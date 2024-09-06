@@ -1,3 +1,76 @@
+$topbar-height: 4rem;
+$main-content-max-width: 1300px;
+
+// 在 992px~1400px 以内，增加内容宽度
+@media (min-width: 992px) and (max-width: 1400px) {
+  #main-wrapper > .container .col-lg-11 {
+    flex: 0 0 96%;
+    max-width: 97%;
+  }
+}
+
+// 在 1650px 以上，减少右侧内容边距
+@media (min-width: 1650px) {
+  body #main-wrapper > .container {
+    padding-left: 3.75rem !important;
+  }
+}
+
+// 在 1400px 以下，隐藏 TOC
+@media (max-width: 1400px) {
+  #panel-wrapper {
+    display: none;
+  }
+}
+
+// 始终展开 TOC
 .is-collapsed {
   max-height: none !important;
+}
+
+// 在移动端，恢复顶部栏高度（默认值为 3rem）
+@media (max-width: 849px) {
+    #topbar-wrapper {
+    height: 3rem !important;
+    }
+}
+
+// 右移 access 栏（最近更新和热门标签）
+.access {
+  margin-left: 3.25rem;
+  min-width: 15rem;
+}
+
+// 右移 TOC
+#toc-wrapper {
+  margin-top: 3rem;
+  min-width: 15rem;
+  margin-left: 3.25rem;
+}
+
+// 移除 TOC 内容的右侧边距
+.pe-4 {
+  padding-right: 0 !important;
+}
+
+// 在 1650px 以上，右移搜索框
+@media (min-width: 1650px) {
+  body search {
+    margin-right: 2.75rem;
+  }
+}
+
+// 在 1200px 以上，右移搜索框
+@media (min-width: 1200px) {
+  body search {
+    margin-right: 3rem;
+  }
+}
+
+// 在 992px 以上，使顶部和搜索栏与下方对齐
+@media (min-width: 992px) {
+  body .px-lg-3 {
+    padding-right: 0 !important;
+    padding-left: 1.2rem !important;
+  }
 }
