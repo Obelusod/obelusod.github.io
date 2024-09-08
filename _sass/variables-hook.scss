@@ -79,3 +79,9 @@ $main-content-max-width: 1300px;
 footer {
     background-color: rgb(0, 0, 0, 0) !important;
 }
+
+// 更改链接悬停颜色
+body %link-hover {
+  color: #d65e5e !important;
+  border-bottom: 1px solid #d65e5e;
+}
