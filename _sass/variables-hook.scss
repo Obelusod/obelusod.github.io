@@ -23,11 +23,6 @@ $main-content-max-width: 1300px;
   }
 }
 
-// 始终展开 TOC
-.is-collapsed {
-  max-height: none !important;
-}
-
 // 在移动端，恢复顶部栏高度（默认值为 3rem）
 @media (max-width: 849px) {
     #topbar-wrapper {
@@ -84,4 +79,14 @@ footer {
 body %link-hover {
   color: #d65e5e !important;
   border-bottom: 1px solid #d65e5e;
+}
+
+// TOC H2 加粗
+.node-name--H2 {
+  font-weight: 600;
+}
+
+// TOC H2 激活时粗细不变（避免被置为 600）
+.toc-link .node-name--H2 .is-active-link {
+  font-weight: 700;
 }

@@ -34,23 +34,6 @@ access: false
         </span>
       {% endif %}
 
-      {% if page.image %}
-        {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
-        {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
-        {% capture alt %}alt="{{ page.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
-
-        {% if page.image.lqip %}
-          {%- capture lqip -%}lqip="{{ page.image.lqip }}"{%- endcapture -%}
-        {% endif %}
-
-        <div class="mt-3 mb-3">
-          <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip }}>
-          {%- if page.image.alt -%}
-            <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>
-          {%- endif -%}
-        </div>
-      {% endif %}
-
       <div class="d-flex justify-content-between">
         <!-- author(s) -->
         <span>
@@ -93,6 +76,23 @@ access: false
           {% include read-time.html content=content prompt=true lang=lang %}
         </div>
       </div>
+
+      {% if page.image %}
+        {% capture src %}src="{{ page.image.path | default: page.image }}"{% endcapture %}
+        {% capture class %}class="preview-img{% if page.image.no_bg %}{{ ' no-bg' }}{% endif %}"{% endcapture %}
+        {% capture alt %}alt="{{ page.image.alt | xml_escape | default: "Preview Image" }}"{% endcapture %}
+
+        {% if page.image.lqip %}
+          {%- capture lqip -%}lqip="{{ page.image.lqip }}"{%- endcapture -%}
+        {% endif %}
+
+        <div class="mt-3 mb-3">
+          <img {{ src }} {{ class }} {{ alt }} w="1200" h="630" {{ lqip }}>
+          {%- if page.image.alt -%}
+            <figcaption class="text-center pt-2 pb-2">{{ page.image.alt }}</figcaption>
+          {%- endif -%}
+        </div>
+      {% endif %}
     </div>
   </header>
 
@@ -151,3 +151,28 @@ access: false
   </div>
   <!-- div.post-tail-wrapper -->
 </article>
+
+<script>  document.addEventListener('DOMContentLoaded', function() {
+  const isExpandToc = {{ page.expand_toc }}
+
+  // 获取所有带有 is-collapsible 和 is-collapsed 类的 <ul> 元素
+  let tocElements = document.querySelectorAll('.toc-list.is-collapsible')
+
+  // 通过删除其中的 .is-collapsed 类来展开 TOC
+  if (isExpandToc) {
+    for (let i = 0; i < tocElements.length; i++) {
+      tocElements[i].classList.remove('is-collapsed')
+      tocElements[i].classList.remove('is-collapsible')
+    }
+  }
+
+  // 添加滚动事件监听器，防止滚动时 .is-collapsed 类被添加
+  window.addEventListener('scroll', function() {
+    if (isExpandToc) {
+      for (let i = 0; i < tocElements.length; i++) {
+        tocElements[i].classList.remove('is-collapsed');
+      }
+    }
+  });
+});
+</script>
