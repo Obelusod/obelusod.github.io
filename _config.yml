@@ -35,6 +35,8 @@ pageviews:
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
+cdn: "https://cdn.jsdelivr.net/gh/obelusod/obelusod.github.io@main"
+
 avatar: "/assets/img/avatar/avatar.png"
 
 toc: true
