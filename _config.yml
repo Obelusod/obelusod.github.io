@@ -25,6 +25,13 @@ social:
   links:
     - https://github.com/Obelusod
 
+analytics:
+  goatcounter:
+    id: obelus
+
+pageviews:
+  provider: goatcounter
+
 # ↑ --------------------------
 # The end of `jekyll-seo-tag` settings
 
