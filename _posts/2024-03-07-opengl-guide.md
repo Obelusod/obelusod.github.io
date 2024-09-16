@@ -6,7 +6,6 @@ categories: [指南, OpenGL]
 tags: [OpenGL, GLEW, freeglut, Visual Studio, 计算机图形学]
 media_subpath: /assets/img/post/opengl-guide/
 image: opengl-logo.png
-expand_toc: true
 ---
 
 ## 安装 GLEW 与 freeglut
@@ -36,6 +35,7 @@ expand_toc: true
 ---
 
 {% box info "GLEW 动态库（Windows 平台）的文件目录结构" %}
+
 - **bin**：存放可执行文件
   - **Release**：发行版本
     - **Win32**：32 位版本的可执行文件
@@ -65,6 +65,7 @@ expand_toc: true
       - `glew32.lib`：64 位的导入库
       - `glew32s.lib`：64 位的导入库（多线程版本）
 - `LICENSE.txt`：许可证文件
+
 {% endbox %}
 
 ![](glew-files.png){: .shadow }
@@ -74,7 +75,9 @@ expand_toc: true
 ### 下载 freeglut（OpenGL 工具包）
 
 {% box info "freeglut（Free OpenGL Utility Toolkit）" %}
+
 **freeglut** 是一个用于创建和管理 OpenGL 窗口的工具库，它是原始 GLUT（OpenGL Utility Toolkit）的一个免费的开源替代品，提供了更多的功能和跨平台支持。通过使用 freeglut，我们可以更轻松地创建窗口、处理输入事件、管理窗口的位置和大小等操作。
+
 {% endbox %}
 
 {: start="1" }
@@ -101,6 +104,7 @@ expand_toc: true
 ---
 
 {% box info "freeglut 动态库（Windows 平台）的文件目录结构" %}
+
 - **bin**：存放可执行文件
   - **x64**：64 位版本的动态链接库文件
     - `freeglut.dll`：64 位的动态链接库
@@ -117,6 +121,7 @@ expand_toc: true
   - `freeglut.lib`：32 位的导入库文件
 - `Copying.txt`：版权和许可证信息
 - `Readme.txt`：关于 freeglut 的简要说明和使用方法
+
 {% endbox %}
 
 ![](freeglut-files.png){: .shadow }
@@ -130,7 +135,9 @@ expand_toc: true
 #### 新建解决方案
 
 {% box info "解决方案（Solution）" %}
+
 **解决方案**是指在 Visual Studio 中进行软件开发时的顶层容器。一个解决方案可以包含多个项目，用于组织和管理不同的代码模块。解决方案文件的扩展名为 `.sln`。
+
 {% endbox %}
 
 {:start="1"}
@@ -168,7 +175,9 @@ expand_toc: true
 #### 添加新建项目
 
 {% box info "新建项目" %}
+
 在一个现有的解决方案中可以添加或新建多个项目，这些项目之间可以相互调用，共享资源，实现整个软件系统的开发和管理。项目文件的扩展名根据项目类型不同而有所不同，比如 C++ 项目的文件扩展名是 `.vcxproj`，而 C# 项目的文件扩展名是 `.csproj`。
+
 {% endbox %}
 
 {:start="1"}
@@ -188,23 +197,31 @@ expand_toc: true
 ### 配置 GLEW 和 freeglut 环境
 
 {% box info "环境配置" %}
+
 为了确保 Visual Studio 编译器能够正确找到和链接 GLEW 和 freeglut 库（动态库）的头文件和库文件，并使编写的程序能够正确运行，需要分别设置（附加）包含目录、（附加）库目录、（附加）依赖项和系统环境变量。
+
 - **包含目录**：用于指定编译器在编译过程中搜索头文件（.h）时的额外搜索路径，以确保编译时就能正确引用这些库的函数和数据结构。
 - **库目录**：用于指定链接器在链接过程中搜索库文件（.lib）时的额外搜索路径，以确保链接时就能正确找到并链接这些库。
 - **依赖项**：用于指定链接器在链接过程中需要链接的额外库文件名称，以确保在链接时能够正确地链接所需的库文件。
 - **系统环境变量**：用于在操作系统层面（所有解决方案/项目均共享）使程序执行时能够正确地找到所需的动态链接库文件（.dll），以确保程序能够正常运行。
+
 {% endbox %}
 
 {% box warning "两种环境配置方式" %}
+
 以下提供两种环境配置方式，二者选其一即可：
+
 - **项目级环境配置（单项目）**
 - **项目属性表配置（跨项目）**
 
 注意：两种配置方法都需要**设置系统环境变量**！
+
 {% endbox %}
 
 {% box danger "务必检查环境配置" %}
+
 如果在编译或运行程序时提示报错（如代码标红线、链接错误、无法解析符号或找不到 .dll 文件等），请检查环境配置的**所有目录项**和**系统环境变量**是否已正确设置！（也可能之前设置的未能保存）
+
 {% endbox %}
 
 ---
@@ -212,7 +229,9 @@ expand_toc: true
 #### 项目级环境配置（单项目）
 
 {% box info "项目级环境配置" %}
+
 项目级环境配置是指仅将环境配置应用于单个项目，不同项目间不共享，如果新建项目需要重新配置。
+
 {% endbox %}
 
 {:start="1"}
@@ -225,13 +244,18 @@ expand_toc: true
 ---
 
 {% box tip "配置与平台" %}
+
 在修改项目属性之前，注意当前选择的所应用的**`配置`**和**`平台`**，建议设置为：
+
 - `配置`：**所有配置**
 - `平台`：**x64**
+
 {% endbox %}
 
 {% box warning "区分 64 位和 32 位平台" %}
+
 此处选择的平台，需要与之后选择的不同位数（Win32/x64）程序的库目录（.lib）相对应！
+
 {% endbox %}
 
 ![](property-page.png){: .shadow }
@@ -276,13 +300,17 @@ expand_toc: true
 1. 点击 **"新行"** 图标，新建目录属性并将值设为 GLEW 和 freeglut 的 **`lib`** 目录（区分 32/64 位程序）
 
 {% box info "64 位与 32 位的 lib 目录" %}
+
 对于 **64 位程序（x64）**，**`lib`** 目录设置为：
+
 - `...\glew\lib\Release\x64`
 - `...\freeglut\lib\x64`
 
 对于 **32 位程序（Win32）**，**`lib`** 目录设置为：
+
 - `...\glew\lib\Release\Win32`
 - `...\freeglut\lib`
+
 {% endbox %}
 
 ![](additional-library-directories-2.png){: .shadow }
@@ -300,7 +328,9 @@ _图中，以 64 位程序为例_
 ##### **设置附加依赖项 [可选]**
 
 {% box tip "此步骤可跳过" %}
+
 这一步骤并不是必要的，编译器会自动查找所需依赖项，可以跳过此设置
+
 {% endbox %}
 
 {:start="1"}
@@ -314,7 +344,9 @@ _图中，以 64 位程序为例_
 1. 在其中写入 GLEW 和 freeglut 的动态库文件名称：**`glew32.lib`**、**`freeglut.lib`**，如图所示
 
 {% box danger "注意拼写" %}
+
 如果动态库文件名称拼写有误（如将 freeglut 错写为 freelut ），编译器将报错无法找到 `.lib` 文件
+
 {% endbox %}
 
 ![](additional-dependencies-2.png){: .shadow }
@@ -324,9 +356,11 @@ _图中，以 64 位程序为例_
 #### 项目属性表配置（跨项目）
 
 {% box info "共享式项目配置" %}
+
 共享式项目配置是指将环境配置保存至新建属性表文件（.props），使用公共属性表可以在不同解决方案和项目间实现配置共享或重用，甚至在不同设备之间分享。
 
 参考官方文档：[共享或重用 Visual Studio 项目设置](https://learn.microsoft.com/zh-cn/cpp/build/create-reusable-property-configurations?view=msvc-170)
+
 {% endbox %}
 
 ---
@@ -398,13 +432,17 @@ _图中，以 64 位程序为例_
 1. 点击 **"新行"** 图标，新建目录属性并将值设为 GLEW 和 freeglut 的 **`lib`** 目录（区分 32/64 位程序）
 
 {% box info "64 位与 32 位的 lib 目录" %}
+
 对于 **64 位程序（x64）**，**`lib`** 目录设置为：
+
 - `...\glew\lib\Release\x64`
 - `...\freeglut\lib\x64`
 
 对于 **32 位程序（Win32）**，**`lib`** 目录设置为：
+
 - `...\glew\lib\Release\Win32`
 - `...\freeglut\lib`
+
 {% endbox %}
 
 ![](library-directories-2.png){: .shadow }
@@ -422,7 +460,9 @@ _图中，以 64 位程序为例_
 ##### **设置附加依赖项 [可选]**
 
 {% box tip "此步骤可跳过" %}
+
 这一步骤并不是必要的，编译器会自动查找所需依赖项，可以跳过此设置
+
 {% endbox %}
 
 {:start="1"}
@@ -436,7 +476,9 @@ _图中，以 64 位程序为例_
 1. 在其中写入 GLEW 和 freeglut 的动态库文件名称：**`glew32.lib`**、**`freeglut.lib`**，如图所示
 
 {% box danger "注意拼写" %}
+
 如果动态库文件名称拼写有误（如将 freeglut 错写为 freelut ），编译器将报错无法找到 `.lib` 文件
+
 {% endbox %}
 
 ![](additional-dependencies-2.png){: .shadow }
@@ -444,7 +486,9 @@ _图中，以 64 位程序为例_
 ---
 
 {% box danger "务必保存" %}
+
 属性表配置完成后，务必点击 **"保存"** 选项进行保存！
+
 {% endbox %}
 
 ![](save-property-sheet.png){: .shadow }
@@ -471,7 +515,9 @@ _图中，以 64 位程序为例_
 1. 导入后，在四种配置项中都会添加该属性表
 
 {% box danger "区分 64 位和 32 位配置" %}
+
 四种配置项都会应用该属性表的配置，意味着如果该属性表的导入库文件（.lib）设置为 64 位程序专用，那么在将项目的当前配置切换至构建 x86（32位）程序后，将无法进行编译，需要手动修改！
+
 {% endbox %}
 
 ![](add-property-sheet-3.png){: .shadow }
@@ -481,7 +527,9 @@ _图中，以 64 位程序为例_
 #### 设置系统环境变量（.dll）
 
 {% box info "系统环境变量" %}
+
 环境变量是一种存储操作系统和应用程序所需配置信息的机制，这些信息通常以键值对的形式存在。其中，`PATH` 变量定义了系统在哪些目录中寻找依赖库（.dll）、可执行文件（.exe）和其他资源，当试图运行一个程序而未提供完整路径时，系统能够根据 `PATH` 环境变量中列出的目录顺序查找并运行该程序。
+
 {% endbox %}
 
 {:start="1"}
@@ -507,17 +555,23 @@ _图中，以 64 位程序为例_
 1. 在右上方点击 **"新建"** 变量并将值设为 GLEW 和 freeglut 的 **`bin`** 目录（区分 32/64 位程序）
 
 {% box info "64 位与 32 位的 bin 目录" %}
+
 对于 **64 位程序（x64）**，**`bin`** 目录设置为：
+
 - `...\glew\bin\Release\x64`
 - `...\freeglut\bin\x64`
 
 对于 **32 位程序（Win32）**，**`bin`** 目录设置为：
+
 - `...\glew\bin\Release\Win32`
 - `...\freeglut\bin`
+
 {% endbox %}
 
 {% box danger "保存并重启 Visual Studio" %}
+
 设置系统环境变量后，需要**完全关闭并重启 Visual Studio** 才能生效，重启前务必**全部保存**项目更改！
+
 {% endbox %}
 
 ![](system-environment-variables-4.png){: .shadow }
@@ -528,7 +582,9 @@ _图中，以 64 位程序为例_
 ## OpenGL 绘图示例
 
 {% box danger "务必检查环境配置" %}
+
 如果在编译或运行程序时提示报错（如代码标红线、链接错误、无法解析符号或找不到 .dll 文件等），请检查环境配置的**所有目录项**和**系统环境变量**是否已正确设置！（也可能之前设置的未能保存）
+
 {% endbox %}
 
 ```c++
