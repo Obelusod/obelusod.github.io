@@ -546,8 +546,8 @@ _图中，以 64 位程序为例_
 
 <table>
 <tr>
-  <td><img src="system-environment-variables-2.png" style="height:420px" alt="config variables 1"></td>
-  <td><img src="system-environment-variables-3.png" style="height:420px" alt="config variables 2"></td>
+  <td><img src="system-environment-variables-2.png" alt="config variables 1"></td>
+  <td><img src="system-environment-variables-3.png" alt="config variables 2"></td>
 </tr>
 </table>
 
