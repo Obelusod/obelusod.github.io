@@ -6,7 +6,7 @@ title: Android Studio 安装与配置指南
 
     **Android Studio** 是 Google 官方推出的集成开发环境（IDE），专为 Android 应用开发设计。它基于 IntelliJ IDEA
     构建，提供智能代码编辑、实时调试、性能分析工具、虚拟设备模拟器以及可视化布局编辑器，支持 Kotlin、Java 等语言，并集成
-    Gradle 构建系统和 Git 版本控制,其丰富的插件生态与 Firebase 等云服务无缝衔接，为开发者提供从编码、测试到部署的全流程工具链，是打造高性能
+    Gradle 构建系统和 Git 版本控制，其丰富的插件生态与 Firebase 等云服务无缝衔接，为开发者提供从编码、测试到部署的全流程工具链，是打造高性能
     Android 应用的首选平台。
 
 !!! Warning "Android Studio 安装要求（Windows）[^2]"

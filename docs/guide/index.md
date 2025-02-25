@@ -35,7 +35,7 @@ hide:
 
     ---
 
-    详细介绍如何安装与配置 Android Studio 开发环境，包括下载与安装 Android Studio、设置虚拟设备（AVD）、配置 SDK 组件、创建并配置 Android 项目
+    为安装与配置 Android Studio 开发环境提供基础指南，包括下载与安装 Android Studio、设置虚拟设备（AVD）、配置 SDK 组件、创建并配置 Android 项目
 
     [:octicons-arrow-right-24: 点击阅读](android-studio/index.md)
 
@@ -43,7 +43,7 @@ hide:
 
     ---
 
-    通过学信网验证学籍并申请免费教育许可证，如何注册账号、文件提交与许可证激活全流程，助力学生合法获取 JetBrains 全系列开发工具
+    通过使用学信网认证申请教育许可证，以及注册账号、文件提交与许可证激活的全流程，助力学生免费且合法地获取 JetBrains 全系列开发工具
 
     [:octicons-arrow-right-24: 点击阅读](jetbrains-educational-license/index.md)
 

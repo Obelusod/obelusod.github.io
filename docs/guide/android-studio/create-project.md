@@ -38,10 +38,16 @@ title: 创建 Android 项目（Phone）
 
 ??? warning "下载或构建失败"
 
-    这一步骤需要安装的构建工具较多，下载速度可能较慢，如果提示下载或构建失败可以尝试更换网络，并点击左侧
+    这一步骤需要安装的构建工具较多，下载速度可能较慢，如果提示下载或构建失败可以尝试更换网络，并点击左下方的
     **"Build"**（构建）图标，在 **"Sync"**（同步）窗口中右键失败的条目，选择 `Reload Gradle Project` 重试。
 
     ![](../../assets/images/android-studio/new-project-error.png)
+
+    !!! annotate tip ""
+
+        如果依然无法解决，可以尝试删除 `%USERPROFILE%\.gradle` 目录 (1)，清理 Gradle 缓存，并重启 Android Studio 后重试
+
+    1. 在文件资源管理器的地址栏填入并回车，可以直接跳转至此目录
 
 ![](../../assets/images/android-studio/new-project-4.png)
 
@@ -70,7 +76,7 @@ title: 创建 Android 项目（Phone）
 
 ## 添加 Android 设备
 
-在右侧侧边栏中点击 **"Device Manager"** 图标，打开设备管理窗口，并点击 **"+"** 号添加 Android 虚拟设备
+在右侧边栏中点击 **"Device Manager"** 图标，打开设备管理窗口，并点击 **"+"** 号添加 Android 虚拟设备
 
 !!! tip "另外添加较低版本的设备"
 
@@ -166,6 +172,19 @@ AVD 配置保持默认即可，点击 **"Finish"** 完成创建
 
 1. 可以点击左侧 **"Build"**（构建）图标，在 **"Build Output"**（构建输出）窗口中查看构建详情
 
+??? warning "下载或构建失败"
+
+    这一步骤需要安装的构建工具较多，下载速度可能较慢，如果提示下载或构建失败可以尝试更换网络，并点击左下方的
+    **"Build"**（构建）图标，在 **"Sync"**（同步）窗口中右键失败的条目，选择 `Reload Gradle Project` 重试。
+
+    ![](../../assets/images/android-studio/new-project-error.png)
+
+    !!! annotate tip ""
+
+        如果依然无法解决，可以尝试删除 `%USERPROFILE%\.gradle` 目录 (1)，清理 Gradle 缓存，并重启 Android Studio 后重试
+
+    1. 在文件资源管理器的地址栏填入并回车，可以直接跳转至此目录
+
 ![](../../assets/images/android-studio/run-app-2.png)
 
 ---
@@ -181,7 +200,7 @@ AVD 配置保持默认即可，点击 **"Finish"** 完成创建
 
 ## 查看 XML 布局代码
 
-打开 `activity_main.xml` 文件，默认是视图为 **"Design"** 预览模式，可以在右上方分别切换 **"Code"**（代码）、**"Split"**（分离）、**"Design"**（设计）三个视图
+打开 `activity_main.xml` 文件，默认视图为 **"Design"** 预览模式，可以在右上方分别切换 **"Code"**（代码）、**"Split"**（分离）、**"Design"**（设计）三个视图
 
 ![](../../assets/images/android-studio/view-xml-1.png)
 

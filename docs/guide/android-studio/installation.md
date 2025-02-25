@@ -68,26 +68,33 @@ title: 安装 Android Studio
 
     如果之前未安装过 Android SDK，会在线查找可用的 SDK 组件列表，务必确保网络可用
 
+!!! warning "无法获取 Android SDK 附加组件列表"
+
+    如果网络状态不佳，可能会提示 "Unable to access Android SDK add-on list"，导致在后续选择 SDK 组件时某些组件可能不会显示（如
+    `Performance`），可以先点击 `Cancel` 暂时跳过，之后在 SDK Manager 中再手动选择安装。
+
 ![](../../assets/images/android-studio/android-studio-setup-8.png)
 
 ---
 
 **"Install Typer"**（安装类型）建议选择 `Custom` 进行自定义安装
 
-!!! warning "不建议选择 `Standard`"
+!!! example "选择 `Custom` 自定义安装"
 
-    如果选择 `Standard` 标准安装，将自动选择所有组件并安装至用户数据文件夹（C 盘），如果需要更改路径则选择自定义安装。
+    如果选择 `Standard` 标准安装，将自动选择所有组件并安装至用户数据文件夹（C 盘），如果需要更改路径必须选择自定义安装。后续步骤为选择
+    `Custom` 自定义安装的情况。
 
 ![](../../assets/images/android-studio/android-studio-setup-9.png)
 
 ---
 
-根据需要选择 SDK 组件，其中 `Android SDK` 和 `Android Vritual Device` 为必选项
+根据需要选择 SDK 组件和安装位置，其中 `Android SDK` 和 `Android Vritual Device` 为必选项
 
 ??? info "SDK 组件说明"
 
     - **Android SDK**：Android 软件开发工具包，包含了开发 Android 应用程序所需的工具、库和样例代码，提供了开发者所需的 API、调试工具和其他必要的资源。
     - **Android SDK Platform**：Android 操作系统的软件开发包，包含了特定版本的 Android 系统的 API 级别和系统图像，开发者可以利用这些平台来编写、编译和运行针对特定 Android 版本的应用程序。
+    - **Performance (Intel HAXM)**：Intel 硬件加速执行管理器是一个可选的性能组件，它可以在 Intel 处理器的计算机上加速 Android 模拟器的性能，提高 Android 模拟器的运行速度。（目前已被弃用）
     - **Performance (Android Emulator hypervisor driver)**：Android 模拟器虚拟化驱动程序是另一个可选的性能组件，它提供了一种虚拟化技术来改善 Android 模拟器的性能，借助这个组件可以在模拟器中更快速地运行和测试应用程序。
     - **Android Virtual Device**：Android Virtual Device（AVD）是 Android 模拟器的配置模拟器，可以模拟不同类型和版本的 Android 设备，创建不同配置的 AVD 来测试应用在不同设备上的运行情况，以确保应用的兼容性和稳定性。
 
