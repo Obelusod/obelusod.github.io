@@ -2,7 +2,7 @@
 title: CUDA Toolkit (+cuDNN)
 ---
 
-??? example "NVIDIA 显卡驱动、CUDA、PyTorch 和 Python 的兼容版本要求"
+??? example "NVIDIA 显卡驱动、CUDA、PyTorch 和 Python 的版本兼容性要求"
 
     ![](../../../assets/images/guide/compatibility-matrix-1.png)
     
@@ -69,7 +69,7 @@ title: CUDA Toolkit (+cuDNN)
 
 !!! tip "选择合适的 CUDA 版本"
 
-    选择 CUDA Toolkit 版本时，需要根据实际开发环境和兼容版本要求（如 PyTorch）选择
+    选择 CUDA Toolkit 版本时，需要根据实际开发环境和版本兼容性要求（如 PyTorch）选择
 
 首先，删除过时的 GPG 密钥
 

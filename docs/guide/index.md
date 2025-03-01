@@ -11,7 +11,7 @@ hide:
 
     ---
 
-    从镜像下载、启动盘制作到系统安装与优化，包括双系统配置、显卡驱动安装、开发环境搭建（CUDA、Python、C++库）及系统优化技巧，为开发者提供完整解决方案
+    面向深度学习开发的全栈式指南，涵盖版本选择、启动盘制作到双系统安装全流程，详解基本配置、显卡驱动部署、开发环境搭建（CUDA、Python、C++库）等，提供企业级最佳实践
 
     [:octicons-arrow-right-24: 点击阅读](ubuntu/index.md)
 
@@ -27,7 +27,7 @@ hide:
 
     ---
 
-    涵盖 GLEW 和 freeglut 的下载与安装，Visual Studio 环境配置，包含目录、库目录、依赖项及系统环境变量的设置，帮助开发者在 Windows 平台上顺利搭建 OpenGL 开发环境
+    Windows 平台 OpenGL 开发环境搭建指南，针对于 GLEW 和 freeglut 库安装，Visual Studio 环境配置，及其包含目录、库目录、依赖项及系统环境变量的设置
 
     [:octicons-arrow-right-24: 点击阅读](opengl/index.md)
 
@@ -35,7 +35,7 @@ hide:
 
     ---
 
-    为安装与配置 Android Studio 开发环境提供基础指南，包括下载与安装 Android Studio、设置虚拟设备（AVD）、配置 SDK 组件、创建并配置 Android 项目
+    Android Studio 开发的入门指南，包括下载与安装 Android Studio、设置虚拟设备（AVD）、配置 SDK 组件、创建并配置 Android 项目的一般开发流程
 
     [:octicons-arrow-right-24: 点击阅读](android-studio/index.md)
 
@@ -43,7 +43,7 @@ hide:
 
     ---
 
-    通过使用学信网认证申请教育许可证，以及注册账号、文件提交与许可证激活的全流程，助力学生免费且合法地获取 JetBrains 全系列开发工具
+    通过学信网认证申请教育许可证，以及注册账号、文件提交与许可证激活的全流程，帮助学生免费获取正版授权的 JetBrains 全系列开发工具
 
     [:octicons-arrow-right-24: 点击阅读](jetbrains-educational-license/index.md)
 

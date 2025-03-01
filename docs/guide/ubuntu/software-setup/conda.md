@@ -60,7 +60,7 @@ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
 conda config --set auto_activate_base false 
 ```
 
-??? note "手动初始化 `conda`"
+??? example "手动初始化 `conda`"
 
     如果需要手动初始化 `conda`，可以使用下列命令：
 
@@ -71,7 +71,7 @@ conda config --set auto_activate_base false
     conda init --all # (1)!
     ```
 
-    1. `--all` 选项将初始化所有支持的 shell，详见：[conda init](https://docs.conda.io/projects/conda/en/stable/commands/init.html)
+    1. `--all` 选项将初始化所有支持的 shell，详见：[conda init — conda documentation](https://docs.conda.io/projects/conda/en/stable/commands/init.html)
 
 ![](../../../assets/images/ubuntu/anaconda-install-4.png)
 
@@ -85,10 +85,15 @@ conda config --set auto_activate_base false
 
 ## 安装 Miniconda [^2]
 
+!!! abstract "Miniconda"
+
+    **Miniconda** 是一个更轻量级的 Python 环境管理工具，它仅包含 Conda 包管理器、Python 解释器及少量核心依赖，相比 Anaconda
+    预装的数百个科学计算包，Miniconda 具有更小的安装体积（通常仅 200MB）和更低的内存占用，尤其适用于服务器部署或快速构建纯净隔离的项目环境。
+
 执行下列命令，下载 Miniconda 最新发行版 (1)
 { .annotate }
 
-1. 对于其他版本，查看 [Miniconda Archive 官网](https://repo.anaconda.com/miniconda/)
+1. 对于其他版本，可查看 [Miniconda Archive](https://repo.anaconda.com/miniconda/)
 
 ```bash
 wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
@@ -96,7 +101,7 @@ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 ---
 
-执行下列命令，安装 Miniconda 发行版
+安装 Miniconda 发行版
 
 ```bash
 bash Miniconda3-latest-Linux-x86_64.sh
@@ -144,6 +149,8 @@ anaconda-navigator
 
 以南京大学镜像站为例，复制下方的镜像源
 
+![](../../../assets/images/ubuntu/mirror_conda.png)
+
 ??? note "常用第三方源 `custom_channels`"
 
     - **conda-forge**：社区维护的开源包仓库，提供大量最新版本的跨平台软件。
@@ -153,8 +160,6 @@ anaconda-navigator
     - **msys2**：Windows 系统工具链频道，包含编译工具和依赖库（如 GCC、Git）。
     - **bioconda**：生物信息学专用频道，提供生物数据分析工具（如 SAMtools、BLAST）。
     - **menpo**：计算机视觉和图像处理工具库（如 dlib、OpenCV）。
-
-![](../../../assets/images/ubuntu/mirror_conda.png)
 
 ---
 
@@ -186,13 +191,15 @@ conda clean -i
 
     如果 `conda` 需要安装指定版本或最新版本 (1)，可以执行下列命令：
 
-    > 如果版本过低，更新需要分阶段进行（逐级更新）
-
     ```bash
     conda install -n base conda=xx.xx.xx
     ```
 
-1. 最新版本可查看 [GitHub Releases](https://github.com/conda/conda/releases)
+    !!! waring annotate ""
+
+        如果版本过低，需要逐级更新，例如要从 `conda 4.12` 更新至 `conda 23.10.0`，需要先安装 `conda 22.11.1`
+
+1. 最新版本可查看 [Releases · conda/conda](https://github.com/conda/conda/releases)
 
 ```bash
 conda update -n base conda
@@ -210,6 +217,16 @@ conda remove anaconda-navigator
 ---
 
 ## 卸载 Anaconda
+
+移除整个 `anaconda3` 目录
+
+```bash
+rm -rf anaconda3
+rm -rf ~/anaconda3
+sudo rm -rf /opt/anaconda3
+```
+
+---
 
 （可选）移除 `anaconda3` 目录以外的环境
 
@@ -235,16 +252,6 @@ conda init --reverse --all
 
 ---
 
-移除整个 `anaconda3` 目录
-
-```bash
-rm -rf anaconda3
-rm -rf ~/anaconda3
-sudo rm -rf /opt/anaconda3
-```
-
----
-
 （可选）移除 `.condarc` 文件和 `.conda`、`.continuum` 目录
 
 ```bash
@@ -264,6 +271,8 @@ rm -rf ~/.condarc ~/.conda ~/.continuum
 ```bash
 ~/miniconda3/uninstall.sh
 ```
+
+---
 
 ## 常用命令 [^3]
 

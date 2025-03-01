@@ -64,7 +64,7 @@ sudo gedit /etc/tlp.conf
 
 !!! warning "更新后可能需要重新配置"
 
-    TLP 更新后可能会覆盖 `tlp.conf` 文件中的配置，因此需要重新配置。
+    TLP 更新后会覆盖（注释） `tlp.conf` 文件中的配置，可能需要重新设置。
 
 ![](../../../assets/images/ubuntu/tlp-conf.png)
 

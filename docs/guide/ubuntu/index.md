@@ -52,6 +52,6 @@ hide:
 
     常见安装问题解决方案与兼容性说明，如更换 Linux 内核、解决软件包依赖关系等
 
-    [:octicons-arrow-right-24: 点击阅读](boot-and-disk.md)
+    [:octicons-arrow-right-24: 点击阅读](faq.md)
 
 </div>

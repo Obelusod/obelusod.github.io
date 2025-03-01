@@ -4,7 +4,7 @@ title: Pip
 
 ## 安装 Pip [^1]
 
-!!! note "默认已安装 Pip"
+!!! info "默认已安装 Pip"
 
     大多数情况下，Python 已经附带安装了 `pip`，可以使用下列命令检查版本：
 
@@ -40,7 +40,7 @@ title: Pip
 
 ## 更新 Pip
 
-!!! tip "更新 Pip"
+!!! tip ""
 
     默认安装的 Pip 可能较旧，建议使用以下命令更新至最新版
 
@@ -52,7 +52,7 @@ python -m pip install --upgrade pip
 
 ## 更新 setuptools 和 wheel
 
-!!! note "setuptools、wheel 和 pip 三者之间的关系"
+??? note "setuptools、wheel 和 pip 三者之间的关系"
     
     `pip` 是 Python 的包管理工具，负责从 PyPI（Python Package Index）下载和安装第三方包。
 

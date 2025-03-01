@@ -70,10 +70,11 @@ nav:
       - guide/ubuntu/configuration/battery-charge-management.md
     - 软件安装与配置:
       - guide/ubuntu/software-setup/index.md
-      - 开发工具:
-        - Pip: guide/ubuntu/software-setup/pip.md
-        - Anaconda: guide/ubuntu/software-setup/conda.md
-        - CUDA Toolkit (+cuDNN): guide/ubuntu/software-setup/cuda.md
+      - Pip: guide/ubuntu/software-setup/pip.md
+      - Anaconda: guide/ubuntu/software-setup/conda.md
+      - CUDA Toolkit (+cuDNN): guide/ubuntu/software-setup/cuda.md
+      - PyTorch: guide/ubuntu/software-setup/pytorch.md
+    - 常见问题: guide/ubuntu/faq.md
   - WSL 安装与配置指南:
     - guide/wsl/index.md
     - 安装 WSL: guide/wsl/installation.md

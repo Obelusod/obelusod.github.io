@@ -2,12 +2,7 @@
 title: 安装 NVIDIA 显卡驱动
 ---
 
-!!! warning "安装过程可能会遇到各种错误"
-
-    在 Linux 上安装 NVIDIA 显卡驱动并非易事，由于兼容性（如 Linux 内核）等问题，在安装过程中可能会遇到莫名其妙的未知错误，
-    有些问题甚至需要重装驱动/系统才能解决，因此**建议在安装完系统后优先安装 NVIDIA 显卡驱动**，以免造成更大的损失。
-
-??? example "NVIDIA 显卡驱动、CUDA、PyTorch 和 Python 的兼容版本要求"
+??? example "NVIDIA 显卡驱动、CUDA、PyTorch 和 Python 的版本兼容性要求"
 
     ![](../../../assets/images/guide/compatibility-matrix-1.png)
     
