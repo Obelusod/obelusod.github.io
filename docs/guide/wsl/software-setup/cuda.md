@@ -76,7 +76,13 @@ title: CUDA Toolkit (+cuDNN)
 
 !!! tip "选择合适的 CUDA 版本"
 
-    选择 CUDA Toolkit 版本时，需要根据实际开发环境和版本兼容性要求（如 PyTorch）选择
+    选择 CUDA Toolkit 版本时，需要根据实际开发环境和版本兼容性要求进行选择，多个 CUDA 版本之间可以通过配置环境变量并存。
+
+    !!! question "是否需要为 PyTorch 安装特定 CUDA？"
+
+        在虚拟环境下，使用包管理器（`conda` 或 `pip`）安装 PyTorch 时，会自动安装所依赖版本的 CUDA 和
+        cuDNN（作为 Python 软件包，如 `cudatoolkit`），并与系统环境变量定义的 CUDA 和 cuDNN 版本相隔离，PyTorch
+        会优先调用虚拟环境中的 CUDA 和 cuDNN。因此，**不需要在系统环境下为 PyTorch 安装特定版本的 CUDA 和 cuDNN**。
 
 首先，删除过时的 GPG 密钥
 
@@ -248,6 +254,8 @@ sudo apt install zlib1g
         网络安装将默认安装最新版的 cuDNN，如需安装特定版本，建议使用软件包本地安装
     
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
+
+    > 如果在之前安装 CUDA Toolkit 时已添加密钥环，可以跳过此步骤
     
     ``` bash
     wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb

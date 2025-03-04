@@ -72,13 +72,13 @@ title: PyTorch
     PyTorch 提供了 CPU 版和 GPU 版，其中 GPU 支持 CUDA（NVIDA）和 ROCm（AMD）两种，为了充分发挥 PyTorch
     的并行加速优势，并处理大规模数据和复杂模型，通常推荐安装 GPU 版本。本篇主要以 CUDA 版本为例。
 
-!!! warning "正确的 CUDA 版本安装"
+???+ warning "正确的 CUDA 版本安装"
 
     对于 PyTorch CUDA，需要 NVIDIA 显卡驱动、CUDA 和 cuDNN 库的支持，并且根据每个 PyTorch
-    版本兼容性的不同，通常需要适配特定的依赖版本，因此**强烈推荐使用 Python 虚拟环境（如 Anaconda）和包管理器进行安装，避免环境冲突或混乱**。
+    版本兼容性的不同，通常需要适配特定版本的依赖，因此**强烈推荐使用 Python 虚拟环境（如 Anaconda）和包管理器进行安装，避免环境冲突或混乱**。
     
-    使用包管理器直接安装 PyTorch 而不指定特定版本（如 `pip install pytorch`），将会默认安装最新的 PyTorch
-    版本及较新的 CUDA 和 cuDNN 版本，往往容易遇到兼容性问题（如版本不匹配/无法找到 CUDA 设备），因此**务必根据官方提供的各个版本的完整安装命令进行安装**。
+    如果使用包管理器直接安装 PyTorch 而不指定版本（如 `pip install pytorch`），将会默认安装最新的 PyTorch
+    版本及较新的 CUDA 和 cuDNN 版本，往往容易遇到兼容性问题（如版本不匹配/无法找到 CUDA 设备），**务必根据官方提供的各个版本的完整安装命令进行安装！**
 
     !!! danger ""
 
@@ -97,11 +97,15 @@ title: PyTorch
 
 1. 参考：[Transitioning from defaults | conda-forge | community-driven packaging for conda](https://conda-forge.org/docs/user/transitioning_from_defaults/)
 
-??? example "PyTorch 安装命令（CUDA）"
+???+ example "PyTorch 安装命令（CUDA）"
 
-    以下仅提供部分较新的主要版本的 PyTorch 安装命令，其他所有版本请参阅：[Previous PyTorch Versions | PyTorch](https://pytorch.org/get-started/previous-versions/)
+    以下仅列出部分较新的主要版本的 PyTorch 安装命令，其他所有版本请参阅：[Previous PyTorch Versions | PyTorch](https://pytorch.org/get-started/previous-versions/)
 
-    ??? quote "PyTorch v2.6.0 | CUDA 11.8, 12.4, 12.6 | Python 3.9 - 3.13"
+    !!! warning ""
+
+        如果要更换原有的 PyTorch 版本，务必先[完全卸载 PyTorch](#卸载-pytorch) 后，再使用命令安装新版本！
+
+    ??? quote "[Latest] PyTorch v2.6.0 | CUDA 11.8, 12.4, 12.6 | Python 3.9 - 3.13"
     
         ```bash title=""
         # CUDA 11.8
@@ -248,25 +252,36 @@ title: PyTorch
         pip install torch==1.12.1+cu116 torchvision==0.13.1+cu116 torchaudio==0.12.1 --extra-index-url https://download.pytorch.org/whl/cu116
         ```
 
-
 ---
 
 ## 验证 PyTorch
 
-执行下列命令，启动 Python 解释器（或编写 Python 脚本）
+执行下列命令（或编写 Python 脚本），验证 PyTorch 是否安装成功
 
 ```bash
-python
+python -c "import torch; print(torch.cuda.is_available())"  # 如果为 True，说明 CUDA 可用
 ```
 
 ---
 
-在解释器中输入下列代码，验证 PyTorch 是否安装成功
+## 卸载 PyTorch
 
-```python
-import torch
-torch.cuda.is_available()  # 如果输出 True，则说明 CUDA 可用
-```
+!!! tip "完全卸载 PyTorch"
 
+    无论之前是使用 `pip` 还是 `conda` 安装，建议同时且反复地使用两者的卸载命令进行卸载，以确保完全清除 PyTorch 及其依赖。
+
+=== "Pip"
+
+    ```bash
+    pip uninstall torch torchvision torchaudio
+    pip cache purge  # （可选）删除所有缓存
+    ```
+
+=== "Conda"
+
+    ```bash
+    conda remove pytorch torchvision torchaudio
+    conda clean --all # （可选）删除所有缓存
+    ```
 
 [^1]: [Start Locally | PyTorch](https://pytorch.org/get-started/locally/)
