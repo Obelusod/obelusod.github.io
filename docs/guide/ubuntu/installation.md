@@ -6,8 +6,7 @@ title: 安装 Ubuntu
 
 !!! abstract "Secure Boot（安全启动）"
 
-    **Secure Boot** 是 BIOS 的一种安全功能，旨在确保操作系统和启动项的完整性和可信性，可以防止未经授权的操作系统、
-    病毒和恶意软件向计算机进行认证，进而保护系统不被攻击和篡改。
+    **Secure Boot** 是 BIOS 的一种安全功能，旨在确保操作系统和启动项的完整性和可信性，可以防止未经授权的操作系统、病毒和恶意软件向计算机进行认证，进而保护系统不被攻击和篡改。
 
     **但在使用外部 U 盘运行某些程序或安装其他操作系统时，会被受到限制而无法运行/安装，因此需要临时禁用，直至所有配置完成（安装 NVIDIA 显卡驱动后）。**
 
@@ -17,13 +16,13 @@ title: 安装 Ubuntu
 
 !!! tip "进入 BIOS 界面"
 
-    不同的主板/电脑进入 BIOS 的按键和操作方法不尽相同，常见的按键如：++f2++、++f12++、++delete++、++esc++等，
-    建议根据主板品牌/型号查询，如搜索 "华硕主板如何禁用 Secure Boot 功能"。
+    不同的主板/电脑进入 BIOS 的按键和操作方法不尽相同，常见的按键如：++f2++、++f12++、++delete++、++esc++等，建议根据主板品牌/型号查询，如搜索
+    "华硕主板如何禁用 Secure Boot 功能"。
 
 ---
 
-通常在 BIOS（Advanced Mode）的 `Security`（安全）或 `Boot` 栏中，设置
-`Secure Boot` 选项为 `Disabled`（Off）进行禁用，最后保存更改即可
+通常在 BIOS（Advanced Mode）的 `Security`（安全）或 `Boot` 栏中，设置 `Secure Boot` 选项为
+`Disabled`（Off）进行禁用，最后保存更改即可
 
 > 有些主板除了禁用 Secure Boot 外，还需要更改 `OS Type` 为 `Other OS`
 
@@ -38,7 +37,7 @@ title: 安装 Ubuntu
 ## 从 U 盘启动引导
 
 !!! info "引导启动"
-    
+
     安装 Ubuntu 系统需要从引导盘（U盘）使用 ISO 镜像安装。
 
 === "在 BIOS/Boot Manager 启动"
@@ -106,7 +105,6 @@ title: 安装 Ubuntu
     - **Boot from next volume**：从下一个卷（磁盘分区）引导启动系统，当计算机上有多个操作系统或者多个引导设备时，可以选择该选项来从其他卷或设备中切换系统。
     - **UEFI Firmware Settings**：进入计算机的 UEFI 固件设置界面（即 BIOS），可以对计算机的硬件设置、启动顺序、安全启动等进行调整和配置。
 
-
 ![](../../assets/images/ubuntu/grub-install-ubuntu.png)
 
 ---
@@ -164,7 +162,8 @@ title: 安装 Ubuntu
 !!! info "选项说明"
 
     - **Interactive installation（交互安装）**：即传统的安装方式，在安装过程中，用户需要根据引导逐一选择或输入相关配置信息（如分区、账户、时区等），直到完成所有配置后才会开始安装，适用于普通用户的自定义安装。
-    - **Automated installation（自动安装）**：一种无需用户干预、提前配置的高级安装方式，通过网络从指定的 URL 加载 autoinstall.yaml 配置文件，可以按照设定好安装选项进行自动化安装，适用于高级用户或企业统一批量部署。
+    - **Automated installation（自动安装）**：一种无需用户干预、提前配置的高级安装方式，通过网络从指定的 URL
+    加载 autoinstall.yaml 配置文件，可以按照设定好安装选项进行自动化安装，适用于高级用户或企业统一批量部署。
 
     自动安装详见：[Introduction to autoinstall - Ubuntu installation documentation](https://canonical-subiquity.readthedocs-hosted.com/en/latest/intro-to-autoinstall.html)
 
@@ -179,7 +178,8 @@ title: 安装 Ubuntu
 !!! info "选项说明"
 
     - **Default selection（默认集合）**：即最小化安装，仅预装一些基本的应用，但依然包括捆绑的软件（如 Snap、FireFox）。
-    - **Extened selection（扩展集合）**：附带安装一些常用的办公应用、工具（如 LibreOffice、Rhythmbox、GNOME Calendar），无需网络连接即可离线安装（使用 snap 包）。
+    - **Extened selection（扩展集合）**：附带安装一些常用的办公应用、工具（如
+    LibreOffice、Rhythmbox、GNOME Calendar），无需网络连接即可离线安装（使用 snap 包）。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-7.png)
 
@@ -206,8 +206,8 @@ title: 安装 Ubuntu
 
 !!! question "选择安装类型"
 
-    - 如果已有 Windows 系统且需要安装双系统，可以选择 **"Install Ubuntu alongside Windows Boot Manager
-    and Ubuntu 24.04 LTS"**，保留 Windows 相关文件并与 Ubuntu 共存，将会自动进行分区。
+    - 如果已有 Windows 系统且需要安装双系统，可以选择 **"Install Ubuntu alongside Windows Boot Manager and Ubuntu 24.04 LTS"**，保留
+    Windows 相关文件并与 Ubuntu 共存，将会自动进行分区。
     - 如果安装双系统或自定义分区，选择 **"Manual installation"**（手动安装/分区），自定义磁盘分区。
     - 如果仅使用 Ubuntu（不存在 Windows 系统），选择 **"Erase disk and install Ubuntu"**（擦除磁盘并安装 Ubuntu）。
 
@@ -246,22 +246,21 @@ title: 安装 Ubuntu
 
 !!! info "Linux 根挂载点"
 
-    在基于 Linux 内核的系统中，默认所有的目录和文件都置于**根挂载点`/`**下，可以为某些重要分区/目录单独地分配一个独立的分区，
-    以提高系统的管理效率、安全性和性能，并避免数据损坏或丢失。
+    在基于 Linux 内核的系统中，默认所有的目录和文件都置于**根挂载点`/`**下，可以为某些重要分区/目录单独地分配一个独立的分区，以提高系统的管理效率、安全性和性能，并避免数据损坏或丢失。
 
-| Linux 常见分区/目录[^1]                  | 描述                                 |
-|:-----------------------------------|:-----------------------------------|
-| `/boot`（MBR）<br/> `/boot/efi`（GPT） | **引导分区**，存放引导程序文件                  |
-| `swap`                             | **内存交换分区**，相当于虚拟内存                 |
-| `/`                                | **根挂载点**，整个文件系统的根目录                |
-| `/home`                            | **普通用户主目录**，存储普通用户的一般文件            |
-| `/root`                            | **root 用户主目录**，存储 root 用户的数据和脚本文件  |
-| `/bin`                             | 存储基本命令的二进制文件                       |
-| `/usr`                             | 存储系统软件，包含用户数据和应用程序                 |
-| `/etc`                             | 存储系统配置文件                           |
-| `/tmp`                             | 存储临时文件，通常在重启后自动删除                  |
-| `/var`                             | 存储变量文件，比如日志或缓存                     |
-| `/dev`                             | 存储设备文件，通常是硬件设备的接口文件                |
+| Linux 常见分区/目录[^1]                | 描述                                                |
+|:---------------------------------------|:----------------------------------------------------|
+| `/boot`（MBR）<br/> `/boot/efi`（GPT） | **引导分区**，存放引导程序文件                      |
+| `swap`                                 | **内存交换分区**，相当于虚拟内存                    |
+| `/`                                    | **根挂载点**，整个文件系统的根目录                  |
+| `/home`                                | **普通用户主目录**，存储普通用户的一般文件          |
+| `/root`                                | **root 用户主目录**，存储 root 用户的数据和脚本文件 |
+| `/bin`                                 | 存储基本命令的二进制文件                            |
+| `/usr`                                 | 存储系统软件，包含用户数据和应用程序                |
+| `/etc`                                 | 存储系统配置文件                                    |
+| `/tmp`                                 | 存储临时文件，通常在重启后自动删除                  |
+| `/var`                                 | 存储变量文件，比如日志或缓存                        |
+| `/dev`                                 | 存储设备文件，通常是硬件设备的接口文件              |
 
 ---
 
@@ -317,7 +316,8 @@ title: 安装 Ubuntu
 
 ---
 
-先在左下方选择安装所在硬盘的 **"Device for boot loader installation"** （安装引导程序的设备），即引导分区 `/boot/efi`，默认会自动分配分区大小
+先在左下方选择安装所在硬盘的 **"Device for boot loader installation"**（安装引导程序的设备），即引导分区
+`/boot/efi`，默认会自动分配分区大小
 
 ![](../../assets/images/ubuntu/ubuntu-installation-11.png)
 
@@ -345,8 +345,8 @@ title: 安装 Ubuntu
 
 !!! info annotate "Use Active Directory（使用活动目录）[^2]"
 
-    Active Directory（AD）是用于在网络环境中为企业和组织提供存储和组织网络资源和用户信息的组策略服务，以及统一身份验证和访问控制的能力；
-    在安装 Ubuntu 时，可以选择使用 AD 对 Ubuntu 进行用户身份验证和集中式管理。
+    Active Directory（AD）是用于在网络环境中为企业和组织提供存储和组织网络资源和用户信息的组策略服务，以及统一身份验证和访问控制的能力；在安装
+    Ubuntu 时，可以选择使用 AD 对 Ubuntu 进行用户身份验证和集中式管理。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-14.png)
 

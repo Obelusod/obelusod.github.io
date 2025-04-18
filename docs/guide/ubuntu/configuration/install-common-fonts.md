@@ -12,7 +12,8 @@ title: 安装常用字体
 
 !!! abstract "Font Manager"
 
-    **Font Manager** 是一款用于管理和组织字体的工具，主要用于 GNOME 桌面环境中，它允许用户轻松查看、安装、删除和分类字体，同时支持字体的预览功能，帮助用户选择合适的字体。
+    **Font Manager** 是一款用于管理和组织字体的工具，主要用于 GNOME
+    桌面环境中，它允许用户轻松查看、安装、删除和分类字体，同时支持字体的预览功能，帮助用户选择合适的字体。
 
 ![](../../../assets/images/ubuntu/font-manager.png)
 
@@ -38,10 +39,14 @@ sudo apt install font-manager
 
 <div class="grid cards" markdown>
 
-- :material-microsoft:{ .lg .middle } **[Microsoft's Core Fonts（微软字体库）](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web)**
-- :material-format-font:{ .lg .middle } **[Source Han Serif（思源宋体）](https://source.typekit.com/source-han-serif/cn/)**
-- :simple-harmonyos:{ .lg .middle } **[HarmonyOS Sans（鸿蒙字体）](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001157868583-V1)**
-- :simple-jetbrains:{ .lg .middle } **[JetBrains Mono](https://www.jetbrains.com/lp/mono/)**
+- :material-microsoft:{ .lg .middle }
+  **[Microsoft's Core Fonts（微软字体库）](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web)**
+- :material-format-font:{ .lg .middle }
+  **[Source Han Serif（思源宋体）](https://source.typekit.com/source-han-serif/cn/)**
+- :simple-harmonyos:{ .lg .middle }
+  **[HarmonyOS Sans（鸿蒙字体）](https://developer.huawei.com/consumer/cn/doc/design-guides/font-0000001157868583-V1)**
+- :simple-jetbrains:{ .lg .middle }
+  **[JetBrains Mono](https://www.jetbrains.com/lp/mono/)**
 
 </div>
 

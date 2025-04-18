@@ -64,8 +64,8 @@ Bash 命令提示符中，如 `vmware@vmwaretest:~$`、`root@mypc:/home#`
 === "GNOME Text Editor"
 
     [GNOME Text Editor](https://apps.gnome.org/TextEditor/) 是一款专注于会话管理的简单文本编辑器，致力于跟踪更改和状态，
-    具有现代化的界面和功能，包括语法高亮显示、搜索替换、内联拼写检查、文档打印等特性，并且支持 Vim 键绑定。目前在 Ubuntu 24.04 上，已取代 Gedit
-    成为 GNOME 默认的文本编辑器（Text Editor）。
+    具有现代化的界面和功能，包括语法高亮显示、搜索替换、内联拼写检查、文档打印等特性，并且支持 Vim 键绑定。目前在
+    Ubuntu 24.04 上，已取代 Gedit 成为 GNOME 默认的文本编辑器（Text Editor）。
     
     ``` bash
     sudo apt install gnome-text-editor

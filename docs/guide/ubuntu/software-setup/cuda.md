@@ -84,7 +84,7 @@ sudo apt-key del 7fa2af80
 ```
 
 === "使用 APT 安装（网络安装）"
-    
+
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
     
     ``` bash
@@ -202,6 +202,7 @@ sudo apt-key del 7fa2af80
     /// caption
     图中，安装路径为 `/usr/local/cuda-11.8/`
     ///
+
     
 ---
 

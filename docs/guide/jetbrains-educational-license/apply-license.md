@@ -32,7 +32,6 @@ title: 申请教育许可证（官方文件）
     
     如果已申请的报告已过有效期，可以点击右侧 **"延长验证有效期"** 来重新设置有效期，如果仅临时使用建议设置 30 天有效期
 
-
 在已申请的、有效期内有效的报告右侧点击 **"查看"** 操作查看报告
 
 ![](../../assets/images/jetbrains-educational-license/get-verification-4.png)
@@ -99,7 +98,8 @@ title: 申请教育许可证（官方文件）
 
 ---
 
-可以点击邮件中的蓝色文字链接 `link your free license`，或直接访问 [JetBrains 账户网站](https://account.jetbrains.com/licenses)查看并将许可证连接至当前账户
+可以点击邮件中的蓝色文字链接
+`link your free license`，或直接访问 [JetBrains 账户网站](https://account.jetbrains.com/licenses)查看并将许可证连接至当前账户
 
 !!! info annotate "教育许可证说明"
 

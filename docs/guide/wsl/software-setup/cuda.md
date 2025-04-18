@@ -4,8 +4,8 @@ title: CUDA Toolkit (+cuDNN)
 
 !!! danger "无需再为 WSL 安装 NVIDIA 显卡驱动！"
 
-    只要在 Windows 上安装了 NVIDIA 显卡驱动，CUDA 就能够在 WSL 2 中使用；安装在 Windows 主机上的 CUDA 驱动程序将在 WSL 2 内部以
-    `libcuda.so` 库的形式进行模拟（stub），因此不应在 WSL 2 环境中安装任何 NVIDIA 显卡的 Linux 驱动程序。
+    只要在 Windows 上安装了 NVIDIA 显卡驱动，CUDA 就能够在 WSL 2 中使用；安装在 Windows 主机上的 CUDA 驱动程序将在
+    WSL 2 内部以 `libcuda.so` 库的形式进行模拟（stub），因此不应在 WSL 2 环境中安装任何 NVIDIA 显卡的 Linux 驱动程序。
 
     **使用 `WSL-Ubuntu CUDA toolkit` 安装程序安装将不会附带 NVIDIA 显卡驱动。**
 
@@ -91,7 +91,7 @@ sudo apt-key del 7fa2af80
 ```
 
 === "使用 APT 安装（网络安装）"
-    
+
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
     
     ``` bash
@@ -163,6 +163,7 @@ sudo apt-key del 7fa2af80
     /// caption
     图中，以 CUDA Toolkit 11.8 为例
     ///
+
     
 ---
 

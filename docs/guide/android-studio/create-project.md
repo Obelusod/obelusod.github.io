@@ -53,7 +53,8 @@ title: 创建 Android 项目（Phone）
 
 ---
 
-在安装完构建工具并更新索引后，左侧项目窗口的文件结构会发生改变，可以在其中找到相应的 `AndroidManifest.xml`、`MainActivity.java` 和 `activity_main.xml` 文件
+在安装完构建工具并更新索引后，左侧项目窗口的文件结构会发生改变，可以在其中找到相应的
+`AndroidManifest.xml`、`MainActivity.java` 和 `activity_main.xml` 文件
 
 ??? info "核心文件说明"
 
@@ -61,8 +62,8 @@ title: 创建 Android 项目（Phone）
     等）、权限、最低 SDK 版本等。所有 Activity 均需在此注册（如主 Activity `MainActivity`），并通过
     `<intent-filter>` 定义其作为应用入口的行为。它还声明应用所需的权限（如网络访问、相机使用），并配置应用图标、主题等全局属性，是
     Android 系统识别应用结构和运行规则的关键文件。
-    - **MainActivity.java**：定义主 Activity 的 Java 类文件，通常是应用启动时第一个被执行的 Activity
-    类。在此文件中，开发者可以处理用户界面交互、业务逻辑、数据操作和生命周期方法等。常用的方法有
+    - **MainActivity.java**：定义主 Activity 的 Java 类文件，通常是应用启动时第一个被执行的
+    Activity 类。在此文件中，开发者可以处理用户界面交互、业务逻辑、数据操作和生命周期方法等。常用的方法有
     `onCreate()`、`onStart()`、`onResume()`、`onPause()` 等，分别对应 Activity 生命周期的不同阶段。
     此外，开发者还可以通过监听按钮点击事件、执行网络请求、更新 UI 元素等来实现实际功能。
     - **activity_main.xml**：用于定义主 Activity 布局的 XML 文件。在此文件中，开发者可以设计和配置 Activity
@@ -189,7 +190,8 @@ AVD 配置保持默认即可，点击 **"Finish"** 完成创建
 
 ---
 
-项目构建完成后，会自动运行选择的 Android 设备（首次开机可能需要较长时间），并在设备中运行本项目的应用程序（`Hello, World!`）(1)
+项目构建完成后，会自动运行选择的 Android
+设备（首次开机可能需要较长时间），并在设备中运行本项目的应用程序（`Hello, World!`）(1)
 { .annotate }
 
 1. 可以在右侧边栏中点击 **"Running Devices"** 图标，查看当前运行中的设备
@@ -200,7 +202,8 @@ AVD 配置保持默认即可，点击 **"Finish"** 完成创建
 
 ## 查看 XML 布局代码
 
-打开 `activity_main.xml` 文件，默认视图为 **"Design"** 预览模式，可以在右上方分别切换 **"Code"**（代码）、**"Split"**（分离）、**"Design"**（设计）三个视图
+打开 `activity_main.xml` 文件，默认视图为 **"Design"** 预览模式，可以在右上方分别切换
+**"Code"**（代码）、**"Split"**（分离）、**"Design"**（设计）三个视图
 
 ![](../../assets/images/android-studio/view-xml-1.png)
 

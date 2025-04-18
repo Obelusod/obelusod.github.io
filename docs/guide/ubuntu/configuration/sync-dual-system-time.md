@@ -61,7 +61,7 @@ title: 同步双系统时间
     1. 此外，也可以仅使用 `sudo timedatectl set-local-rtc 1` 命令，将系统时间视为本地时间
 
 === "将 Windows 时钟设置为 UTC 时钟"
-    
+
     在 Windows 系统中，按下 ++win+r++ 启动运行，输入 `regedit`，打开注册表编辑器
     
     ![](../../../assets/images/ubuntu/run-regedit.png)

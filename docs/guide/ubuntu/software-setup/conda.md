@@ -8,6 +8,7 @@ title: Anaconda
 { .annotate }
 
 1. 可以通过 `wget` 命令在终端中下载，例如：
+
 ```bash
 wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 ```
@@ -56,6 +57,7 @@ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
 </div>
 
 1. 如果需要取消默认激活 `base` 环境，可以使用下列命令：
+
 ```bash
 conda config --set auto_activate_base false 
 ```
@@ -138,12 +140,12 @@ anaconda-navigator
 
 1. 可在[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)中查询
 
-|       推荐镜像站       | 镜像站帮助页（Anaconda）                                              |
-|:-----------------:|---------------------------------------------------------------|
-| 清华大学镜像站（tsinghua） | <https://mirror.tuna.tsinghua.edu.cn/help/anaconda/>          |
-|   南京大学镜像站（nju）    | <https://mirror.nju.edu.cn/mirrorz-help/anaconda/?mirror=NJU> |
-|  上海交通大学镜像站（sjtu）  | <https://mirrors.sjtug.sjtu.edu.cn/docs/anaconda>             |
-|  阿里云镜像站（aliyun）   | <https://developer.aliyun.com/mirror/anaconda>                |
+| 推荐镜像站                | 镜像站帮助页（Anaconda）                                      |
+|:-------------------------:|---------------------------------------------------------------|
+| 清华大学镜像站（tsinghua）| <https://mirror.tuna.tsinghua.edu.cn/help/anaconda/>          |
+| 南京大学镜像站（nju）     | <https://mirror.nju.edu.cn/mirrorz-help/anaconda/?mirror=NJU> |
+| 上海交通大学镜像站（sjtu）| <https://mirrors.sjtug.sjtu.edu.cn/docs/anaconda>             |
+| 阿里云镜像站（aliyun）    | <https://developer.aliyun.com/mirror/anaconda>                |
 
 ---
 
@@ -276,23 +278,23 @@ rm -rf ~/.condarc ~/.conda ~/.continuum
 
 ## 常用命令 [^3]
 
-| 描述                                                                   	 | 命令                                                                                                            	         |
-|:-----------------------------------------------------------------------|:------------------------------------------------------------------------------------------------------------------------|
-| 验证 conda 安装，检查版本等                                            	         | `conda info`                                                                                                      	     |
-| 创建环境                                                               	   | `conda create --name ENVNAME python=3.10`                                                                         	     |
-| 删除环境                                                               	   | `conda remove -n ENVNAME --all`                                                                                   	     |
-| 激活环境                                                               	   | `conda activate ENVNAME`                                                                                          	     |
-| 列出已安装包                                                           	     | `conda list`                                                                                                      	     |
-| 更新所有包                                                             	    | `conda update --all`                                                                                              	     |
-| 安装包（指定 channel）                                                 	      | `conda install -c CHANNELNAME PKG1 PKG2`<br>`conda install CHANNELNAME::PKGNAME`                                    	   |
-| 安装包（指定版本）                                                     	        | `conda install PKGNAME=3.1.4`<br>`conda install "PKGNAME>2.5,<3.2"`<br>`conda install "PKGNAME [version='2.5|3.2']`" 	   |
-| 安装包（文件列表）                                                     	        | `conda install --file FILENAME`                                                                                   	     |
-| 卸载包                                                                 	  | `conda uninstall PKGNAME`                                                                                         	     |
-| 列出所有环境及其位置                                                   	         | `conda env list`                                                                                                  	     |
-| 导出环境文件<br>1. 跨平台兼容<br>2. 指定平台 + 包<br>3. 指定平台 + 包 + channel 	           | `conda env export --from-history>ENV.yml`<br>`conda env export ENVNAME>ENV.yml`<br>`conda list --explicit>ENV.txt`    	 |
-| 导入环境文件                                                           	     | `conda env create -n ENVNAME --file ENV.yml`<br>`conda create -n ENVNAME --file ENV.txt`                            	   |
-| 删除所有未使用文件                                                     	        | `conda clean --all`                                                                                               	     |
-| 检查 conda 配置                                                        	   | `conda config --show`                                                                                             	     |
+| 描述                                                                            | 命令                                                                                                            	  |
+|:--------------------------------------------------------------------------------|:---------------------------------------------------------------------------------------------------------------------|
+| 验证 conda 安装，检查版本等                                            	       | `conda info`                                                                                                      	  |
+| 创建环境                                                                        | `conda create --name ENVNAME python=3.10`                                                                         	  |
+| 删除环境                                                                        | `conda remove -n ENVNAME --all`                                                                                   	  |
+| 激活环境                                                               	       | `conda activate ENVNAME`                                                                                          	  |
+| 列出已安装包                                                           	       | `conda list`                                                                                                      	  |
+| 更新所有包                                                             	       | `conda update --all`                                                                                              	  |
+| 安装包（指定 channel）                                                 	       | `conda install -c CHANNELNAME PKG1 PKG2`<br>`conda install CHANNELNAME::PKGNAME`                                     |
+| 安装包（指定版本）                                                     	       | `conda install PKGNAME=3.1.4`<br>`conda install "PKGNAME>2.5,<3.2"`<br>`conda install "PKGNAME [version='2.5|3.2']`" |
+| 安装包（文件列表）                                                     	       | `conda install --file FILENAME`                                                                                   	  |
+| 卸载包                                                                 	       | `conda uninstall PKGNAME`                                                                                         	  |
+| 列出所有环境及其位置                                                   	       | `conda env list`                                                                                                  	  |
+| 导出环境文件<br>1. 跨平台兼容<br>2. 指定平台 + 包<br>3. 指定平台 + 包 + channel | `conda env export --from-history>ENV.yml`<br>`conda env export ENVNAME>ENV.yml`<br>`conda list --explicit>ENV.txt`   |
+| 导入环境文件                                                           	       | `conda env create -n ENVNAME --file ENV.yml`<br>`conda create -n ENVNAME --file ENV.txt`                             |
+| 删除所有未使用文件                                                     	       | `conda clean --all`                                                                                               	  |
+| 检查 conda 配置                                                        	       | `conda config --show`                                                                                             	  |
 
 [^1]: [Installing Anaconda Distribution — Anaconda documentation](https://docs.anaconda.com/anaconda/install/)
 [^2]: [Installing Miniconda — Miniconda documentation](https://docs.anaconda.com/navigator/install/)

@@ -78,7 +78,8 @@ title: PyTorch
     版本兼容性的不同，通常需要适配特定版本的依赖，因此**强烈推荐使用 Python 虚拟环境（如 Anaconda）和包管理器进行安装，避免环境冲突或混乱**。
     
     如果使用包管理器直接安装 PyTorch 而不指定版本（如 `pip install pytorch`），将会默认安装最新的 PyTorch
-    版本及较新的 CUDA 和 cuDNN 版本，往往容易遇到兼容性问题（如版本不匹配/无法找到 CUDA 设备），**务必根据官方提供的各个版本的完整安装命令进行安装！**
+    版本及较新的 CUDA 和 cuDNN 版本，往往容易遇到兼容性问题（如版本不匹配/无法找到 CUDA
+    设备），**务必根据官方提供的各个版本的完整安装命令进行安装！**
 
     !!! danger ""
 
@@ -90,8 +91,8 @@ title: PyTorch
 
 ??? note annotate "从 PyTorch 2.6 开始不再提供官方 Conda 包"
 
-    出于维护成本与用户使用情况考虑，从 PyTorch 2.6 版本开始，官方 Anaconda 频道（`-c pytorch`）不再提供 Conda 包。
-    作为替代方案，可以考虑迁移至第三方的 `conda-forge` 频道 (1)，或使用 Pip 安装 PyTorch。
+    出于维护成本与用户使用情况考虑，从 PyTorch 2.6 版本开始，官方 Anaconda 频道（`-c pytorch`）不再提供
+    Conda 包。作为替代方案，可以考虑迁移至第三方的 `conda-forge` 频道 (1)，或使用 Pip 安装 PyTorch。
 
     详见：[[Announcement] Deprecating PyTorch’s official Anaconda channel](https://github.com/pytorch/pytorch/issues/138506)
 

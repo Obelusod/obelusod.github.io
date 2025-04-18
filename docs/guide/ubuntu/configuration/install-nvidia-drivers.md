@@ -325,32 +325,32 @@ title: 安装 NVIDIA 显卡驱动
 
     ???+ warning "是否为 NVIDIA 内核模块签名"
 
-        The target kernel has CONFIG_MODULE_SIG set, which means that it supports cryptographic signatures on kernel
+        **The target kernel has CONFIG_MODULE_SIG set, which means that it supports cryptographic signatures on kernel
         modules. On some systems, the kernel may refuse to load modules without a valid signature from a trusted key.
         This system also has UEFI Secure Boot enabled; many distributions enforce module signature verification on UEFI
-        systems when Secure Boot is enabled. Would you like to sign the NVIDIA kernel module?
+        systems when Secure Boot is enabled. Would you like to sign the NVIDIA kernel module?**
 
-        > 目标内核启用了 `CONFIG_MODULE_SIG`，这意味着它支持对内核模块进行加密签名。在一些系统中，如果内核模块没有经过可信密钥的有效签名，
-        将会被拒绝加载。此外，该系统已启用 UEFI 安全启动（UEFI Secure Boot）；许多发行版会在启用 Secure Boot 的 UEFI
-        系统上执行模块签名验证。是否为 NVIDIA 内核模块签名？
+        > 目标内核启用了 `CONFIG_MODULE_SIG`，这意味着它支持对内核模块进行加密签名。在一些系统中，如果内核模块没有经过可信密钥的有效签名，将会被拒绝加载。此外，该系统已启用
+        UEFI 安全启动（UEFI Secure Boot）；许多发行版会在启用 Secure Boot 的 UEFI 系统上执行模块签名验证。是否为 NVIDIA 内核模块签名？
 
         出现这段文本的原因是启用了 `CONFIG_MODULE_SIG`（内核模块签名检查），以及 UEFI 安全启动（Secure Boot），可以按
         [禁用 Secure Boot 功能](../installation.md/#禁用-secure-boot-功能) 中的步骤来禁用安全启动功能；或者根据提示完成/拒绝签名验证。
 
     ???+ warning "是否自动更新 X 配置文件"
 
-        Would you like to run the nvidia-xconfig utility to automatically update your X configuration file so that the
-        NVIDIA driver will be used when you restart X? Any pre-existing X configuration file will be backed up.
+        **Would you like to run the nvidia-xconfig utility to automatically update your X configuration file so that the
+        NVIDIA driver will be used when you restart X? Any pre-existing X configuration file will be backed up.**
     
-        > 是否运行 `nvidia-xconfig` 工具来自动更新 X 配置文件，以便在重新启动 X 时使用 NVIDIA 驱动程序？所有先前存在的 X 配置文件都将会被备份。
+        > 是否运行 `nvidia-xconfig` 工具来自动更新 X 配置文件，以便在重新启动 X 时使用 NVIDIA
+        驱动程序？所有先前存在的 X 配置文件都将会被备份。
 
         其中，X 配置文件（X configuration file）指的是 X 窗口系统设置的文件，运行 `nvidia-xconfig`
         会更新此文件，确保在重启时使用正确的 NVIDIA 驱动程序，并确保正确配置显卡和显示器，一般选择 `Yes`。
 
     ???+ warning "是否在 DKMS 中注册内核模块源代码"
 
-        Would you like to register the kernel module sources with DKMS? This will allow DKMS to automatically build
-        a new module, if you install a different kernel later?
+        **Would you like to register the kernel module sources with DKMS? This will allow DKMS to automatically build
+        a new module, if you install a different kernel later?**
 
         > 是否在 DKMS 中注册内核模块源码，从而在以后安装不同的内核版本时，DKMS 可以自动构建新的内核模块？
 

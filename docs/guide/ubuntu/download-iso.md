@@ -29,8 +29,8 @@ title: 获取系统镜像
     - **清华大学镜像站（Ubuntu）**：<https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases>
     - **南京大学镜像站（Ubuntu）**：<https://mirror.nju.edu.cn/ubuntu-releases>
 
-|     初始版本     |    Code Name    | Linux Kernel | GNOME | Python |  GCC   | systemd |
+| 初始版本     | Code Name       | Linux Kernel | GNOME | Python | GCC    | systemd |
 |:------------:|:---------------:|:------------:|:-----:|:------:|:------:|:-------:|
-| Ubuntu 24.04 |  Noble Numbat   |     6.8      |  46   |  3.12  |   14   |  255.4  |
-| Ubuntu 22.04 | Jammy Jellyfish |     5.15     |  42   | 3.10.4 | 11.2.0 | 249.11  |
-| Ubuntu 20.04 |   Focal Fossa   |     5.4      | 3.36  | 3.8.2  |  9.3   |   242   |
+| Ubuntu 24.04 | Noble Numbat    | 6.8          | 46    | 3.12   | 14     | 255.4   |
+| Ubuntu 22.04 | Jammy Jellyfish | 5.15         | 42    | 3.10.4 | 11.2.0 | 249.11  |
+| Ubuntu 20.04 | Focal Fossa     | 5.4          | 3.36  | 3.8.2  | 9.3    | 242     |

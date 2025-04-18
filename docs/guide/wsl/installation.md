@@ -36,9 +36,10 @@ wsl --install -d [Distro] [Option] # (1)!
 
 !!! tip "`wsl --install`"
 
-    默认情况下，`wsl --install` 命令将从 Microsoft Store 获取并安装默认 Ubuntu 发行版，此版本可能并不适用于当前开发环境；Windows
-    上可以同时安装多个 Linux 发行版，且相互独立，根据具体需求选择安装即可；如果无法从 Microsoft Store 下载安装，可以尝试附加 `--web-download`
-    选项更改为从 GitHub 下载。
+    默认情况下，`wsl --install` 命令将从 Microsoft Store 获取并安装默认 Ubuntu
+    发行版，此版本可能并不适用于当前开发环境；Windows 上可以同时安装多个 Linux
+    发行版，且相互独立，根据具体需求选择安装即可；如果无法从 Microsoft Store
+    下载安装，可以尝试附加 `--web-download` 选项更改为从 GitHub 下载。
 
 ??? example "命令可选项 `[Option]`"
 

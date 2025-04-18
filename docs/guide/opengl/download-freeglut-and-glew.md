@@ -6,8 +6,9 @@ title: 获取 freeglut 与 GLEW
 
 !!! abstract "freeglut（Free OpenGL Utility Toolkit）[^1]"
 
-    **freeglut** 是一个用于创建和管理 OpenGL 窗口的工具库，它是原始 GLUT（OpenGL Utility Toolkit）的一个免费的开源替代品，提供了更多功能和跨平台支持。通过
-    freeglut 可以更轻松地创建窗口、处理输入事件、管理窗口的位置和大小等操作。
+    **freeglut** 是一个用于创建和管理 OpenGL 窗口的工具库，它是原始 GLUT（OpenGL Utility
+    Toolkit）的一个免费的开源替代品，提供了更多功能和跨平台支持。通过 freeglut
+    可以更轻松地创建窗口、处理输入事件、管理窗口的位置和大小等操作。
 
 访问 [freeglut 官网](https://freeglut.sourceforge.net)，在 **"Pre-Compiled Packages"** 栏下，点击
 **`Martin Payne's Windows binaries (MSVC and MinGW)`** 访问 Martin Payne 的网站（freeglut Windows Development Libraries）
@@ -59,11 +60,12 @@ Microsoft Visual C++（MSVC）的二进制文件
 ## 下载 GLEW
 
 !!! abstract "GLEW（OpenGL Extension Wrangler Library）[^2]"
+
     **GLEW** 是一个开源的、跨平台的 C/C++ 库，用于管理 OpenGL 的扩展。在实际的 OpenGL 开发中，有许多功能是由扩展提供的，而 GLEW
     可以帮助我们轻松地管理这些扩展。它提供了一组简洁的接口，方便我们查询、加载和管理 OpenGL 的扩展，使得在不同平台上编写 OpenGL 代码变得更加简单和统一。
 
-访问 [GLEW 官网](https://www.opengl.org)，在 **"Downloads"** 标题下，点击 **`Windows 32-bit and 64-bit`** 下载适用于 Windows
-平台的二进制文件（Binaries）(1)
+访问 [GLEW 官网](https://www.opengl.org)，在 **"Downloads"** 标题下，点击 **`Windows 32-bit and 64-bit`** 下载适用于
+Windows 平台的二进制文件（Binaries）(1)
 { .annotate }
 
 1. 二进制文件包含了从源文件（Source）编译的适用于特定平台的可执行文件、头文件、静态/动态库文件等

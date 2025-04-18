@@ -12,7 +12,8 @@ title: Pip
     python --version
     ```
 
-    部分 Linux 发行版会处理 Python3 的迁移，如果使用系统自带的 Python 而未处于虚拟环境，可能需要将后续的 `python` 命令替换为 `python3`。
+    部分 Linux 发行版会处理 Python3 的迁移，如果使用系统自带的 Python 而未处于虚拟环境，可能需要将后续的
+    `python` 命令替换为 `python3`。
 
 === "使用 APT 安装"
 
@@ -21,7 +22,7 @@ title: Pip
     ```
 
 === "使用 `ensurepip` 模块安装"
-    
+
     ``` bash
     python -m ensurepip # (1)!
     ```
@@ -53,12 +54,12 @@ python -m pip install --upgrade pip
 ## 更新 setuptools 和 wheel
 
 ??? note "setuptools、wheel 和 pip 三者之间的关系"
-    
+
     - `pip` 是 Python 的包管理工具，负责从 PyPI（Python Package Index）下载和安装第三方包。
-
-    - `setuptools` 是用于构建和打包 Python 项目的工具，定义了项目元数据、依赖关系和构建流程（如通过 `setup.py`），是 `pip` 安装源码包（如 `.tar.gz`）时的底层依赖。
-
-    - `wheel` 则是一种预构建的二进制包格式（`.whl` 文件），由 `setuptools` 或类似工具生成，能够显著加快安装速度并减少环境依赖问题，而 `pip` 可直接安装 `wheel` 包。
+    - `setuptools` 是用于构建和打包 Python 项目的工具，定义了项目元数据、依赖关系和构建流程（如通过 `setup.py`），是
+    `pip` 安装源码包（如 `.tar.gz`）时的底层依赖。
+    - `wheel` 则是一种预构建的二进制包格式（`.whl` 文件），由 `setuptools` 或类似工具生成，能够显著加快安装速度并减少环境依赖问题，而
+    `pip` 可直接安装 `wheel` 包。
 
     三者共同支撑了 Python 包的打包、分发和安装流程，其中 `setuptools` 负责“构建”，`wheel` 优化“分发”，而 `pip` 完成“安装”。
 
@@ -75,12 +76,12 @@ python -m pip install --upgrade setuptools wheel
 
 1. 可在[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)中查询
 
-|       推荐镜像站       | 镜像站帮助页（PyPI）                                              |
-|:-----------------:|-----------------------------------------------------------|
+|  推荐镜像站                | 镜像站帮助页（PyPI）                                              |
+|:--------------------------:|-----------------------------------------------------------|
 | 清华大学镜像站（tsinghua） | <https://mirror.tuna.tsinghua.edu.cn/help/pypi/>          |
-|   南京大学镜像站（nju）    | <https://mirror.nju.edu.cn/mirrorz-help/pypi/?mirror=NJU> |
-|  上海交通大学镜像站（sjtu）  | <https://mirrors.sjtug.sjtu.edu.cn/docs/pypi-packages>    |
-|  阿里云镜像站（aliyun）   | <https://developer.aliyun.com/mirror/pypi>                |
+| 南京大学镜像站（nju）      | <https://mirror.nju.edu.cn/mirrorz-help/pypi/?mirror=NJU> |
+| 上海交通大学镜像站（sjtu） | <https://mirrors.sjtug.sjtu.edu.cn/docs/pypi-packages>    |
+| 阿里云镜像站（aliyun）     | <https://developer.aliyun.com/mirror/pypi>                |
 
 === "临时使用"
 

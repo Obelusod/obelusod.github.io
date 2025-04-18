@@ -13,21 +13,21 @@ title: 更新 Ubuntu 与软件
 
 1. 可在[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)中查询
 
-|       推荐镜像站       |   速度    | 镜像站帮助页（Ubuntu）                                              |
-|:-----------------:|:-------:|:------------------------------------------------------------|
-| 清华大学镜像站（tsinghua） | 10 Gbps | <https://mirror.tuna.tsinghua.edu.cn/help/ubuntu>           |
-|   南京大学镜像站（nju）    | 10 Gbps | <https://mirror.nju.edu.cn/mirrorz-help/ubuntu/?mirror=NJU> |
-| 中国科学技术大学镜像站（ustc） | ? Gbps  | <https://mirrors.ustc.edu.cn/help/ubuntu.html>              |
-|  上海交通大学镜像站（sjtu）  | 1 Gbps  | <https://mirrors.sjtug.sjtu.edu.cn/docs/ubuntu>             |
-|  阿里云镜像站（aliyun）   | ? Gbps  | <https://developer.aliyun.com/mirror/ubuntu>                |
+| 推荐镜像站                     | 速度     | 镜像站帮助页（Ubuntu）                                      |
+|:------------------------------:|:--------:|:------------------------------------------------------------|
+| 清华大学镜像站（tsinghua）     | 10 Gbps  | <https://mirror.tuna.tsinghua.edu.cn/help/ubuntu>           |
+| 南京大学镜像站（nju）          | 10 Gbps  | <https://mirror.nju.edu.cn/mirrorz-help/ubuntu/?mirror=NJU> |
+| 中国科学技术大学镜像站（ustc） | ? Gbps   | <https://mirrors.ustc.edu.cn/help/ubuntu.html>              |
+| 上海交通大学镜像站（sjtu）     | 1 Gbps   | <https://mirrors.sjtug.sjtu.edu.cn/docs/ubuntu>             |
+| 阿里云镜像站（aliyun）         | ? Gbps   | <https://developer.aliyun.com/mirror/ubuntu>                |
 
 ---
 
 ??? note "DEB822 源格式 [^1]"
 
-    自 Ubuntu 24.04 起，APT 软件源配置文件引入了新的 DEB822 格式（`.list`），以取代传统的 One-Line-Style 格式（`.sources`）。
-    DEB822 允许在多行中定义单一的源，每个配置项都以键值对的形式出现，对于某些字段（如 `URIs`）支持列出多个值，并提供了
-    `Enabled` 字段可以方便地启用或禁用源。
+    自 Ubuntu 24.04 起，APT 软件源配置文件引入了新的 DEB822 格式（`.list`），以取代传统的
+    One-Line-Style（单行格式）（`.sources`）。DEB822 允许在多行中定义单一的源，每个配置项都以键值对的形式出现，对于某些字段（如
+    `URIs`）支持列出多个值，并提供了 `Enabled` 字段可以方便地启用或禁用源。
     
     DEB822 格式关键字段（Field）：
 
@@ -107,7 +107,7 @@ title: 更新 Ubuntu 与软件
 ## 更新软件包
 
 !!! tip "获取最新软件包列表"
-    
+
     每次更新/安装软件前，确保已获取最新的软件包列表。
 
 === "使用 APT 更新"
