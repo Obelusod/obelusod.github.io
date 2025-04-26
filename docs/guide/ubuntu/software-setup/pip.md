@@ -76,7 +76,7 @@ python -m pip install --upgrade setuptools wheel
 
 1. 可在[校园网联合镜像站](https://mirrors.cernet.edu.cn/site)中查询
 
-|  推荐镜像站                | 镜像站帮助页（PyPI）                                              |
+|  推荐镜像站                | 镜像站帮助页（PyPI）                                      |
 |:--------------------------:|-----------------------------------------------------------|
 | 清华大学镜像站（tsinghua） | <https://mirror.tuna.tsinghua.edu.cn/help/pypi/>          |
 | 南京大学镜像站（nju）      | <https://mirror.nju.edu.cn/mirrorz-help/pypi/?mirror=NJU> |
@@ -110,15 +110,15 @@ python -m pip install --upgrade setuptools wheel
 
 ## 常用命令 [^2]
 
-| 描述              | 命令                                                                                                                                              |
-|:----------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
+| 描述                      | 命令                                                                                                                                            |
+|:--------------------------|:------------------------------------------------------------------------------------------------------------------------------------------------|
 | 验证 pip 安装，检查版本等 | `pip --version, pip -V`                                                                                                                         |
-| 安装包             | `pip install <options> <package>` <br/> &emsp; `-r, --requirement <file>` <br/> &emsp; `-U, --upgrade` <br/> &emsp; `-e, --editable <path/url>` |
-| 卸载包             | `pip uninstall <options> <package>` <br/> &emsp; `-r, --requirement <file>` <br/> &emsp; `-y, --yes`                                            |
-| 列出已安装包          | `pip list`                                                                                                                                      |
-| 显示已安装包的信息       | `pip show <package>`                                                                                                                            |
-| 显示缓存信息          | `pip cache info`                                                                                                                                |
-| 删除所有缓存          | `pip cache purge`                                                                                                                               |
+| 安装包                    | `pip install <options> <package>` <br/> &emsp; `-r, --requirement <file>` <br/> &emsp; `-U, --upgrade` <br/> &emsp; `-e, --editable <path/url>` |
+| 卸载包                    | `pip uninstall <options> <package>` <br/> &emsp; `-r, --requirement <file>` <br/> &emsp; `-y, --yes`                                            |
+| 列出已安装包              | `pip list`                                                                                                                                      |
+| 显示已安装包的信息        | `pip show <package>`                                                                                                                            |
+| 显示缓存信息              | `pip cache info`                                                                                                                                |
+| 删除所有缓存              | `pip cache purge`                                                                                                                               |
 
 [^1]: [Installing Packages - Python Packaging User Guide](https://packaging.python.org/en/latest/tutorials/installing-packages/)
 [^2]: [Commands - pip documentation](https://pip.pypa.io/en/stable/cli/)

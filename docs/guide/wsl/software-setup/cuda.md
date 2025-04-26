@@ -24,17 +24,24 @@ title: CUDA Toolkit (+cuDNN)
       </tr></thead>
     <tbody>
       <tr>
+        <td>2.7</td>
+        <td>11.8, 12.6, 12.8</td>
+        <td>~ 9.7.1.26</td>
+        <td rowspan="3">&gt;=3.9, &lt;=3.13</td>
+      </tr>
+      <tr>
         <td>2.6</td>
         <td>11.8, 12.4, 12.6</td>
-        <td rowspan="3">~ 9.1.0.70</td>
-        <td rowspan="2">&gt;=3.9, &lt;=3.13</td>
+        <td>~ 9.5.1.17</td>
       </tr>
       <tr>
         <td>2.5</td>
         <td rowspan="2">11.8, 12.1, 12.4</td>
+        <td>None</td>
       </tr>
       <tr>
         <td>2.4</td>
+        <td>~ 9.1.0.70</td>
         <td rowspan="3">&gt;=3.8, &lt;=3.12</td>
       </tr>
       <tr>
@@ -64,8 +71,7 @@ title: CUDA Toolkit (+cuDNN)
         <td>1.12</td>
         <td>11.3, 11.6</td>
       </tr>
-    </tbody>
-    </table>
+    </tbody></table>
 
     详见：[CUDA Toolkit Major Component Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#cuda-toolkit-major-component-versions)
     和 [Releasing PyTorch | Release Compatibility Matrix](https://github.com/pytorch/pytorch/blob/main/RELEASE.md#release-compatibility-matrix)
