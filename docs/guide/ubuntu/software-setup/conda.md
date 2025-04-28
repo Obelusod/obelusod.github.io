@@ -9,9 +9,9 @@ title: Anaconda
 
 1. 可以通过 `wget` 命令在终端中下载，例如：
 
-```bash
-wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
-```
+    ```bash
+    wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+    ```
 
 ![](../../../assets/images/ubuntu/anaconda-archive.png)
 
@@ -21,7 +21,7 @@ wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
 
 !!! warning "不要以管理员身份运行"
 
-    不要使用 `sudo` 以管理员身份运行，否则会默认安装至 `root` 目录，之后安装软件包可能会出现权限问题
+    如果使用 `sudo` 以管理员身份运行，Anaconda 将安装至 `root` 目录，之后安装软件包时可能会出现权限问题
 
 ```bash
 bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
@@ -197,9 +197,9 @@ conda clean -i
     conda install -n base conda=xx.xx.xx
     ```
 
-    !!! waring annotate ""
+    !!! warning ""
 
-        如果版本过低，需要逐级更新，例如要从 `conda 4.12` 更新至 `conda 23.10.0`，需要先安装 `conda 22.11.1`
+        如果版本过低可能需要逐级更新，例如要从 `conda 4.12` 更新至 `conda 23.10.0`，需要先安装 `conda 22.11.1`
 
 1. 最新版本可查看 [Releases · conda/conda](https://github.com/conda/conda/releases)
 
@@ -220,17 +220,7 @@ conda remove anaconda-navigator
 
 ## 卸载 Anaconda
 
-移除整个 `anaconda3` 目录
-
-```bash
-rm -rf anaconda3
-rm -rf ~/anaconda3
-sudo rm -rf /opt/anaconda3
-```
-
----
-
-（可选）移除 `anaconda3` 目录以外的环境
+移除 `anaconda3` 目录以外的环境
 
 <div class="annotate" markdown>
 
@@ -246,7 +236,7 @@ sudo rm -rf /opt/anaconda3
 
 ---
 
-（可选）移除所有终端配置文件中的 `conda` 初始化脚本
+移除所有终端配置文件中的 `conda` 初始化脚本
 
 ```bash
 conda init --reverse --all
@@ -254,7 +244,7 @@ conda init --reverse --all
 
 ---
 
-（可选）移除 `.condarc` 文件和 `.conda`、`.continuum` 目录
+移除 `.condarc` 文件和 `.conda`、`.continuum` 目录
 
 ```bash
 rm -rf ~/.condarc ~/.conda ~/.continuum
@@ -262,7 +252,20 @@ rm -rf ~/.condarc ~/.conda ~/.continuum
 
 ---
 
+移除整个 `anaconda3` 及相关目录
+
+```bash
+rm -rf anaconda3
+rm -rf ~/anaconda3
+sudo rm -rf /opt/anaconda3
+```
+
+---
+
 ## 卸载 Miniconda
+```bash
+~/miniconda3/uninstall.sh
+```
 
 ???+ example "命令可选项"
 
@@ -270,9 +273,6 @@ rm -rf ~/.condarc ~/.conda ~/.continuum
     - `--remove-config-files {user,system,all}`：删除配置文件（例如 `.condarc` 文件），`user` 会移除当前用户主目录内的文件，而 `system` 会移除该目录外的所有文件
     - `--remove-user-data`：删除用户数据（例如 `~/.conda` 目录）
 
-```bash
-~/miniconda3/uninstall.sh
-```
 
 ---
 

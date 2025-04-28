@@ -4,7 +4,7 @@ title: 准备磁盘分区
 
 !!! example "如果只需安装 Ubuntu 单系统，可以跳过此步骤"
 
-    如果要在保留 Windows 系统的情况下，安装 Ubuntu 系统（双系统），需要提前设置 BIOS 的引导模式，并分配/预留磁盘空间；如果只需安装
+    如果要在保留 Windows 系统的情况下安装 Ubuntu 系统（组成双系统），需要提前设置 BIOS 的引导模式，并分配/预留磁盘空间；如果只需安装
     Ubuntu 单系统，可以跳过这一步骤。
 
 ---
@@ -90,7 +90,7 @@ title: 准备磁盘分区
 右键单击左侧需要查看的磁盘，选择 **"属性"**
 ///
 
-![](../../assets/images/ubuntu/disk-management-2.png){ width=190 }
+![](../../assets/images/ubuntu/disk-management-2.png){ width=200 }
 
 /// caption
 选择 **"卷"** 即可查看
@@ -174,7 +174,13 @@ title: 准备磁盘分区
 右键单击需要划分的主分区，选择 **"压缩卷"**
 ///
 
-![](../../assets/images/ubuntu/disk-management-5.png){ width=450 align=left }
+<div class="grid" markdown>
+<div markdown>
+
+![](../../assets/images/ubuntu/disk-management-5.png)
+
+</div>
+<div markdown>
 
 在 **"输入压缩空间量"** 中输入需要分配的大小后，点击 **"压缩"** 即可。
 
@@ -187,6 +193,9 @@ title: 准备磁盘分区
 - 80 GB —— 81926 MB
 - 100 GB —— 102407 MB
 - 200 GB —— 204806 MB
+
+</div>
+</div>
 
 [^1]: [BIOS - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/BIOS)
 [^2]: [UEFI - 维基百科，自由的百科全书](https://zh.wikipedia.org/wiki/UEFI)

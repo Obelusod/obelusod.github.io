@@ -19,7 +19,7 @@ title: CUDA Toolkit (+cuDNN)
       <tr>
         <th>PyTorch</th>
         <th>CUDA</th>
-        <th>CUDNN</th>
+        <th>cuDNN</th>
         <th>Python</th>
       </tr></thead>
     <tbody>
@@ -244,7 +244,7 @@ sudo apt autoremove --purge -V
 
     **为了获得最佳性能，建议安装最新的 cuDNN 9 及与之兼容的 CUDA 11/12 最新版本 ！** (1)
 
-1. cuDNN 9 可以与之前的 7/8 版本共存，安装新版将不会自动删除较旧的版本
+1. cuDNN 9 可以与之前的 7/8 版本共存，安装新版本不会自动删除较旧的版本
 
 ---
 
@@ -259,10 +259,12 @@ sudo apt install zlib1g
     !!! warning "默认安装最新版本"
 
         网络安装将默认安装最新版的 cuDNN，如需安装特定版本，建议使用软件包本地安装
+
+    !!! success ""
+
+        如果在之前安装 CUDA Toolkit 时已添加密钥环，可以跳过此步骤
     
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
-
-    > 如果在之前安装 CUDA Toolkit 时已添加密钥环，可以跳过此步骤
     
     ``` bash
     wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb

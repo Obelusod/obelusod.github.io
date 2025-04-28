@@ -8,7 +8,7 @@ title: 安装 Ubuntu
 
     **Secure Boot** 是 BIOS 的一种安全功能，旨在确保操作系统和启动项的完整性和可信性，可以防止未经授权的操作系统、病毒和恶意软件向计算机进行认证，进而保护系统不被攻击和篡改。
 
-    **但在使用外部 U 盘运行某些程序或安装其他操作系统时，会被受到限制而无法运行/安装，因此需要临时禁用，直至所有配置完成（安装 NVIDIA 显卡驱动后）。**
+    **启用 Secure Boot 后，在使用外部 U 盘运行某些程序或安装其他操作系统时，会被受到限制而无法运行/安装，因此需要临时禁用。**
 
 ---
 
@@ -21,15 +21,16 @@ title: 安装 Ubuntu
 
 ---
 
-通常在 BIOS（Advanced Mode）的 `Security`（安全）或 `Boot` 栏中，设置 `Secure Boot` 选项为
-`Disabled`（Off）进行禁用，最后保存更改即可
+以华硕主板为例，在 BIOS（Advanced Mode）的 `Security`（安全）或 `Boot` 栏中，设置 `Secure Boot` 选项为
+`Disabled` 进行禁用，最后保存更改即可 (1)
+{ .annotate }
 
-> 有些主板除了禁用 Secure Boot 外，还需要更改 `OS Type` 为 `Other OS`
+1. 华硕主板可能还需要更改 `OS Type` 为 `Other OS`
 
 ![](../../assets/images/ubuntu/secure-boot.png)
 
 /// caption
-例如华硕主板的 BIOS 界面（旧版本），图片来源于华硕官网
+华硕主板的 BIOS 界面（旧版本），图片来源于华硕官网
 ///
 
 ---
@@ -187,14 +188,14 @@ title: 安装 Ubuntu
 
 ### 专有软件（Proprietary Software）
 
-选择是否安装推荐的专有软件（如显卡驱动、Wi-Fi 驱动和编解码器等），建议**均不勾选**，后续再自行安装
+选择是否安装推荐的专有软件（如显卡驱动、Wi-Fi 驱动和编解码器等），建议此处**全都不勾选**，后续再自行安装
 
 !!! warning "开源显卡驱动"
 
-    如果勾选 `Install third-party software for graphics and Wi-Fi hardware`，将会安装第三方专有驱动（如
+    如果勾选 `Install third-party software for graphics and Wi-Fi hardware`，将会安装第三方非开源的专有驱动（如
     NVIDIA 驱动），否则将默认使用开源的显卡驱动（Xorg）。
 
-    另外，勾选后安装的第三方专有驱动（如 NVIDIA 驱动）可能会默认安装非最新稳定版本，如出现问题可以在后续更换。
+    另外，勾选后安装的专有驱动（如 NVIDIA 驱动）可能不是最新的稳定版本，如出现问题可以在之后更换。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-8.png)
 
@@ -208,8 +209,8 @@ title: 安装 Ubuntu
 
     - 如果已有 Windows 系统且需要安装双系统，可以选择 **"Install Ubuntu alongside Windows Boot Manager and Ubuntu 24.04 LTS"**，保留
     Windows 相关文件并与 Ubuntu 共存，将会自动进行分区。
-    - 如果安装双系统或自定义分区，选择 **"Manual installation"**（手动安装/分区），自定义磁盘分区。
-    - 如果仅使用 Ubuntu（不存在 Windows 系统），选择 **"Erase disk and install Ubuntu"**（擦除磁盘并安装 Ubuntu）。
+    - 如果安装双系统或自定义分区，选择 **"Manual installation"**（手动安装），自定义磁盘分区。
+    - 如果仅使用 Ubuntu（或不存在 Windows 系统），选择 **"Erase disk and install Ubuntu"**（擦除磁盘并安装 Ubuntu）。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-9.png)
 
@@ -234,39 +235,52 @@ title: 安装 Ubuntu
 
 !!! warning "注意正确选择硬盘空闲区"
 
-    如果有两块或两块以上的硬盘，例如想要将 Ubuntu 安装在第二块硬盘，务必选择**第二块硬盘下方**的空闲区（`Free space`）！
+    如果有两块或两块以上的硬盘，例如想要将 Ubuntu 安装在第二块硬盘，务必选择**第二块硬盘下方的空闲区（`Free space`）**！
 
 ![](../../assets/images/ubuntu/ubuntu-installation-10.png)
 
 /// caption
-图中，欲将 Ubuntu 安装在第二块硬盘的第二块分区（nvme1n1n1p1）之后，具体以实际情况为准
+图中，将 Ubuntu 安装在第二块硬盘的第二块分区（`nvme1n1p2`），具体以实际情况为准
 ///
 
 ---
 
-!!! info "Linux 根挂载点"
+在左下方选择 **"Device for boot loader installation"**（安装引导程序的设备），即 Linux 引导分区 `/boot/efi`
+的位置，默认会自动分配分区大小
 
-    在基于 Linux 内核的系统中，默认所有的目录和文件都置于**根挂载点`/`**下，可以为某些重要分区/目录单独地分配一个独立的分区，以提高系统的管理效率、安全性和性能，并避免数据损坏或丢失。
+![](../../assets/images/ubuntu/ubuntu-installation-11.png)
 
-| Linux 常见分区/目录[^1]                | 描述                                                |
-|:---------------------------------------|:----------------------------------------------------|
-| `/boot`（MBR）<br/> `/boot/efi`（GPT） | **引导分区**，存放引导程序文件                      |
-| `swap`                                 | **内存交换分区**，相当于虚拟内存                    |
-| `/`                                    | **根挂载点**，整个文件系统的根目录                  |
-| `/home`                                | **普通用户主目录**，存储普通用户的一般文件          |
-| `/root`                                | **root 用户主目录**，存储 root 用户的数据和脚本文件 |
-| `/bin`                                 | 存储基本命令的二进制文件                            |
-| `/usr`                                 | 存储系统软件，包含用户数据和应用程序                |
-| `/etc`                                 | 存储系统配置文件                                    |
-| `/tmp`                                 | 存储临时文件，通常在重启后自动删除                  |
-| `/var`                                 | 存储变量文件，比如日志或缓存                        |
-| `/dev`                                 | 存储设备文件，通常是硬件设备的接口文件              |
+/// caption
+图中，将 Ubuntu 安装在第二块硬盘，因此选择在 `nvme1n1` 安装引导程序
+///
 
 ---
 
-??? info "常用分区方案（GPT，200 GB）"
+???+ info "Linux 目录结构 [^1]"
 
-    以下分区方案仅供参考，可以根据具体需求适当调整，或是减少/增加独立分区，例如不单独分配 `/home` 分区，或增加 `/usr`、`/var` 分区。
+    在基于 Linux 内核的系统中，所有的目录和文件都置于**根挂载点`/`**下，可以为某些重要分区/目录单独地分配一个独立的分区，以提高系统的管理效率、安全性和性能，并避免数据损坏或丢失。
+
+    | 常见目录/分区                          | 描述                                                |
+    |:---------------------------------------|:----------------------------------------------------|
+    | `/boot`（MBR）<br/> `/boot/efi`（GPT） | **引导分区**，存放引导程序文件                      |
+    | `swap`                                 | **内存交换分区**，相当于虚拟内存                    |
+    | `/`                                    | **根挂载点**，整个文件系统的根目录                  |
+    | `/home`                                | **普通用户主目录**，存储普通用户的一般文件          |
+    | `/root`                                | **root 用户主目录**，存储 root 用户的数据和脚本文件 |
+    | `/bin`                                 | 存储基本命令的二进制文件                            |
+    | `/usr`                                 | 存储系统软件，包含用户数据和应用程序                |
+    | `/etc`                                 | 存储系统配置文件                                    |
+    | `/tmp`                                 | 存储临时文件，通常在重启后自动删除                  |
+    | `/var`                                 | 存储变量文件，比如日志或缓存                        |
+    | `/dev`                                 | 存储设备文件，通常是硬件设备的接口文件              |
+
+!!! tip "建议仅划分出根挂载点"
+
+    在 Ubuntu 24.04 之后，引导分区会自动分配大小，因此建议**仅划分出根挂载点 `/`** 即可。
+
+??? example "参考分区方案（GPT，200 GB）"
+
+    以下分区方案仅供参考，可以根据具体需求适当调整，例如不单独分配 `/home` 分区，或增加 `/usr`、`/var` 分区。
 
     一般而言，如果电脑内存为 16GB 或以上，`swap` 分区可以不分配或少分配（日常使用基本不会占满）。
 
@@ -310,17 +324,6 @@ title: 安装 Ubuntu
     </tbody>
     </table>
 
-!!! tip "Ubuntu 24.04 建议仅划分出根挂载点"
-
-    在 Ubuntu 24.04 之后，引导分区会自动分配大小，因此建议**仅划分出根挂载点 `/`** 即可。
-
----
-
-先在左下方选择安装所在硬盘的 **"Device for boot loader installation"**（安装引导程序的设备），即引导分区
-`/boot/efi`，默认会自动分配分区大小
-
-![](../../assets/images/ubuntu/ubuntu-installation-11.png)
-
 ---
 
 按照类似于上述方案进行分区，选择 **"Free space"**（空闲区），并点击左下方 **"+"** 按钮，依次新建分区
@@ -333,15 +336,19 @@ title: 安装 Ubuntu
 
 ![](../../assets/images/ubuntu/ubuntu-installation-13.png)
 
+/// caption
+图中，仅划分出必要的引导分区（`/boot/efi`）和根挂载点（`/`）
+///
+
 ---
 
 ### 设置账户（Account）
 
-设置用户名、计算机名和密码，其中用户和计算机名不宜过长，否则会出现终端输入命令时过长的提示
+设置用户名、计算机名和密码，其中用户和计算机名不宜过长，否则在终端输入命令时提示符可能会超出窗口视野
 
-!!! tip "远程控制取消密码"
+!!! tip "远程控制无需登录"
 
-    如果该电脑/系统常被用于远程操控，可以取消 `Require my password to log in`（登录时需要密码），以便每次重启后无需密码直接进入桌面。
+    如果该电脑/系统常被用于远程操控，可以取消勾选 `Require my password to log in`（登录时需要密码），以便每次重启后无需登录直接进入桌面。
 
 !!! info annotate "Use Active Directory（使用活动目录）[^2]"
 
@@ -354,12 +361,12 @@ title: 安装 Ubuntu
 
 ### 选择时区（Timezone）
 
-点击中国版图的任意区域，即 `Asia/Shanghai` 时区（北京时间，UTC/GMT+08:00）即可
+点击中国版图的任意区域，设置为 `Asia/Shanghai` 时区（北京时间，UTC/GMT+08:00）
 
 !!! tip "自动选择镜像站"
 
-    选择位置（Location）后，如果先前连接了网络将会自动将软件源更换至选定位置附近的镜像源，例如
-    `Shanghai`（上海）时区可能会选择 "清华大学镜像站"（tsinghua）。
+    在此处选择时区和位置后，如果先前连接了网络，将会自动将 APT 软件源更换至选定位置附近的镜像源，例如
+    `Asia/Shanghai`（上海）时区可能会选择 "清华大学镜像站"（tsinghua）。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-15.png)
 
@@ -379,7 +386,7 @@ title: 安装 Ubuntu
 
 等待安装完成，可能需要十分钟左右，点击右下方的 **"终端"** 图标可以查看安装详情
 
-> 如果先前连接网络并勾选了专有软件，安装时将会依据网络状况、更新内容需要额外的安装时间
+> 如果先前已连接网络并勾选了安装专有软件，可能需要额外的安装和更新时间
 
 ![](../../assets/images/ubuntu/ubuntu-installation-17.png)
 
@@ -389,7 +396,7 @@ title: 安装 Ubuntu
 
 ### 重启系统（Restart）
 
-安装完成后，需要重启系统（Restart）
+安装完成后，选择重启系统（Restart now）
 
 ![](../../assets/images/ubuntu/ubuntu-installation-19.png)
 
@@ -401,9 +408,9 @@ title: 安装 Ubuntu
 
 ---
 
-启动后进入 GNU GRUB 系统，要求选择启动引导（Boot）项，或是等待 10s 后自动选择第一默认启动项
+启动后进入 GNU GRUB 系统，选择启动引导（Boot）项，或是在等待 10s 后自动选择第一启动项
 
-> Window Boot Manager 为 Windows 启动管理器，用于启动 Windows 系统。
+> 其中 `Window Boot Manager` 为 Windows 启动管理器，用于启动 Windows 系统
 
 ![](../../assets/images/ubuntu/ubuntu-installation-21.png)
 

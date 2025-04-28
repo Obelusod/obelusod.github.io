@@ -32,10 +32,7 @@ xdg-user-dirs-gtk-update
 
 ---
 
-之后，可以再设置系统默认的语言环境为初始语言（如中文，`zh_CN.UTF-8`）(1)
-{ .annotate }
-
-1. 之后可以再使用 `xdg-user-dirs-gtk-update` 命令更新用户目录，但选择保留旧的名称（英文）
+如果需要，可以再设置系统默认的语言环境为初始语言（如中文，`zh_CN.UTF-8`）
 
 ```bash
 export LANG=zh_CN.UTF-8

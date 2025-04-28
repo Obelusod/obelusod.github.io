@@ -8,7 +8,7 @@
 /* 高亮样式 */
 .highlight span.filename {
     border-radius: var(--base-border-radius); /* 使用全局变量定义边框半径 */
-    font-family: var(--md-code-font-family); /* 使用 Markdown 代码字体 */
+    font-family: var(--md-code-font-family), monospace; /* 使用 Markdown 代码字体 */
     border-bottom-left-radius: 0; /* 底部左边框半径 */
     border-bottom-right-radius: 0; /* 底部右边框半径 */
 }

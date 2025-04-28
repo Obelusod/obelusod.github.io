@@ -12,7 +12,7 @@ title: PyTorch
       <tr>
         <th>PyTorch</th>
         <th>CUDA</th>
-        <th>CUDNN</th>
+        <th>cuDNN</th>
         <th>Python</th>
       </tr></thead>
     <tbody>
@@ -289,7 +289,7 @@ title: PyTorch
 执行下列命令（或编写 Python 脚本），验证 PyTorch 是否安装成功
 
 ```bash
-python -c "import torch; print(torch.cuda.is_available())"  # 如果为 True，说明 CUDA 可用
+python -c "import torch; print(torch.cuda.is_available())"  # 如果输出为 True，说明 CUDA 可用
 ```
 
 ---
@@ -311,7 +311,7 @@ python -c "import torch; print(torch.cuda.is_available())"  # 如果为 True，�
 
     ```bash
     conda remove pytorch torchvision torchaudio
-    conda clean --all # （可选）删除所有缓存
+    conda clean --all  # （可选）删除所有缓存
     ```
 
 [^1]: [Start Locally | PyTorch](https://pytorch.org/get-started/locally/)

@@ -12,7 +12,7 @@ title: 安装 NVIDIA 显卡驱动
       <tr>
         <th>PyTorch</th>
         <th>CUDA</th>
-        <th>CUDNN</th>
+        <th>cuDNN</th>
         <th>Python</th>
       </tr></thead>
     <tbody>
@@ -84,11 +84,11 @@ title: 安装 NVIDIA 显卡驱动
     !!! info "版本标签（Tags）"
 
         - `server`：适用于服务器环境
-        - `open`、`open source`：包含开源的内核驱动
-        - `non-free`、`proprietary`：不开源、专有驱动
+        - `open`、`open source`：开源的内核驱动
+        - `non-free`、`proprietary`：包含非开源的专有驱动
         - `recommended`、`tested`：稳定的、经过测试的推荐版本
 
-        最稳定的较新版本可以根据带有 `server` 标签的最新版判断，如下图中的 `550` 版本。
+        较新的稳定版本可以根据带有 `server` 标签的最新版判断，如下图中的 `550` 版本。
 
     !!! warning "不推荐安装开源版本"
 
@@ -100,7 +100,7 @@ title: 安装 NVIDIA 显卡驱动
     ![](../../../assets/images/ubuntu/additional-drivers.png)
 
     /// caption
-    图中，较新最稳定的版本为：`nvidia-driver-550 (proprietary, tested)`
+    图中，较新的稳定版本为：`nvidia-driver-550 (proprietary, tested)`
     ///
 
     ---
@@ -122,11 +122,11 @@ title: 安装 NVIDIA 显卡驱动
     !!! info "版本标签（Tags）"
 
         - `server`：适用于服务器环境
-        - `open`、`open source`：包含开源的内核驱动
-        - `non-free`、`proprietary`：不开源、专有驱动
+        - `open`、`open source`：开源的内核驱动
+        - `non-free`、`proprietary`：包含非开源的专有驱动
         - `recommended`、`tested`：稳定的、经过测试的推荐版本
 
-        最稳定的较新版本可以根据带有 `server` 标签的最新版判断，如下图中的 `535` 版本。
+        较新的稳定版本可以根据带有 `server` 标签的最新版判断，如下图中的 `535` 版本。
 
     !!! warning "不推荐安装开源版本"
 
@@ -138,7 +138,7 @@ title: 安装 NVIDIA 显卡驱动
     ![](../../../assets/images/ubuntu/ubuntu-drivers-devices.png)
 
     /// caption
-    图中，较新最稳定的版本为：`nvidia-driver-535`
+    图中，较新的稳定版本为：`nvidia-driver-535`
     ///
 
     ---
