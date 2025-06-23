@@ -45,6 +45,6 @@ hide:
 
     通过学信网认证申请教育许可证，以及注册账号、文件提交与许可证激活的全流程，帮助学生免费获取正版授权的 JetBrains 全系列开发工具
 
-    [:octicons-arrow-right-24: 点击阅读](jetbrains-educational-license/index.md)
+    [:octicons-arrow-right-24: 点击阅读](jetbrains-edu-license/index.md)
 
 </div>

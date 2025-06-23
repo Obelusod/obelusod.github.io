@@ -97,10 +97,10 @@ nav:
     - 安装 Android Studio: guide/android-studio/installation.md
     - 创建 Android 项目（Phone）: guide/android-studio/create-project.md
   - JetBrains 教育许可证申请指南:
-    - guide/jetbrains-educational-license/index.md
-    - 注册 JetBrains 账号: guide/jetbrains-educational-license/register-account.md
-    - 申请教育许可证（官方文件）: guide/jetbrains-educational-license/apply-license.md
-    - 在 JetBrains IDE 激活许可证: guide/jetbrains-educational-license/activate-license.md
+    - guide/jetbrains-edu-license/index.md
+    - 注册 JetBrains 账号: guide/jetbrains-edu-license/register-account.md
+    - 申请教育许可证（官方文件）: guide/jetbrains-edu-license/apply-license.md
+    - 在 JetBrains IDE 激活许可证: guide/jetbrains-edu-license/activate-license.md
 
 extra:
   social:
