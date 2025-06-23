@@ -35,7 +35,7 @@ hide:
 
     ---
 
-    Android Studio 开发的入门指南，包括下载与安装 Android Studio、设置虚拟设备（AVD）、配置 SDK 组件、创建并配置 Android 项目的一般开发流程
+    MySQL 社区版的本地部署指南，包括完整安装流程、服务器（端口/权限/服务）、Root 账户和环境变量的配置说明，并详解 Workbench 与 DataGrip 等 IDE 的连接方法
 
     [:octicons-arrow-right-24: 点击阅读](mysql/index.md)
 
