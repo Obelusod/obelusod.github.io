@@ -75,12 +75,12 @@ title: CUDA Toolkit (+cuDNN)
 
 !!! tip "选择合适的 CUDA 版本"
 
-    选择 CUDA Toolkit 版本时，需要根据实际开发环境和版本兼容性要求进行选择，多个 CUDA 版本之间可以通过配置环境变量并存。
+    选择 CUDA Toolkit 版本时，需要根据实际开发环境和版本兼容性进行选择，多个 CUDA 版本之间可以通过配置环境变量并存。
 
     !!! question "是否需要为 PyTorch 安装特定 CUDA？"
 
         在虚拟环境下，使用包管理器（`conda` 或 `pip`）安装 PyTorch 时，会自动安装所依赖版本的 CUDA 和
-        cuDNN（作为 Python 软件包，如 `cudatoolkit`），并与系统环境变量定义的 CUDA 和 cuDNN 版本相隔离，PyTorch
+        cuDNN（作为 Python 软件包，如 `nvidia-cuda-runtime`），并与系统环境变量定义的 CUDA 和 cuDNN 版本相隔离，PyTorch
         会优先调用虚拟环境中的 CUDA 和 cuDNN。因此，**不需要在系统环境下为 PyTorch 安装特定版本的 CUDA 和 cuDNN**。
 
 首先，删除过时的 GPG 密钥

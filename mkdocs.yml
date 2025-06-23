@@ -92,6 +92,11 @@ nav:
       - 项目属性表配置（跨项目）: guide/opengl/environment-config/property-sheet.md
     - 设置系统环境变量: guide/opengl/setting-system-environment-variables.md
     - OpenGL 绘图示例: guide/opengl/example.md
+  - MySQL 安装与配置指南:
+    - guide/mysql/index.md
+    - 安装 MySQL: guide/mysql/installation.md
+    - 安装 SQL IDE: guide/mysql/ide.md
+    - 常见安装错误: guide/mysql/faq.md
   - Android Studio 安装与配置指南:
     - guide/android-studio/index.md
     - 安装 Android Studio: guide/android-studio/installation.md

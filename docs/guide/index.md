@@ -31,6 +31,14 @@ hide:
 
     [:octicons-arrow-right-24: 点击阅读](opengl/index.md)
 
+-   :simple-mysql:{ .lg .middle } __MySQL 安装与配置指南__
+
+    ---
+
+    Android Studio 开发的入门指南，包括下载与安装 Android Studio、设置虚拟设备（AVD）、配置 SDK 组件、创建并配置 Android 项目的一般开发流程
+
+    [:octicons-arrow-right-24: 点击阅读](mysql/index.md)
+
 -   :material-android:{ .lg .middle } __Android Studio 安装与配置指南__
 
     ---

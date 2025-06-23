@@ -326,7 +326,7 @@ title: 安装 Ubuntu
 
 ---
 
-按照类似于上述方案进行分区，选择 **"Free space"**（空闲区），并点击左下方 **"+"** 按钮，依次新建分区
+选择 **"Free space"**（空闲区），并点击左下方 **"+"** 按钮，依次新建分区
 
 ![](../../assets/images/ubuntu/ubuntu-installation-12.png)
 

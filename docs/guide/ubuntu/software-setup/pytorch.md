@@ -90,19 +90,12 @@ title: PyTorch
     !!! danger ""
 
         在虚拟环境下，使用包管理器（`conda` 或 `pip`）安装 PyTorch 时，会自动安装所依赖版本的 CUDA 和
-        cuDNN（作为 Python 软件包，如 `cudatoolkit`），并与系统环境变量定义的 CUDA 和 cuDNN 版本相隔离，PyTorch
+        cuDNN（作为 Python 软件包，如 `nvidia-cuda-runtime`），并与系统环境变量定义的 CUDA 和 cuDNN 版本相隔离，PyTorch
         会优先调用虚拟环境中的 CUDA 和 cuDNN。
 
         **即只要在虚拟环境中正确安装 PyTorch，无论系统中是否安装过任何版本的 CUDA 和 cuDNN，都不会造成兼容性问题。**
 
-??? note annotate "从 PyTorch 2.6 开始不再提供官方 Conda 包"
-
-    出于维护成本与用户使用情况考虑，从 PyTorch 2.6 版本开始，官方 Anaconda 频道（`-c pytorch`）不再提供
-    Conda 包。作为替代方案，可以考虑迁移至第三方的 `conda-forge` 频道 (1)，或使用 Pip 安装 PyTorch。
-
     详见：[[Announcement] Deprecating PyTorch’s official Anaconda channel](https://github.com/pytorch/pytorch/issues/138506)
-
-1. 参考：[Transitioning from defaults | conda-forge | community-driven packaging for conda](https://conda-forge.org/docs/user/transitioning_from_defaults/)
 
 ???+ example "PyTorch 安装命令（CUDA）"
 
@@ -113,18 +106,25 @@ title: PyTorch
 
         如果要更换原有的 PyTorch 版本，务必先[完全卸载 PyTorch](#卸载-pytorch) 后，再使用命令安装新版本！
 
+    ??? note annotate "从 PyTorch 2.6 开始不再提供官方 Conda 包"
+    
+        出于维护成本与用户使用情况考虑，从 PyTorch 2.6 版本开始，官方 Anaconda 频道（`-c pytorch`）不再提供
+        Conda 包。作为替代方案，可以考虑迁移至第三方的 `conda-forge` 频道 (1)，或使用 Pip 安装 PyTorch。
+
+    1. 参考：[Transitioning from defaults | conda-forge | community-driven packaging for conda](https://conda-forge.org/docs/user/transitioning_from_defaults/)
+
     ??? tip "从国内镜像源下载（Pip）"
 
         `pip` 安装命令使用 `--index-url` 选项来区分不同 CUDA 版本的 PyTorch，默认参数指定从官方源获取，如果下载失败或速度较慢可以更换为国内镜像源。
 
         > 将 `--index-url` 参数中的 `https://download.pytorch.org/whl` 替换为镜像源，版本路径（如 `/cu118`）不变
     
-        |  推荐镜像站                | PyTorch 镜像源（Wheel）                      |
+        |  推荐镜像站                | PyTorch 镜像源（Wheel）                       |
         |:--------------------------:|-----------------------------------------------|
-        | 南京大学镜像站（nju）      | <https://mirrors.nju.edu.cn/pytorch/whl>     |
-        | 阿里云镜像站（aliyun）     | <https://mirrors.aliyun.com/pytorch-wheels>  |
+        | 南京大学镜像站（nju）      | `https://mirrors.nju.edu.cn/pytorch/whl`      |
+        | 阿里云镜像站（aliyun）     | `https://mirrors.aliyun.com/pytorch-wheels`   |
 
-    ???+ quote "[Latest] PyTorch v2.7.0 | CUDA 11.8, 12.6, 12.8 | Python 3.9 - 3.13"
+    ???+ quote "[Latest] PyTorch v2.7.1 | CUDA 11.8, 12.6, 12.8 | Python 3.9 - 3.13"
     
         ```bash title=""
         # CUDA 11.8
