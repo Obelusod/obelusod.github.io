@@ -21,8 +21,8 @@ title: 安装常用字体
 
 安装 Font Manager（字体管理器）
 
-```bash
-sudo apt install font-manager
+``` console
+$ sudo apt install font-manager
 ```
 
 ---

@@ -10,30 +10,30 @@ title: 更改用户文件夹本地化
 
 安装 `xdg-user-dirs` 工具（通常多数桌面环境已安装）
 
-```bash
-sudo apt install xdg-user-dirs
+``` console
+$ sudo apt install xdg-user-dirs
 ```
 
 ---
 
-设置系统默认的语言环境为美国英语（`en_US`）
+设置系统默认的语言环境为美国英语（`en_US.UTF-8`）
 
-```bash
-export LANG=en_US
+``` console
+$ export LANG=en_US.UTF-8
 ```
 
 ---
 
 使用 `xdg-user-dirs` 根据当前语言环境重新配置用户目录
 
-```bash
-xdg-user-dirs-gtk-update
+``` console
+$ xdg-user-dirs-gtk-update
 ```
 
 ---
 
 如果需要，可以再设置系统默认的语言环境为初始语言（如中文，`zh_CN.UTF-8`）
 
-```bash
-export LANG=zh_CN.UTF-8
+``` console
+$ export LANG=zh_CN.UTF-8
 ```

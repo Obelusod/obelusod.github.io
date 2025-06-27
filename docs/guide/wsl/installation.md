@@ -12,8 +12,8 @@ title: 安装 WSL
 
 在 PowerShell 中输入并执行下列命令，列出当前可用的 Linux 发行版
 
-``` powershell
-wsl --list --online # (1)!
+``` pwsh-session
+PS> wsl --list --online # (1)!
 ```
 
 1. 或 `wsl -l -o`
@@ -28,8 +28,8 @@ wsl --list --online # (1)!
 
 > 将 `[Distro]` 替换为发行版名称，例如 `wsl --install -d Ubuntu-22.04`
 
-``` powershell
-wsl --install -d [Distro] [Option] # (1)!
+``` pwsh-session
+PS> wsl --install -d [Distro] [Option] # (1)!
 ```
 
 1. 或使用 `wsl --install` 安装默认 Ubuntu 发行版

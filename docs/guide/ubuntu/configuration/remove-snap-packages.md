@@ -17,65 +17,65 @@ title: 卸载 Snap 组件及其软件包
 
 卸载前，先停止所有 Snapd 服务
 
-```bash
-sudo systemctl disable snapd.service
-sudo systemctl disable snapd.socket
-sudo systemctl disable snapd.seeded.service
-sudo systemctl stop snapd
+``` console
+$ sudo systemctl disable snapd.service
+$ sudo systemctl disable snapd.socket
+$ sudo systemctl disable snapd.seeded.service
+$ sudo systemctl stop snapd
 ```
 
 ---
 
 获取 Snap 软件包列表 `${package}`
 
-```bash
-snap list
+``` console
+$ snap list
 ```
 
 ---
 
 使用下列命令卸载所有 Snap 软件包和 Snapd 服务
 
-```bash
-sudo snap remove --purge ${package}
-sudo snap remove --purge snapd
+``` console
+$ sudo snap remove --purge ${package}
+$ sudo snap remove --purge snapd
 ```
 
 ---
 
 清理 Snap 缓存数据
 
-```bash
-sudo rm -rf /var/cache/snapd/
+``` console
+$ sudo rm -rf /var/cache/snapd/
 ```
 
 使用 APT 完全卸载 Snap
 
-```bash
-sudo apt autoremove --purge snapd
+``` console
+$ sudo apt autoremove --purge snapd
 ```
 
 ---
 
 删除 Snap 文件夹
 
-```bash
-sudo rm -rf ~/snap
+``` console
+$ sudo rm -rf ~/snap
 ```
 
 ---
 
 为了禁止 APT 重新安装 Snap，新建并编辑以下规则（`nosnap`）
 
-```bash
-sudo gedit /etc/apt/preferences.d/nosnap
+``` console
+$ sudo gedit /etc/apt/preferences.d/nosnap
 ```
 
 ---
 
 在 `nosnap` 文件中写入以下内容，并保存即可
 
-```yaml title="nosnap"
+``` yaml title="nosnap"
 Package: snapd
 Pin: release a=*
 Pin-Priority: -10

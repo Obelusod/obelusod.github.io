@@ -263,8 +263,8 @@ title: 安装 MySQL
 
 为了验证是否已正确配置，可以在终端中执行下列命令，如果提示如下版本信息则说明配置成功
 
-```PowerShell
-mysql -V  # 或 mysql --version
+``` pwsh-session
+PS> mysql -V  # 或 mysql --version
 ```
 
 ![](../../assets/images/mysql/mysql-version.png)
@@ -275,8 +275,8 @@ mysql -V  # 或 mysql --version
 
 打开终端，输入并执行下列命令，并输入 **Root 用户密码**进行登录
 
-```PowerShell
-mysql -u root -p  # 或 mysql --user root --password
+``` pwsh-session
+PS> mysql -u root -p  # 或 mysql --user root --password
 ```
 
 ???+ example "连接 MySQL 服务器命令参数说明"
@@ -294,7 +294,7 @@ mysql -u root -p  # 或 mysql --user root --password
 
 ??? tip "常用 MySQL 语句"
 
-    ```sql title="数据库操作"
+    ``` sql title="数据库操作"
     SHOW DATABASES;                                -- 查看所有数据库
     CREATE DATABASE db_name;                       -- 创建数据库
     USE db_name;                                   -- 切换数据库
@@ -302,7 +302,7 @@ mysql -u root -p  # 或 mysql --user root --password
     ALTER DATABASE db_name CHARACTER SET utf8mb4;  -- 修改数据库字符集
     ```
     
-    ```sql title="表操作"
+    ``` sql title="表操作"
     SHOW TABLES;                                          -- 查看当前数据库所有表
     CREATE TABLE table_name (id INT PRIMARY KEY);         -- 创建表
     DESC table_name;                                      -- 查看表结构
@@ -314,7 +314,7 @@ mysql -u root -p  # 或 mysql --user root --password
     DELETE FROM table_name WHERE condition;               -- 删除数据
     ```
     
-    ```sql title="实用命令"
+    ``` sql title="实用命令"
     STATUS;  -- 查看服务器状态
     EXIT;    -- 退出 MySQL 客户端
     ```

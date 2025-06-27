@@ -8,8 +8,8 @@ title: Pip
 
     大多数情况下，Python 已经附带安装了 `pip`，可以使用下列命令检查版本：
 
-    ```bash
-    python --version
+    ``` console
+    $ python --version
     ```
 
     部分 Linux 发行版会处理 Python3 的迁移，如果使用系统自带的 Python 而未处于虚拟环境，可能需要将后续的
@@ -17,24 +17,24 @@ title: Pip
 
 === "使用 APT 安装"
 
-    ``` bash
-    sudo apt install python3-pip
+    ``` console
+    $ sudo apt install python3-pip
     ```
 
 === "使用 `ensurepip` 模块安装"
 
-    ``` bash
-    python -m ensurepip # (1)!
+    ``` console
+    $ python -m ensurepip # (1)!
     ```
 
     1. `ensurepip` 模块需要 Python 3.4 及以上版本
 
 === "使用 `get-pip.py` 脚本安装"
 
-    ``` bash
-    wget https://bootstrap.pypa.io/get-pip.py  # 下载 get-pip.py 脚本
+    ``` console
+    $ wget https://bootstrap.pypa.io/get-pip.py  # 下载 get-pip.py 脚本
 
-    python get-pip.py
+    $ python get-pip.py
     ```
 
 ---
@@ -45,8 +45,8 @@ title: Pip
 
     默认安装的 Pip 可能较旧，建议使用以下命令更新至最新版
 
-``` bash
-python -m pip install --upgrade pip
+``` console
+$ python -m pip install --upgrade pip
 ```
 
 ---
@@ -63,8 +63,8 @@ python -m pip install --upgrade pip
 
     三者共同支撑了 Python 包的打包、分发和安装流程，其中 `setuptools` 负责“构建”，`wheel` 优化“分发”，而 `pip` 完成“安装”。
 
-```bash
-python -m pip install --upgrade setuptools wheel
+``` console
+$ python -m pip install --upgrade setuptools wheel
 ```
 
 ---
@@ -85,20 +85,20 @@ python -m pip install --upgrade setuptools wheel
 
 === "临时使用"
 
-    ``` bash
-    pip install -i ${index-url} ${package}
+    ``` console
+    $ pip install -i ${index-url} ${package}
     ```
 
 === "设为默认（使用命令）"
 
-    ``` bash
-    pip config set global.index-url ${index-url}
+    ``` console
+    $ pip config set global.index-url ${index-url}
     ```
 
 === "设为默认（编辑配置文件）"
 
-    ``` bash
-    gedit ~/.config/pip/pip.conf
+    ``` console
+    $ gedit ~/.config/pip/pip.conf
     ```
 
     ![](../../../assets/images/wsl/pip-config.png)

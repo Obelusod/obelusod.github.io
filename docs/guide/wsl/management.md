@@ -16,8 +16,8 @@ title: 管理 WSL
 
 1. 可以使用 `wsl --list` 命令列出所有 WSL 发行版
 
-``` powershell
-(Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object { $_.GetValue("DistributionName") -eq '<distribution-name>' }).GetValue("BasePath") + "\ext4.vhdx"
+``` pwsh-session
+PS> (Get-ChildItem -Path HKCU:\Software\Microsoft\Windows\CurrentVersion\Lxss | Where-Object { $_.GetValue("DistributionName") -eq '<distribution-name>' }).GetValue("BasePath") + "\ext4.vhdx"
 ```
 
 !!! tip "使用 Everything 搜索"

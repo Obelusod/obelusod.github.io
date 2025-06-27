@@ -9,8 +9,8 @@ title: Anaconda
 
 1. 可以通过 `wget` 命令在终端中下载，例如：
 
-    ```bash
-    wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+    ``` console
+    $ wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
     ```
 
 ![](../../../assets/images/ubuntu/anaconda-archive.png)
@@ -23,8 +23,8 @@ title: Anaconda
 
     如果使用 `sudo` 以管理员身份运行，Anaconda 将安装至 `root` 目录，之后安装软件包时可能会出现权限问题
 
-```bash
-bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
+``` console
+$ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
 ```
 
 ---
@@ -58,8 +58,8 @@ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
 
 1. 如果需要取消默认激活 `base` 环境，可以使用下列命令：
 
-```bash
-conda config --set auto_activate_base false 
+``` console
+$ conda config --set auto_activate_base false 
 ```
 
 ??? example "手动初始化 `conda`"
@@ -68,9 +68,9 @@ conda config --set auto_activate_base false
 
     > 将 `${PATH_TO_CONDA}` 替换为 Anaconda 的安装目录，默认为 `~/anaconda3`
 
-    ```bash
-    source ${PATH_TO_CONDA}/bin/activate
-    conda init --all # (1)!
+    ``` console
+    $ source ${PATH_TO_CONDA}/bin/activate
+    $ conda init --all # (1)!
     ```
 
     1. `--all` 选项将初始化所有支持的 shell，详见：[conda init — conda documentation](https://docs.conda.io/projects/conda/en/stable/commands/init.html)
@@ -97,16 +97,16 @@ conda config --set auto_activate_base false
 
 1. 对于其他版本，可查看 [Miniconda Archive](https://repo.anaconda.com/miniconda/)
 
-```bash
-wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
+``` console
+$ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 ```
 
 ---
 
 安装 Miniconda 发行版
 
-```bash
-bash Miniconda3-latest-Linux-x86_64.sh
+``` console
+$ bash Miniconda3-latest-Linux-x86_64.sh
 ```
 
 ---
@@ -125,8 +125,8 @@ bash Miniconda3-latest-Linux-x86_64.sh
 
 使用下列命令启动 Navigator：
 
-```bash
-anaconda-navigator
+``` console
+$ anaconda-navigator
 ```
 
 ![](../../../assets/images/ubuntu/anaconda-navigator.png)
@@ -167,8 +167,8 @@ anaconda-navigator
 
 在终端中执行下列命令，编辑软件源配置文件
 
-```bash
-gedit ~/.condarc
+``` console
+$ gedit ~/.condarc
 ```
 
 ---
@@ -181,8 +181,8 @@ gedit ~/.condarc
 
 更改为镜像源后，需要清除索引缓存
 
-```bash
-conda clean -i
+``` console
+$ conda clean -i
 ```
 
 ---
@@ -193,8 +193,8 @@ conda clean -i
 
     如果 `conda` 需要安装指定版本或最新版本 (1)，可以执行下列命令：
 
-    ```bash
-    conda install -n base conda=xx.xx.xx
+    ``` console
+    $ conda install -n base conda=xx.xx.xx
     ```
 
     !!! warning ""
@@ -203,17 +203,17 @@ conda clean -i
 
 1. 最新版本可查看 [Releases · conda/conda](https://github.com/conda/conda/releases)
 
-```bash
-conda update -n base conda
-conda update anaconda-navigator
+``` console
+$ conda update -n base conda
+$ conda update anaconda-navigator
 ```
 
 ---
 
 ## 卸载 Navigator
 
-```bash
-conda remove anaconda-navigator
+``` console
+$ conda remove anaconda-navigator
 ```
 
 ---
@@ -230,41 +230,42 @@ conda remove anaconda-navigator
 
 1. 可以使用 `conda info --envs` 命令查看所有环境及其目录
 
-```bash
-~/anaconda3/_conda constructor uninstall --prefix ${PATH_TO_ENV_DIRECTORY}
+``` console
+$ ~/anaconda3/_conda constructor uninstall --prefix ${PATH_TO_ENV_DIRECTORY}
 ```
 
 ---
 
 移除所有终端配置文件中的 `conda` 初始化脚本
 
-```bash
-conda init --reverse --all
+``` console
+$ conda init --reverse --all
 ```
 
 ---
 
 移除 `.condarc` 文件和 `.conda`、`.continuum` 目录
 
-```bash
-rm -rf ~/.condarc ~/.conda ~/.continuum
+``` console
+$ rm -rf ~/.condarc ~/.conda ~/.continuum
 ```
 
 ---
 
 移除整个 `anaconda3` 及相关目录
 
-```bash
-rm -rf anaconda3
-rm -rf ~/anaconda3
-sudo rm -rf /opt/anaconda3
+``` console
+$ rm -rf anaconda3
+$ rm -rf ~/anaconda3
+$ sudo rm -rf /opt/anaconda3
 ```
 
 ---
 
 ## 卸载 Miniconda
-```bash
-~/miniconda3/uninstall.sh
+
+``` console
+$ ~/miniconda3/uninstall.sh
 ```
 
 ???+ example "命令可选项"

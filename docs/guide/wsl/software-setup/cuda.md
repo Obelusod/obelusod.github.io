@@ -92,20 +92,20 @@ title: CUDA Toolkit (+cuDNN)
 
 首先，删除过时的 GPG 密钥
 
-``` bash
-sudo apt-key del 7fa2af80
+``` console
+$ sudo apt-key del 7fa2af80
 ```
 
 === "使用 APT 安装（网络安装）"
 
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
     
-    ``` bash
-    wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
+    ``` console
+    $ wget https://developer.download.nvidia.com/compute/cuda/repos/wsl-ubuntu/x86_64/cuda-keyring_1.1-1_all.deb
 
-    sudo dpkg -i cuda-keyring_1.1-1_all.deb
+    $ sudo dpkg -i cuda-keyring_1.1-1_all.deb
 
-    sudo apt update
+    $ sudo apt update
     ```
     
     ---
@@ -132,8 +132,8 @@ sudo apt-key del 7fa2af80
 
         目前兼容性最佳的版本为：`CUDA Toolkit 11.8`
     
-    ``` bash
-    sudo apt install ${cuda-toolkit}
+    ``` console
+    $ sudo apt install ${cuda-toolkit}
     ```
 
 === "使用软件包安装（本地安装）"
@@ -175,8 +175,8 @@ sudo apt-key del 7fa2af80
 
 编辑 `.bashrc` 文件，配置环境变量
 
-```bash
-gedit ~/.bashrc
+``` console
+$ gedit ~/.bashrc
 ```
 
 ---
@@ -185,7 +185,7 @@ gedit ~/.bashrc
 
 > 需要将 `cuda-x.x` 替换为实际安装的版本，例如 `cuda-11.8`
 
-```bash title=".bashrc"
+``` bash title=".bashrc"
 export PATH=/usr/local/cuda-x.x/bin${PATH:+:${PATH}}
 export LD_LIBRARY_PATH=/usr/local/cuda-x.x/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
@@ -196,8 +196,8 @@ export LD_LIBRARY_PATH=/usr/local/cuda-x.x/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY
 
 保存更改后，使用下列命令使配置立即生效：
 
-```bash
-source ~/.bashrc
+``` console
+$ source ~/.bashrc
 ```
 
 ---
@@ -206,8 +206,8 @@ source ~/.bashrc
 
 > 建议重启系统以重新加载图形界面
 
-``` bash
-nvcc --version
+``` console
+$ nvcc --version
 ```
 
 ---
@@ -216,15 +216,15 @@ nvcc --version
 
 - **移除 CUDA Toolkit**
 
-``` bash
-sudo apt --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
- "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" "*nvvm*"
+``` console
+$ sudo apt --purge remove "*cuda*" "*cublas*" "*cufft*" "*cufile*" "*curand*" \
+  "*cusolver*" "*cusparse*" "*gds-tools*" "*npp*" "*nvjpeg*" "nsight*" "*nvvm*"
 ```
 
 - **清理缓存及无用的相关依赖**
 
-``` bash
-sudo apt autoremove --purge -V
+``` console
+$ sudo apt autoremove --purge -V
 ```
 
 ---
@@ -250,8 +250,8 @@ sudo apt autoremove --purge -V
 
 安装 cuDNN 依赖项 zlib（数据压缩软件库）
 
-```bash
-sudo apt install zlib1g
+``` console
+$ sudo apt install zlib1g
 ```
 
 === "使用 APT 安装（网络安装）"
@@ -266,12 +266,12 @@ sudo apt install zlib1g
     
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
     
-    ``` bash
-    wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
+    ``` console
+    $ wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
     
-    sudo dpkg -i cuda-keyring_1.1-1_all.deb
+    $ sudo dpkg -i cuda-keyring_1.1-1_all.deb
     
-    sudo apt update
+    $ sudo apt update
     ```
     
     ???+ example "根据实际版本和架构，`$distro/$arch` 需要替换为以下字段："
@@ -294,14 +294,14 @@ sudo apt install zlib1g
     
     - **对于 CUDA 11：**
     
-    ```bash
-    sudo apt install cudnn9-cuda-11
+    ``` console
+    $ sudo apt install cudnn9-cuda-11
     ```
     
     - **对于 CUDA 12：**
     
-    ```bash
-    sudo apt install cudnn9-cuda-12
+    ``` console
+    $ sudo apt install cudnn9-cuda-12
     ```
 
 === "使用 APT 安装（本地安装）"
@@ -336,26 +336,26 @@ sudo apt install zlib1g
 
 安装 cuDNN 示例
 
-```bash
-sudo apt install libcudnn9-samples
+``` console
+$ sudo apt install libcudnn9-samples
 ```
 
 ---
 
 编译 `mnistCUDNN` 示例
 
-```bash
-cd /usr/src/cudnn_samples_v9/mnistCUDNN
+``` console
+$ cd /usr/src/cudnn_samples_v9/mnistCUDNN
 
-sudo make clean && sudo make
+$ sudo make clean && sudo make
 ```
 
 ---
 
 运行 `mnistCUDNN` 示例
 
-```bash
-./mnistCUDNN
+``` console
+$ ./mnistCUDNN
 ```
 
 ---

@@ -35,8 +35,8 @@ title: 软件安装与配置
 
     [Vim](https://www.vim.org/) 是一款功能强大的、基于命令行的文本编辑器，支持语法高亮、智能缩进、代码折叠等高级编辑功能，还可以通过插件扩展它的功能，特别适合于程序员和系统管理员等专业人士使用。
     
-    ``` bash
-    sudo apt install vim
+    ``` console
+    $ sudo apt install vim
     ```
 
 === "Gedit"
@@ -44,8 +44,8 @@ title: 软件安装与配置
     [Gedit](https://gedit-text-editor.org/) 是一款轻量级的、基于图形界面的文本编辑器，具有代码高亮、自动缩进、多标签编辑、插件扩展等功能，是
     Ubuntu GNOME 桌面环境中预安装的编辑器之一。
     
-    ``` bash
-    sudo apt install gedit
+    ``` console
+    $ sudo apt install gedit
     ```
 
 === "GNOME Text Editor"
@@ -53,6 +53,6 @@ title: 软件安装与配置
     [GNOME Text Editor](https://apps.gnome.org/TextEditor/) 是一款专注于会话管理的简单文本编辑器，致力于跟踪更改和状态，具有现代化的界面和功能，包括语法高亮显示、搜索替换、内联拼写检查、文档打印等特性，并且支持
     Vim 键绑定。目前在 Ubuntu 24.04 上，已取代 Gedit 成为 GNOME 默认的文本编辑器（Text Editor）。
     
-    ``` bash
-    sudo apt install gnome-text-editor
+    ``` console
+    $ sudo apt install gnome-text-editor
     ```

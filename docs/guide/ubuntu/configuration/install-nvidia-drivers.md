@@ -113,8 +113,8 @@ title: 安装 NVIDIA 显卡驱动
 
     在终端中执行下列命令，查看当前可安装的驱动
 
-    ```bash
-    ubuntu-drivers devices # (1)!
+    ``` console
+    $ ubuntu-drivers devices # (1)!
     ```
 
     1. 如果提示找不到 `ubuntu-drivers` 命令，需要使用 `sudo apt install ubuntu-drivers-common` 命令安装
@@ -149,8 +149,8 @@ title: 安装 NVIDIA 显卡驱动
 
         文件名需要根据实际修改，可以输入前几个字符，再按下 ++tab++ 键即可自动补全完整的命令/名称
 
-    ```bash
-    sudo apt install ${driver-name} # (1)!
+    ``` console
+    $ sudo apt install ${driver-name} # (1)!
     ```
     
     1. 使用 `sudo ubuntu-drivers autoinstall` 命令可以自动安装官方推荐的驱动（不建议）
@@ -159,8 +159,8 @@ title: 安装 NVIDIA 显卡驱动
 
     安装完成后，需要重启才能生效（Reboot）
     
-    ```bash
-    sudo reboot
+    ``` console
+    $ sudo reboot
     ```
 
 === "使用软件包本地安装"
@@ -203,16 +203,16 @@ title: 安装 NVIDIA 显卡驱动
 
     > 如果当前正在使用 NVIDIA 驱动，执行后将卸载并自动更换为最初的开源驱动
 
-    ```bash
-    sudo apt --purge remove nvidia*
+    ``` console
+    $ sudo apt --purge remove nvidia*
     ```
 
     ---
 
     安装 NVIDIA 驱动程序安装时所需的编译和链接工具
 
-    ```bash
-    sudo apt install build-essential libglvnd-dev pkg-config # (1)!
+    ``` console
+    $ sudo apt install build-essential libglvnd-dev pkg-config # (1)!
     ```
     
     1. `build-essential`、`libglvnd-dev`、`pkg-config` 包含了绝大部分常用的编译和链接工具
@@ -221,8 +221,8 @@ title: 安装 NVIDIA 显卡驱动
 
     编辑 Linux 内核模块的禁用列表文件 `blacklist`
 
-    ```bash
-    sudo gedit /etc/modprobe.d/blacklist.conf # (1)!
+    ``` console
+    $ sudo gedit /etc/modprobe.d/blacklist.conf # (1)!
     ```
     
     1. 也可以在同路径下，新建 `blacklist-nvidia-nouveau.conf` 文件，专门用于禁用 Nvidia Nouveau 开源驱动程序
@@ -231,7 +231,7 @@ title: 安装 NVIDIA 显卡驱动
 
     在文件的末尾添加以下两行内容，禁用默认的 Nvidia Nouveau 开源驱动
 
-    ```text title="blacklist.conf"
+    ``` text title="blacklist.conf"
     blacklist nouveau
     options nouveau modeset=0
     ```
@@ -246,16 +246,16 @@ title: 安装 NVIDIA 显卡驱动
 
     更新 Linux 内核的配置文件
 
-    ```bash
-    sudo update-initramfs -u
+    ``` console
+    $ sudo update-initramfs -u
     ```
 
     ---
 
     重启系统，使禁用列表生效
     
-    ```bash
-    sudo reboot
+    ``` console
+    $ sudo reboot
     ```
 
     !!! warning annotate "重启后黑屏"
@@ -293,8 +293,8 @@ title: 安装 NVIDIA 显卡驱动
         - `5` ：图形界面模式（多用户）
         - `6` ：系统重启
     
-    ```bash
-    sudo telinit 3
+    ``` console
+    $ sudo telinit 3
     ```
     
     ---
@@ -309,8 +309,8 @@ title: 安装 NVIDIA 显卡驱动
     
         在下列命令尾加上 `--no-opengl-files` 参数，不安装 OpenGL 文件，可能解决某些报错
     
-    ```bash
-    sudo bash ${NVIDIA-Linux-x86_64-xxx.xx.run}
+    ``` console
+    $ sudo bash ${NVIDIA-Linux-x86_64-xxx.xx.run}
     ```
 
     ---
@@ -373,16 +373,16 @@ title: 安装 NVIDIA 显卡驱动
 
     重启系统，使驱动生效
 
-    ```bash
-    sudo reboot
+    ``` console
+    $ sudo reboot
     ```
 
 ---
 
 重启后，执行下列命令，检查 NVIDIA 是否安装成功
 
-```bash
-nvidia-smi
+``` console
+$ nvidia-smi
 ```
 
 ![](../../../assets/images/ubuntu/nvidia-smi.png)

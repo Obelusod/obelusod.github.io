@@ -64,8 +64,8 @@ title: 更新 Ubuntu 与软件
 
         在终端中执行下列命令，编辑软件源配置文件
 
-        ``` bash
-        sudo gedit /etc/apt/sources.list.d/ubuntu.sources
+        ``` console
+        $ sudo gedit /etc/apt/sources.list.d/ubuntu.sources
         ```
 
         ---
@@ -114,16 +114,16 @@ title: 更新 Ubuntu 与软件
 
     更新软件包列表以获取最新版本
     
-    ``` bash
-    sudo apt update
+    ``` console
+    $ sudo apt update
     ```
     
     ---
     
     更新所有可更新软件包
     
-    ``` bash
-    sudo apt upgrade
+    ``` console
+    $ sudo apt upgrade
     ```
 
 === "在"软件更新器"中更新"

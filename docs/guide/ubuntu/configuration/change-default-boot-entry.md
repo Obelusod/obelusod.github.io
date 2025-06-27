@@ -50,8 +50,8 @@ title: 更改开机默认启动项
 
     执行下列命令，查看 GRUB 配置文件中的所有启动项的顺序和名称
 
-    ```bash
-    cat /boot/grub/grub.cfg | grep menu
+    ``` console
+    $ cat /boot/grub/grub.cfg | grep menu
     ```
     
     ![](../../../assets/images/ubuntu/cat-grub-menu.png)
@@ -68,8 +68,8 @@ title: 更改开机默认启动项
 
     编辑 GRUB 配置文件
 
-    ```bash
-    sudo gedit /etc/default/grub
+    ``` console
+    $ sudo gedit /etc/default/grub
     ```
 
     ---
@@ -98,6 +98,6 @@ title: 更改开机默认启动项
 
     重新生成 GRUB 配置文件，使更改生效
 
-    ```bash
-    sudo update-grub
+    ``` console
+    $ sudo update-grub
     ```

@@ -1,16 +1,16 @@
 @font-face {
-  font-family: "MapleMono";
-  src: url("/assets/fonts/MapleMono-NF-CN-Regular.ttf") format('truetype');
+    font-family: "MapleMono";
+    src: url("/assets/fonts/MapleMono-NF-CN-Regular.ttf") format('truetype');
 }
 
 /* 设置代码块字体 */
 :root {
-  --md-code-font: "MapleMono";
+    --md-code-font: "MapleMono";
 }
 
 /* 设置网格容器的最大宽度 */
 .md-grid {
-    max-width: 1440px;
+    max-width: 66rem;
 }
 
 /* 设置内容区域的左右内边距 */
@@ -19,8 +19,23 @@
     padding-right: 0.75rem;
 }
 
+/* 自定义锚点链接样式 */
+.toclink {
+    color: unset !important;
+}
+
+/* 自定义锚点链接悬停样式 */
+.toclink:hover {
+    color: var(--md-accent-fg-color) !important;
+}
+
 /* 隐藏侧边栏的滚动条 */
 .md-sidebar__scrollwrap {
+    scrollbar-width: none;
+}
+
+/* 隐藏代码块的滚动条 */
+.md-typeset pre > code {
     scrollbar-width: none;
 }
 
@@ -35,8 +50,8 @@
 /* 设置表格显示为全宽 */
 .md-typeset__table,
 .md-typeset__table table:not([class]) {
-  width: 100%;
-  display: table;
+    width: 100%;
+    display: table;
 }
 
 /* 设置表格默认垂直居中 */
@@ -48,4 +63,9 @@
 /* 设置反馈提示的样式 */
 .md-feedback__title {
     font-size: smaller;
+}
+
+/* 阻止代码块提示符和输出结果的复制 */
+.highlight .gp, .highlight .go { /* Generic.Prompt, Generic.Output */
+    user-select: none;
 }

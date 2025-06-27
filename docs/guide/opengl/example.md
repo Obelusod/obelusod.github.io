@@ -7,7 +7,7 @@ title: OpenGL 绘图示例
     如果在编译或运行程序时提示报错（如代码标红线、链接错误、无法解析符号或找不到 `.dll`
     文件等），请检查环境配置的**所有目录项**和**系统环境变量**是否已正确设置！（也可能之前设置的未能保存）
 
-```c++ title="OpenGL.cpp" linenums="1"
+``` c++ title="OpenGL.cpp" linenums="1"
 #include <gl/glut.h>
 #include <cmath>
 

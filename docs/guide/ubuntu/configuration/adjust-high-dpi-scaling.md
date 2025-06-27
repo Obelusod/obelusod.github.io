@@ -17,8 +17,8 @@ title: 调整高分辨率缩放
 
 安装 Gnome Tweak
 
-```bash
-sudo apt install gnome-tweaks # (1)!
+``` console
+$ sudo apt install gnome-tweaks # (1)!
 ```
 
 1. 早期版本名为 `gnome-tweak-tool`

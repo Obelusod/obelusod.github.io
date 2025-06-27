@@ -46,6 +46,7 @@ theme:
     - content.code.copy
     - content.code.annotate
     - content.tooltips
+    - content.tabs.link
 
 nav:
   - 主页: index.md
@@ -132,11 +133,14 @@ extra_css:
   - stylesheets/extra.css
   - stylesheets/round.css
 
+extra_javascript:
+  - js/copy-patch.js
+
 markdown_extensions:
   - toc:
       toc_depth: 4
-      permalink: "#"
-      permalink_title: "固定链接"
+      anchorlink: true
+      anchorlink_class: "toclink"
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
@@ -150,7 +154,6 @@ markdown_extensions:
   - pymdownx.highlight:
       use_pygments: true
       line_spans: __span
-      auto_title: true
       anchor_linenums: true
       pygments_lang_class: true
   - pymdownx.emoji:

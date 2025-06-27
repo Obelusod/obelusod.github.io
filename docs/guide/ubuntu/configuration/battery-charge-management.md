@@ -18,20 +18,20 @@ title: 电池充电管理
 
     TLP 是一款适用于 Linux 的电池管理工具，可以通过调整系统设置和参数来最大限度地延长笔记本电脑的电池寿命，并提高其性能和稳定性。
 
-```bash
-sudo add-apt-repository ppa:linrunner/tlp  # 添加官方 PPA 仓库以获取最新版
-sudo apt update
-sudo apt install tlp tlp-rdw
+``` console
+$ sudo add-apt-repository ppa:linrunner/tlp  # 添加官方 PPA 仓库以获取最新版
+$ sudo apt update
+$ sudo apt install tlp tlp-rdw
 ```
 
 ---
 
 启动 TLP，并确保 TLP 服务保持开机自启
 
-```bash
-sudo tlp start
-sudo systemctl enable tlp.service
-tlp-stat -s  # 检查 TLP 是否已启用并处于运行状态
+``` console
+$ sudo tlp start
+$ sudo systemctl enable tlp.service
+$ tlp-stat -s  # 检查 TLP 是否已启用并处于运行状态
 ```
 
 ![](../../../assets/images/ubuntu/tlp-stat-s.png)
@@ -43,8 +43,8 @@ tlp-stat -s  # 检查 TLP 是否已启用并处于运行状态
 
 1. 可以使用快捷键 ++ctrl+f++ 快速查找关键字
 
-```bash
-sudo gedit /etc/tlp.conf
+``` console
+$ sudo gedit /etc/tlp.conf
 ```
 
 ---
@@ -72,16 +72,16 @@ sudo gedit /etc/tlp.conf
 
 保存文件后，执行下列命令使配置生效
 
-```bash
-sudo tlp start
+``` console
+$ sudo tlp start
 ```
 
 ---
 
 检查 TLP 电池保养配置
 
-```bash
-sudo tlp-stat -b
+``` console
+$ sudo tlp-stat -b
 ```
 
 ![](../../../assets/images/ubuntu/tlp-stat-b.png)

@@ -74,8 +74,8 @@ Bash 命令提示符中，如 `obelus@Hyper-V:~$`、`root@mypc:/home#`
 
 1. 如果对 `vim` 操作不熟练，可以使用其他文本编辑器（如 `gedit`），或使用 Windows 跨系统编辑此文件
 
-``` bash
-sudo vim /etc/apt/sources.list
+``` console
+$ sudo vim /etc/apt/sources.list
 ```
 
 ---
@@ -94,16 +94,16 @@ sudo vim /etc/apt/sources.list
 
 更新软件包列表以获取最新版本
 
-``` bash
-sudo apt update
+``` console
+$ sudo apt update
 ```
 
 ---
 
 更新所有可更新软件包
 
-``` bash
-sudo apt upgrade
+``` console
+$ sudo apt upgrade
 ```
 
 [^3]: [跨文件系统工作 | Microsoft Learn](https://learn.microsoft.com/zh-cn/windows/wsl/filesystems)
