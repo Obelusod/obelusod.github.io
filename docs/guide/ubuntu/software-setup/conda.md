@@ -1,16 +1,27 @@
 ---
-title: Anaconda
+title: Conda
 ---
 
 ## 安装 Anaconda [^1]
 
-访问 [Anaconda Archive 官网](https://repo.anaconda.com/archive/)，选择相应架构（如 `Linux-x86_64`）的最新版本下载 (1)
+!!! abstract "Anaconda"
+
+    **Anaconda** 是一个面向语言科学计算的跨平台的开源 Python 和 R 语言发行版，内置强大的环境管理与包管理工具
+    Conda，支持多语言环境的隔离和切换，并集成了超过 1500 个预编译的科学计算、数据处理和机器学习相关的软件包。与
+    Pip 使用需编译的源码包相比（如今已支持二进制 Wheel 包），Conda
+    采用二进制分发模式，直接包含可执行文件与静态链接库，避免了可能的编译难题。
+
+访问 [Anaconda Archive 官网](https://repo.anaconda.com/archive/) (1)，选择相应架构（如 `Linux-x86_64`）的最新版本下载
 { .annotate }
 
-1. 可以通过 `wget` 命令在终端中下载，例如：
+1. 此外，也可以访问 [Download Anaconda Distribution | Anaconda](https://www.anaconda.com/download) 获取最新版本
+
+!!! tip ""
+
+    可以通过 `wget` 命令在终端中下载，例如：
 
     ``` console
-    $ wget https://repo.anaconda.com/archive/Anaconda3-2024.10-1-Linux-x86_64.sh
+    $ wget https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
     ```
 
 ![](../../../assets/images/ubuntu/anaconda-archive.png)
@@ -111,7 +122,7 @@ $ bash Miniconda3-latest-Linux-x86_64.sh
 
 ---
 
-## 启动 Navigator
+## 使用 Navigator
 
 !!! abstract "Anaconda Navigator"
 
@@ -119,9 +130,7 @@ $ bash Miniconda3-latest-Linux-x86_64.sh
 
     !!! tip annotate ""
 
-        Anaconda 已附带安装 Navigator，对于 Miniconda，可以使用 `conda install anaconda-navigator` 命令安装 (1)
-
-    1. 如果需要卸载 Navigator，可以使用 `conda remove anaconda-navigator` 命令
+        Anaconda 已附带安装 Navigator，对于 Miniconda，可以使用 `conda install anaconda-navigator` 命令安装
 
 使用下列命令启动 Navigator：
 
@@ -156,7 +165,7 @@ $ anaconda-navigator
 ??? note "常用第三方源 `custom_channels`"
 
     - **conda-forge**：社区维护的开源包仓库，提供大量最新版本的跨平台软件。
-    - **pytorch**：PyTorch 官方频道，提供深度学习框架及其扩展库。
+    - **pytorch（已弃用）**：PyTorch 官方频道，提供深度学习框架及其扩展库。
     - **nvidia**：NVIDIA 维护的频道，包含 CUDA 工具包等 GPU 加速库。
     - **intel**：Intel 优化的数学库（如 MKL），提升 CPU 计算性能。
     - **msys2**：Windows 系统工具链频道，包含编译工具和依赖库（如 GCC、Git）。
@@ -189,6 +198,11 @@ $ conda clean -i
 
 ## 更新 Conda 和 Navigator
 
+``` console
+$ conda update -n base conda       # 更新 Conda
+$ conda update anaconda-navigator  # 更新 Navigator
+```
+
 !!! tip annotate "指定更新版本"
 
     如果 `conda` 需要安装指定版本或最新版本 (1)，可以执行下列命令：
@@ -202,11 +216,6 @@ $ conda clean -i
         如果版本过低可能需要逐级更新，例如要从 `conda 4.12` 更新至 `conda 23.10.0`，需要先安装 `conda 22.11.1`
 
 1. 最新版本可查看 [Releases · conda/conda](https://github.com/conda/conda/releases)
-
-``` console
-$ conda update -n base conda
-$ conda update anaconda-navigator
-```
 
 ---
 
@@ -297,6 +306,6 @@ $ ~/miniconda3/uninstall.sh
 | 删除所有未使用文件                                                     	       | `conda clean --all`                                                                                               	  |
 | 检查 conda 配置                                                        	       | `conda config --show`                                                                                             	  |
 
-[^1]: [Installing Anaconda Distribution — Anaconda documentation](https://docs.anaconda.com/anaconda/install/)
-[^2]: [Installing Miniconda — Miniconda documentation](https://docs.anaconda.com/navigator/install/)
+[^1]: [Installing Anaconda Distribution - Anaconda](https://www.anaconda.com/docs/getting-started/anaconda/install)
+[^2]: [Installing Miniconda - Anaconda](https://www.anaconda.com/docs/getting-started/miniconda/install)
 [^3]: [Conda Commands](https://docs.conda.io/projects/conda/en/stable/commands/index.html)

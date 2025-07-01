@@ -75,7 +75,7 @@ title: PyTorch
 
 !!! info "区分 CPU 与 GPU 版本"
 
-    PyTorch 提供了 CPU 版和 GPU 版，其中 GPU 分别支持 CUDA（NVIDA）和 ROCm（AMD），为了充分发挥 PyTorch
+    PyTorch 提供了 CPU 版和 GPU 版，其中 GPU 分别支持 CUDA（NVIDIA）和 ROCm（AMD），为了充分发挥 PyTorch
     的并行加速优势，并处理大规模数据和复杂模型，通常推荐安装 GPU 版本。本篇主要以 CUDA 版本为例。
 
 ???+ warning "如何正确安装 CUDA 版本"
@@ -104,10 +104,10 @@ title: PyTorch
 
         如果要更换原有的 PyTorch 版本，务必先[完全卸载 PyTorch](#卸载-pytorch) 后，再使用命令安装新版本！
 
-    ??? note annotate "从 PyTorch 2.6 开始不再提供官方 Conda 包"
+    ??? note annotate "官方频道不再提供 Conda 包"
     
         出于维护成本与用户使用情况考虑，从 PyTorch 2.6 版本开始，官方 Anaconda 频道（`-c pytorch`）不再提供
-        Conda 包。作为替代方案，可以考虑迁移至第三方的 `conda-forge` 频道 (1)，或使用 Pip 安装 PyTorch。
+        Conda 包。作为替代方案，可以考虑迁移至由社区维护的 `conda-forge` 频道 (1)，或使用 Pip 安装 PyTorch。
 
         详见：[[Announcement] Deprecating PyTorch’s official Anaconda channel](https://github.com/pytorch/pytorch/issues/138506)
 

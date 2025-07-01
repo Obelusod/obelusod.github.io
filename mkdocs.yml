@@ -72,7 +72,7 @@ nav:
     - 软件安装与配置:
       - guide/ubuntu/software-setup/index.md
       - Pip: guide/ubuntu/software-setup/pip.md
-      - Anaconda: guide/ubuntu/software-setup/conda.md
+      - Conda: guide/ubuntu/software-setup/conda.md
       - CUDA Toolkit (+cuDNN): guide/ubuntu/software-setup/cuda.md
       - PyTorch: guide/ubuntu/software-setup/pytorch.md
     - 常见问题: guide/ubuntu/faq.md

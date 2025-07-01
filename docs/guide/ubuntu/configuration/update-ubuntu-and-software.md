@@ -58,7 +58,7 @@ title: 更新 Ubuntu 与软件
 
         以南京大学镜像站为例，选择相应的 Ubuntu 版本和 DEB822 格式，并复制下方的镜像源
 
-        ![](../../../assets/images/ubuntu/mirror_ubuntu.png)
+        ![](../../../assets/images/ubuntu/mirror_ubuntu_deb822.png)
 
         ---
 
@@ -72,11 +72,27 @@ title: 更新 Ubuntu 与软件
 
         将配置文件内容全部替换为镜像源，并保存文件
 
-        ![](../../../assets/images/ubuntu/deb822_file.png)
+        ![](../../../assets/images/ubuntu/ubuntu_deb822_file.png)
 
     === "One-Line-Style 格式（sources.list）"
 
-        !!! quote "TODO"
+        以南京大学镜像站为例，选择相应的 Ubuntu 版本和传统格式，并复制下方的镜像源
+
+        ![](../../../assets/images/ubuntu/mirror_ubuntu_oneline.png)
+
+        ---
+
+        在终端中执行下列命令，编辑软件源配置文件
+
+        ``` console
+        $ sudo gedit /etc/apt/sources.list
+        ```
+
+        ---
+
+        将配置文件内容全部替换为镜像源，并保存文件
+
+        ![](../../../assets/images/ubuntu/ubuntu_oneline_file.png)
 
 === "在"软件和更新"中更换"
 
@@ -120,7 +136,10 @@ title: 更新 Ubuntu 与软件
     
     ---
     
-    更新所有可更新软件包
+    更新所有可更新软件包 (1)
+    { .annotate }
+
+    1. 部分重要更新（如显卡驱动）可能需要重启系统才能生效
     
     ``` console
     $ sudo apt upgrade
@@ -134,9 +153,10 @@ title: 更新 Ubuntu 与软件
 
     ---
 
-    点击右下角 **"Install Now"**（立刻安装）即可
+    点击右下角 **"Install Now"**（立刻安装）即可 (1)
+    { .annotate }
 
-    > 部分重要更新可能提示需要重启系统才能生效
+    1. 部分重要更新（如显卡驱动）可能需要重启系统才能生效
 
     ![](../../../assets/images/ubuntu/software-updater.png)
 
