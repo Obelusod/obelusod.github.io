@@ -1,6 +1,9 @@
 # IntelliJ project files
 .idea
 
+# Virtual environments
+.venv
+
 # Dependencies
 node_modules
 __pycache__
