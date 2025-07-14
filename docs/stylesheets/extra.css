@@ -8,15 +8,9 @@
     --md-code-font: "MapleMono";
 }
 
-/* 设置网格容器的最大宽度 */
+/* 设置内容网格的最大宽度 */
 .md-grid {
-    max-width: 66rem;
-}
-
-/* 设置内容区域的左右内边距 */
-.md-content {
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
+    max-width: 64rem;
 }
 
 /* 自定义锚点链接样式 */
