@@ -11,7 +11,7 @@ function getTextWithoutPromptAndOutput(targetSelector) {
     if (!targetElement) return '';
 
     // 需要排除的CSS类名（Pygments语法高亮中的提示符和输出类）
-    const excludedClasses = ["gp", "go"]; // gp: Generic Prompt, go: Generic Output
+    const excludedClasses = ["gp", "go"];  // gp: Generic Prompt, go: Generic Output
 
     /**
      * 递归处理DOM节点

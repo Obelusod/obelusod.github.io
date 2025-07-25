@@ -33,6 +33,11 @@
     scrollbar-width: none;
 }
 
+/* 设置块引用的样式 */
+.md-typeset blockquote {
+    font-size: medium;
+}
+
 /* 设置图表标题的样式 */
 .md-typeset figcaption {
     font-style: normal;

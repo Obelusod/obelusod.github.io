@@ -1,6 +1,7 @@
 site_name: Obelisk Docs
 site_url: https://obelus.cc
 site_author: Obelus
+copyright: Copyright &copy; 2025 <a href="https://github.com/Obelusod" rel="noreferrer" target="_blank" >Obelus</a>
 
 theme:
   name: material
@@ -109,9 +110,7 @@ nav:
     - 在 JetBrains IDE 激活许可证: guide/jetbrains-edu-license/activate-license.md
 
 extra:
-  social:
-    - icon: fontawesome/brands/github
-      link: https://github.com/Obelusod
+  generator: false
   analytics:
     provider: google
     property: G-7NRK35CQKM
