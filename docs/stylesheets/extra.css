@@ -33,6 +33,22 @@
     scrollbar-width: none;
 }
 
+/* 设置备案信息样式 */
+.md-beian {
+    display: flex;
+    gap: .35rem;
+    margin: 0 .4rem;
+    padding: .2rem 0 .6rem;
+    font-size: .64rem;
+    align-items: center
+}
+
+@media screen and (min-width: 45em) {
+    .md-beian {
+        padding: .6rem 0
+    }
+}
+
 /* 设置块引用的样式 */
 .md-typeset blockquote {
     font-size: medium;

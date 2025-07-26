@@ -93,13 +93,15 @@
       <div class="md-footer-meta__inner md-grid">
         {% include "partials/copyright.html" %}
 
-        <!-- 添加备案信息 -->
-        <div class="md-footer-beian" style="font-size: .64rem;display:flex;align-items:center;gap:0.35rem">
-          <img src="/assets/images/misc/beian_logo.png" width="16px"/>
-          <a href="https://beian.mps.gov.cn/#/query/webSearch?code=45010002451008" rel="noreferrer" target="_blank" style="color:inherit;opacity:.7">桂公网安备45010002451008号</a>
-          <a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank" style="color:inherit;opacity:.7">桂ICP备2025067259号</a>
-        </div>
+        <!-- 备案信息 -->
+        {% if config.extra.beian %}
+          {% include "partials/beian.html" %}
+        {% endif %}
 
+        <!-- Social links -->
+        {% if config.extra.social %}
+          {% include "partials/social.html" %}
+        {% endif %}
       </div>
     </div>
   </footer>

@@ -1,0 +1,29 @@
+<div class="md-beian">
+  {% set beian = config.extra.beian %}
+
+  {% if beian.gongan_icon %}
+    <img src="{{ beian.gongan_icon | url }}" alt="beian_logo" width="16px"/>
+  {% endif %}
+
+  {% if beian.gongan_id and beian.gongan_num %}
+    <a
+      href="https://beian.mps.gov.cn/#/query/webSearch?code={{ beian.gongan_id }}"
+      rel="noreferrer"
+      target="_blank"
+      style="color: inherit; opacity: .7;"
+    >
+      {{ beian.gongan_num }}
+    </a>
+  {% endif %}
+
+  {% if beian.icp %}
+    <a
+      href="https://beian.miit.gov.cn/"
+      rel="noreferrer"
+      target="_blank"
+      style="color: inherit; opacity: .7;"
+    >
+      {{ beian.icp }}
+    </a>
+  {% endif %}
+</div>

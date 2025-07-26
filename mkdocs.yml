@@ -110,7 +110,11 @@ nav:
     - 在 JetBrains IDE 激活许可证: guide/jetbrains-edu-license/activate-license.md
 
 extra:
-  generator: false
+  beian:
+      icp: 桂ICP备2025067259号
+      gongan_id: 45010002451008
+      gongan_num: 桂公网安备45010002451008号
+      gongan_icon: assets/images/misc/beian_logo.png
   analytics:
     provider: google
     property: G-7NRK35CQKM
