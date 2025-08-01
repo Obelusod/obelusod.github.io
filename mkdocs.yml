@@ -10,8 +10,7 @@ theme:
   custom_dir: overrides
 
   font:
-    text: Noto Sans Simplified Chinese
-    code: JetBrains Mono
+    text: Roboto
 
   palette:
     - media: "(prefers-color-scheme: light)"

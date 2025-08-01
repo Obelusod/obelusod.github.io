@@ -5,5 +5,5 @@ description = "Obelisk Docs"
 requires-python = ">=3.12"
 dependencies = [
     "mkdocs-glightbox>=0.4.0",
-    "mkdocs-material[imaging]>=9.6.15",
+    "mkdocs-material[imaging]>=9.6.16",
 ]

@@ -1,11 +1,8 @@
-@font-face {
-    font-family: "MapleMono";
-    src: url("/assets/fonts/MapleMono-NF-CN-Regular.ttf") format('truetype');
-}
+@import url("https://fontsapi.zeoseven.com/442/main/result.css");
 
 /* 设置代码块字体 */
 :root {
-    --md-code-font: "MapleMono";
+    --md-code-font: "Maple Mono NF CN";
 }
 
 /* 设置内容网格的最大宽度 */
