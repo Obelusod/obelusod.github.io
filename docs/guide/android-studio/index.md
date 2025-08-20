@@ -1,5 +1,6 @@
 ---
 title: Android Studio 安装与配置指南
+description: 面向 Android（Phone）项目开发的 Android Studio 入门指南
 ---
 
 !!! abstract "Android Studio [^1]"

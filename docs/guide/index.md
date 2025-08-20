@@ -31,7 +31,7 @@ hide:
 
     [:octicons-arrow-right-24: 点击阅读](opengl/index.md)
 
--   :simple-mysql:{ .lg .middle } __MySQL 安装与配置指南__
+-   :simple-mysql:{ .lg .middle } __MySQL 安装与配置__
 
     ---
 
@@ -39,7 +39,7 @@ hide:
 
     [:octicons-arrow-right-24: 点击阅读](mysql/index.md)
 
--   :material-android:{ .lg .middle } __Android Studio 安装与配置指南__
+-   :material-android:{ .lg .middle } __Android Studio 安装与配置__
 
     ---
 

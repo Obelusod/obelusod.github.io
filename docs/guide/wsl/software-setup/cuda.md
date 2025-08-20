@@ -9,72 +9,11 @@ title: CUDA Toolkit (+cuDNN)
 
     **使用 `WSL-Ubuntu CUDA toolkit` 安装程序安装将不会附带 NVIDIA 显卡驱动。**
 
-??? example "NVIDIA 显卡驱动、CUDA、PyTorch 和 Python 的版本兼容性要求"
-
-    ![](../../../assets/images/guide/compatibility-matrix-1.png)
-    
-    ![](../../../assets/images/guide/compatibility-matrix-2.png)
-    
-    <table><thead>
-      <tr>
-        <th>PyTorch</th>
-        <th>CUDA</th>
-        <th>cuDNN</th>
-        <th>Python</th>
-      </tr></thead>
-    <tbody>
-      <tr>
-        <td>2.7</td>
-        <td>11.8, 12.6, 12.8</td>
-        <td>~ 9.7.1.26</td>
-        <td rowspan="3">&gt;=3.9, &lt;=3.13</td>
-      </tr>
-      <tr>
-        <td>2.6</td>
-        <td>11.8, 12.4, 12.6</td>
-        <td>~ 9.5.1.17</td>
-      </tr>
-      <tr>
-        <td>2.5</td>
-        <td rowspan="2">11.8, 12.1, 12.4</td>
-        <td>None</td>
-      </tr>
-      <tr>
-        <td>2.4</td>
-        <td>~ 9.1.0.70</td>
-        <td rowspan="3">&gt;=3.8, &lt;=3.12</td>
-      </tr>
-      <tr>
-        <td>2.3</td>
-        <td rowspan="3">11.8, 12.1</td>
-        <td rowspan="3">~ 8.7.0.84</td>
-      </tr>
-      <tr>
-        <td>2.2</td>
-      </tr>
-      <tr>
-        <td>2.1</td>
-        <td rowspan="2">&gt;= 3.8, &lt;=3.11</td>
-      </tr>
-      <tr>
-        <td>2.0</td>
-        <td>11.7, 11.8</td>
-        <td>~ 8.5.0.96</td>
-      </tr>
-      <tr>
-        <td>1.13</td>
-        <td>11.6, 11.7</td>
-        <td rowspan="2">~ 8.3.2.44</td>
-        <td rowspan="2">&gt;= 3.7, &lt;=3.10</td>
-      </tr>
-      <tr>
-        <td>1.12</td>
-        <td>11.3, 11.6</td>
-      </tr>
-    </tbody></table>
-
-    详见：[CUDA Toolkit Major Component Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#cuda-toolkit-major-component-versions)
-    和 [Releasing PyTorch | Release Compatibility Matrix](https://github.com/pytorch/pytorch/blob/main/RELEASE.md#release-compatibility-matrix)
+{%
+    include-markdown "share/cuda.md"
+    start="<!-- cuda-driver-compatibility-start -->"
+    end="<!-- cuda-driver-compatibility-end -->"
+%}
 
 ---
 
@@ -239,10 +178,10 @@ $ sudo apt autoremove --purge -V
 
 !!! note annotate "更新至 cuDNN 9"
 
-    2024年2月，cuDNN 9.0.0 发布，主要引入了对动态形状推理的优化支持，显著提升了可变输入尺寸场景（如自然语言处理）的计算效率，同时新增了针对
+    2024年2月 cuDNN 9.0.0 发布，主要引入了对动态形状推理的优化支持，显著提升了可变输入尺寸场景（如自然语言处理）的计算效率，同时新增了针对
     Ampere 架构 GPU（如A100）的细粒度 Tensor Core 加速功能，优化了卷积、池化和归一化等核心操作的性能，并扩展了 API 以支持更灵活的模型设计。
 
-    **为了获得最佳性能，建议安装最新的 cuDNN 9 及与之兼容的 CUDA 11/12 最新版本 ！** (1)
+    **为了获得最佳性能，建议安装最新的 cuDNN 9 及与之兼容的CUDA 11+ 版本 ！** (1)
 
 1. cuDNN 9 可以与之前的 7/8 版本共存，安装新版本不会自动删除较旧的版本
 
@@ -259,12 +198,10 @@ $ sudo apt install zlib1g
     !!! warning "默认安装最新版本"
 
         网络安装将默认安装最新版的 cuDNN，如需安装特定版本，建议使用软件包本地安装
-
-    !!! success ""
-
-        如果在之前安装 CUDA Toolkit 时已添加密钥环，可以跳过此步骤
     
     安装 NVIDIA CUDA 密钥环，以获取最新软件源
+
+    > 如果在之前安装 CUDA Toolkit 时已添加密钥环，无需再重复安装！
     
     ``` console
     $ wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
@@ -274,7 +211,7 @@ $ sudo apt install zlib1g
     $ sudo apt update
     ```
     
-    ???+ example "根据实际版本和架构，`$distro/$arch` 需要替换为以下字段："
+    ???+ example "根据实际版本和架构，将 `$distro/$arch` 替换为以下字段："
     
         - `ubuntu2004/x86_64`
         - `ubuntu2004/sbsa`
@@ -291,18 +228,24 @@ $ sudo apt install zlib1g
     ---
     
     安装适用于 CUDA 版本的 cuDNN：
+
+    === "CUDA 11"
+
+        ``` console
+        $ sudo apt install cudnn9-cuda-11
+        ```
     
-    - **对于 CUDA 11：**
+    === "CUDA 12"
     
-    ``` console
-    $ sudo apt install cudnn9-cuda-11
-    ```
+        ``` console
+        $ sudo apt install cudnn9-cuda-12
+        ```
     
-    - **对于 CUDA 12：**
+    === "CUDA 13"
     
-    ``` console
-    $ sudo apt install cudnn9-cuda-12
-    ```
+        ``` console
+        $ sudo apt install cudnn9-cuda-13
+        ```
 
 === "使用 APT 安装（本地安装）"
 
@@ -312,22 +255,25 @@ $ sudo apt install zlib1g
 
     ---
 
-    选择目标平台的操作系统、架构、发行版，其中，**安装类型选择 `deb (local)`**
+    选择目标平台的操作系统、架构和发行版，其中，**安装类型选择 `deb (local)`，配置方案选择 `FULL`** (1)
+    { .annotate }
+
+    1. `FULL` 即为 cuDNN 完整版，`JIT` 版本通过仅支持图 API 的运行时融合引擎来实现体积缩减，但会略微减少支持范围和性能表现，详见：[Graphs — NVIDIA cuDNN Frontend](https://docs.nvidia.com/deeplearning/cudnn/frontend/v1.13.0/developer/graph-api.html#cudnn-jit)
 
     ![](../../../assets/images/guide/cudnn-download-1.png)
 
     /// caption
-    图中，以 cuDNN 9.7.1 为例
+    图中，以 cuDNN 9.12.0 为例
     ///
 
     ---
 
-    依照所选 Installer Type（安装类型）的安装命令进行安装
+    依照所选安装类型的安装命令进行安装
 
     ![](../../../assets/images/guide/cudnn-download-2.png)
 
     /// caption
-    图中，以 cuDNN 9.7.1 为例
+    图中，以 cuDNN 9.12.0 为例
     ///
 
 ---

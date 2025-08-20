@@ -1,5 +1,6 @@
 ---
 title: OpenGL 安装与配置指南
+description: Windows 平台 OpenGL 开发环境 GLEW 和 freeglut 搭建指南
 ---
 
 !!! abstract "OpenGL（Open Graphics Library）[^1]"

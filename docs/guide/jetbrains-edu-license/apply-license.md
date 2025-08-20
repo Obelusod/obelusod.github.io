@@ -10,19 +10,19 @@ title: 申请教育许可证（官方文件）
 
     如果忘记密码，可以尝试使用微信扫码登录
 
-![](../../assets/images/jetbrains-educational-license/get-verification-1.png)
+![](../../assets/images/jetbrains-edu-license/get-verification-1.png)
 
 ---
 
 在账号管理页面左侧，点击学信档案栏下的 **"在线验证报告"** 选项
 
-![](../../assets/images/jetbrains-educational-license/get-verification-2.png)
+![](../../assets/images/jetbrains-edu-license/get-verification-2.png)
 
 ---
 
 在 **"教育部学籍在线验证报告"** 右侧点击 **"查看"** 按钮
 
-![](../../assets/images/jetbrains-educational-license/get-verification-3.png)
+![](../../assets/images/jetbrains-edu-license/get-verification-3.png)
 
 ---
 
@@ -34,7 +34,7 @@ title: 申请教育许可证（官方文件）
 
 在已申请的、有效期内有效的报告右侧点击 **"查看"** 操作查看报告
 
-![](../../assets/images/jetbrains-educational-license/get-verification-4.png)
+![](../../assets/images/jetbrains-edu-license/get-verification-4.png)
 
 ---
 
@@ -47,7 +47,7 @@ title: 申请教育许可证（官方文件）
 
     文件名格式为：`教育部学籍在线验证报告_姓名.pdf`，请勿修改文件名称和扩展名！
 
-![](../../assets/images/jetbrains-educational-license/get-verification-5.png)
+![](../../assets/images/jetbrains-edu-license/get-verification-5.png)
 
 ---
 
@@ -55,7 +55,7 @@ title: 申请教育许可证（官方文件）
 
 在 [JetBrains 免费许可证计划网站](https://www.jetbrains.com.cn/community/education)下方，点击 **"立即申请"** 跳转至申请页面
 
-![](../../assets/images/jetbrains-educational-license/apply-license-1.png)
+![](../../assets/images/jetbrains-edu-license/apply-license-1.png)
 
 ---
 
@@ -70,9 +70,9 @@ title: 申请教育许可证（官方文件）
 
 <div class="grid" markdown>
 
-![](../../assets/images/jetbrains-educational-license/apply-license-2.png)
+![](../../assets/images/jetbrains-edu-license/apply-license-2.png)
 
-![](../../assets/images/jetbrains-educational-license/apply-license-3.png)
+![](../../assets/images/jetbrains-edu-license/apply-license-3.png)
 
 </div>
 
@@ -84,7 +84,7 @@ title: 申请教育许可证（官方文件）
 
     官方文件为人工审批，申请提交后通常在一周（长则 1~2 周）内会收到邮件通知处理结果
 
-![](../../assets/images/jetbrains-educational-license/apply-license-4.png)
+![](../../assets/images/jetbrains-edu-license/apply-license-4.png)
 
 ---
 
@@ -94,7 +94,7 @@ title: 申请教育许可证（官方文件）
 
     如果两周后还未提示收到相关邮件，可能是被视为垃圾邮件，可以检查垃圾邮件查看
 
-![](../../assets/images/jetbrains-educational-license/apply-license-5.png)
+![](../../assets/images/jetbrains-edu-license/apply-license-5.png)
 
 ---
 
@@ -113,4 +113,4 @@ title: 申请教育许可证（官方文件）
 
 1. 此外，部分 JetBrains 插件（如 Material Theme UI）也可以通过教育许可证免费使用
 
-![](../../assets/images/jetbrains-educational-license/apply-license-6.png)
+![](../../assets/images/jetbrains-edu-license/apply-license-6.png)

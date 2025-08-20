@@ -1,5 +1,6 @@
 ---
 title: Ubuntu 安装与配置指南
+description: 面向深度学习开发的全栈式 Ubuntu 指南
 hide:
   - feedback
 ---

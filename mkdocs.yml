@@ -1,3 +1,5 @@
+# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+
 site_name: Obelisk Docs
 site_url: https://obelus.cc
 site_author: Obelus
@@ -108,6 +110,9 @@ nav:
     - 申请教育许可证（官方文件）: guide/jetbrains-edu-license/apply-license.md
     - 在 JetBrains IDE 激活许可证: guide/jetbrains-edu-license/activate-license.md
 
+exclude_docs: |
+  share/
+
 extra:
   beian:
       icp: 桂ICP备2025067259号
@@ -190,5 +195,4 @@ plugins:
   - social:
       cards_layout_options:
         font_family: Noto Sans SC
-
-# yaml-language-server: $schema=https://squidfunk.github.io/mkdocs-material/schema.json
+  - include-markdown

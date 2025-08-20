@@ -1,5 +1,6 @@
 ---
 title: MySQL 安装与配置指南
+description: MySQL 社区版的本地部署与 IDE 开发指南
 ---
 
 !!! abstract "MySQL [^1]"

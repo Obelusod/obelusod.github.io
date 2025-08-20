@@ -2,72 +2,11 @@
 title: PyTorch
 ---
 
-??? example "NVIDIA 显卡驱动、CUDA、PyTorch 和 Python 的版本兼容性要求"
-
-    ![](../../../assets/images/guide/compatibility-matrix-1.png)
-    
-    ![](../../../assets/images/guide/compatibility-matrix-2.png)
-    
-    <table><thead>
-      <tr>
-        <th>PyTorch</th>
-        <th>CUDA</th>
-        <th>cuDNN</th>
-        <th>Python</th>
-      </tr></thead>
-    <tbody>
-      <tr>
-        <td>2.7</td>
-        <td>11.8, 12.6, 12.8</td>
-        <td>~ 9.7.1.26</td>
-        <td rowspan="3">&gt;=3.9, &lt;=3.13</td>
-      </tr>
-      <tr>
-        <td>2.6</td>
-        <td>11.8, 12.4, 12.6</td>
-        <td>~ 9.5.1.17</td>
-      </tr>
-      <tr>
-        <td>2.5</td>
-        <td rowspan="2">11.8, 12.1, 12.4</td>
-        <td>None</td>
-      </tr>
-      <tr>
-        <td>2.4</td>
-        <td>~ 9.1.0.70</td>
-        <td rowspan="3">&gt;=3.8, &lt;=3.12</td>
-      </tr>
-      <tr>
-        <td>2.3</td>
-        <td rowspan="3">11.8, 12.1</td>
-        <td rowspan="3">~ 8.7.0.84</td>
-      </tr>
-      <tr>
-        <td>2.2</td>
-      </tr>
-      <tr>
-        <td>2.1</td>
-        <td rowspan="2">&gt;= 3.8, &lt;=3.11</td>
-      </tr>
-      <tr>
-        <td>2.0</td>
-        <td>11.7, 11.8</td>
-        <td>~ 8.5.0.96</td>
-      </tr>
-      <tr>
-        <td>1.13</td>
-        <td>11.6, 11.7</td>
-        <td rowspan="2">~ 8.3.2.44</td>
-        <td rowspan="2">&gt;= 3.7, &lt;=3.10</td>
-      </tr>
-      <tr>
-        <td>1.12</td>
-        <td>11.3, 11.6</td>
-      </tr>
-    </tbody></table>
-
-    详见：[CUDA Toolkit Major Component Versions](https://docs.nvidia.com/cuda/cuda-toolkit-release-notes/index.html#cuda-toolkit-major-component-versions)
-    和 [Releasing PyTorch | Release Compatibility Matrix](https://github.com/pytorch/pytorch/blob/main/RELEASE.md#release-compatibility-matrix)
+{%
+    include-markdown "share/cuda.md"
+    start="<!-- cuda-driver-compatibility-start -->"
+    end="<!-- cuda-driver-compatibility-end -->"
+%}
 
 ---
 
@@ -102,7 +41,7 @@ title: PyTorch
 
     !!! warning ""
 
-        如果要更换原有的 PyTorch 版本，务必先[完全卸载 PyTorch](#卸载-pytorch) 后，再使用命令安装新版本！
+        如果要更换原有的 PyTorch 版本，务必[完全卸载 PyTorch](#卸载-pytorch) 后，再使用命令安装新版本！
 
     ??? note annotate "官方频道不再提供 Conda 包"
     
@@ -124,24 +63,44 @@ title: PyTorch
         | 南京大学镜像站（nju）      | `https://mirrors.nju.edu.cn/pytorch/whl`      |
         | 阿里云镜像站（aliyun）     | `https://mirrors.aliyun.com/pytorch-wheels`   |
 
-    ???+ quote "PyTorch v2.7.1 | CUDA 11.8, 12.6, 12.8 | Python 3.9 - 3.13"
+    ???+ quote "PyTorch v2.8.0 | CUDA 12.6, 12.8, 12.9 | Python 3.9 - 3.13"
     
-        === "CUDA 11.8"
-
-            ``` console
-            $ pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-            ```
-
         === "CUDA 12.6"
 
             ``` console
-            $ pip install torch torchvision torchaudio
+            $ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu126
             ```
 
         === "CUDA 12.8"
 
             ``` console
-            $ pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+            $ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+            ```
+
+        === "CUDA 12.9"
+
+            ``` console
+            $ pip install torch torchvision --index-url https://download.pytorch.org/whl/cu129
+            ```
+
+    ??? quote "PyTorch v2.7.1 | CUDA 11.8, 12.6, 12.8 | Python 3.9 - 3.13"
+    
+        === "CUDA 11.8"
+
+            ``` console
+            $ pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu118
+            ```
+
+        === "CUDA 12.6"
+
+            ``` console
+            $ pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu126
+            ```
+
+        === "CUDA 12.8"
+
+            ``` console
+            $ pip install torch==2.7.1 torchvision==0.22.1 torchaudio==2.7.1 --index-url https://download.pytorch.org/whl/cu128
             ```
 
     ??? quote "PyTorch v2.6.0 | CUDA 11.8, 12.4, 12.6 | Python 3.9 - 3.13"
@@ -340,7 +299,7 @@ $ python -c "import torch; print(torch.cuda.is_available())"  # 如果输出为 
 
 !!! tip "完全卸载 PyTorch"
 
-    无论之前是使用 `pip` 还是 `conda` 安装，建议同时且反复地使用两者的卸载命令进行卸载，以确保完全清除 PyTorch 及其依赖。
+    无论之前是使用 `pip` 还是 `conda` 安装，建议同时执行两者的卸载命令，以确保完全清除 PyTorch 及其依赖。
 
 === "Pip"
 

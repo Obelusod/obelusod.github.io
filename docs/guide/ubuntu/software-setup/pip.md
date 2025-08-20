@@ -43,7 +43,7 @@ title: Pip
 
 !!! tip ""
 
-    默认安装的 Pip 可能较旧，建议使用以下命令更新至最新版
+    默认安装的 Pip 可能较旧，建议使用下列命令更新至最新版
 
 ``` console
 $ python -m pip install --upgrade pip

@@ -1,5 +1,6 @@
 ---
 title: WSL 安装与配置指南
+description: WSL 的详细安装步骤、基础配置、磁盘管理与常用软件部署
 ---
 
 !!! abstract "适用于 Linux 的 Windows 子系统（Windows Subsystem for Linux，WSL）[^1]"
@@ -28,7 +29,7 @@ title: WSL 安装与配置指南
 
 ---
 
-!!! info "WSL 1 和 WSL 2 之间的主要区别[^2]"
+!!! info "WSL 2 相较于 WSL 1 的主要区别[^2]"
 
     - WSL 2 在托管 VM 内使用 **实际的 Linux 内核**、支持**完整的系统调用兼容性**以及**跨 Linux 和 Windows 操作系统的性能**。
     - WSL 2 是安装 Linux 发行版时的当前默认版本，它使用**最新最好的虚拟化技术**在**轻量级实用工具虚拟机 (VM)** 内运行 Linux 内核。
@@ -47,7 +48,7 @@ title: WSL 安装与配置指南
 | systemd 支持                                   | :material-close: | :material-check: |
 | IPv6 支持                                      | :material-check: | :material-check: |
 
-!!! note "本指南主要聚焦于 WSL 2 和 Ubuntu"
+!!! note "本指南主要聚焦于 WSL 2 和 Ubuntu 发行版"
 
     WSL 2 使用虚拟化技术并拥有完整的 Linux 内核，在文件 IO 性能和系统调用兼容性上相比 WSL 1 均有巨大提升，因此**建议安装最新的 WSL 2**。
 

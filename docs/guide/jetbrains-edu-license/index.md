@@ -1,5 +1,6 @@
 ---
 title: JetBrains 教育许可证申请指南
+description: 适用于所有在校大学生的 JetBrains 免费许可证申请指南
 ---
 
 !!! abstract "JetBrains 教育许可证 [^1]"

@@ -6,7 +6,7 @@ title: Conda
 
 !!! abstract "Anaconda"
 
-    **Anaconda** 是一个面向语言科学计算的跨平台的开源 Python 和 R 语言发行版，内置强大的环境管理与包管理工具
+    **Anaconda** 是一个面向语言科学计算的跨平台的开源 Python 和 R 语言发行版（`Anaconda Distribution`），内置强大的环境管理与包管理工具
     Conda，支持多语言环境的隔离和切换，并集成了超过 1500 个预编译的科学计算、数据处理和机器学习相关的软件包。与
     Pip 使用需编译的源码包相比（如今已支持二进制 Wheel 包），Conda
     采用二进制分发模式，直接包含可执行文件与静态链接库，避免了可能的编译难题。
@@ -14,14 +14,14 @@ title: Conda
 访问 [Anaconda Archive 官网](https://repo.anaconda.com/archive/) (1)，选择相应架构（如 `Linux-x86_64`）的最新版本下载
 { .annotate }
 
-1. 此外，也可以访问 [Download Anaconda Distribution | Anaconda](https://www.anaconda.com/download) 获取最新版本
+1. 也可以访问 [Download Anaconda Distribution | Anaconda](https://www.anaconda.com/download) 获取安装包
 
 !!! tip ""
 
     可以通过 `wget` 命令在终端中下载，例如：
 
     ``` console
-    $ wget https://repo.anaconda.com/archive/Anaconda3-2025.06-0-Linux-x86_64.sh
+    $ wget https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh
     ```
 
 ![](../../../assets/images/ubuntu/anaconda-archive.png)
@@ -69,9 +69,9 @@ $ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
 
 1. 如果需要取消默认激活 `base` 环境，可以使用下列命令：
 
-``` console
-$ conda config --set auto_activate_base false 
-```
+    ``` console
+    $ conda config --set auto_activate_base false 
+    ```
 
 ??? example "手动初始化 `conda`"
 
@@ -100,7 +100,7 @@ $ conda config --set auto_activate_base false
 
 !!! abstract "Miniconda"
 
-    **Miniconda** 是一个更轻量级的 Python 环境管理工具，它仅包含 Conda 包管理器、Python 解释器及少量核心依赖，相比 Anaconda
+    **Miniconda** 是一个更轻量级的 Python 发行版，它仅包含 Conda 包管理器、Python 解释器及少量核心依赖，相比 Anaconda
     预装的数百个科学计算包，Miniconda 具有更小的安装体积（通常仅 200MB）和更低的内存占用，尤其适用于服务器部署或快速构建纯净隔离的项目环境。
 
 执行下列命令，下载 Miniconda 最新发行版 (1)
@@ -116,8 +116,18 @@ $ wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh
 
 安装 Miniconda 发行版
 
+> 默认安装位置为 `~/miniconda3`
+
 ``` console
 $ bash Miniconda3-latest-Linux-x86_64.sh
+```
+
+---
+
+手动初始化 `conda`
+
+```console
+$ ~/miniconda3/bin/conda init --all
 ```
 
 ---
@@ -130,7 +140,9 @@ $ bash Miniconda3-latest-Linux-x86_64.sh
 
     !!! tip annotate ""
 
-        Anaconda 已附带安装 Navigator，对于 Miniconda，可以使用 `conda install anaconda-navigator` 命令安装
+        Anaconda 已附带安装 Navigator，对于 Miniconda，可以使用 `conda install anaconda-navigator` 命令安装 (1)
+
+    1. 同样也可以使用 `conda remove anaconda-navigator` 命令卸载
 
 使用下列命令启动 Navigator：
 
@@ -162,15 +174,17 @@ $ anaconda-navigator
 
 ![](../../../assets/images/ubuntu/mirror_conda.png)
 
-??? note "常用第三方源 `custom_channels`"
+??? note annotate "常用第三方源 `custom_channels`"
 
     - **conda-forge**：社区维护的开源包仓库，提供大量最新版本的跨平台软件。
-    - **pytorch（已弃用）**：PyTorch 官方频道，提供深度学习框架及其扩展库。
+    - **pytorch (1)**：PyTorch 官方频道，提供深度学习框架及其扩展库。
     - **nvidia**：NVIDIA 维护的频道，包含 CUDA 工具包等 GPU 加速库。
     - **intel**：Intel 优化的数学库（如 MKL），提升 CPU 计算性能。
     - **msys2**：Windows 系统工具链频道，包含编译工具和依赖库（如 GCC、Git）。
     - **bioconda**：生物信息学专用频道，提供生物数据分析工具（如 SAMtools、BLAST）。
     - **menpo**：计算机视觉和图像处理工具库（如 dlib、OpenCV）。
+
+1. 目前已弃用，详见：[[Announcement] Deprecating PyTorch’s official Anaconda channel](https://github.com/pytorch/pytorch/issues/138506)
 
 ---
 
@@ -219,17 +233,9 @@ $ conda update anaconda-navigator  # 更新 Navigator
 
 ---
 
-## 卸载 Navigator
-
-``` console
-$ conda remove anaconda-navigator
-```
-
----
-
 ## 卸载 Anaconda
 
-移除 `anaconda3` 目录以外的环境
+（可选）移除 `anaconda3` 目录以外的环境
 
 <div class="annotate" markdown>
 
@@ -245,18 +251,10 @@ $ ~/anaconda3/_conda constructor uninstall --prefix ${PATH_TO_ENV_DIRECTORY}
 
 ---
 
-移除所有终端配置文件中的 `conda` 初始化脚本
+（可选）移除所有终端配置文件中的 `conda` 初始化脚本
 
 ``` console
 $ conda init --reverse --all
-```
-
----
-
-移除 `.condarc` 文件和 `.conda`、`.continuum` 目录
-
-``` console
-$ rm -rf ~/.condarc ~/.conda ~/.continuum
 ```
 
 ---
@@ -267,6 +265,14 @@ $ rm -rf ~/.condarc ~/.conda ~/.continuum
 $ rm -rf anaconda3
 $ rm -rf ~/anaconda3
 $ sudo rm -rf /opt/anaconda3
+```
+
+---
+
+（可选）移除 `.condarc` 文件和 `.conda`、`.continuum` 目录
+
+``` console
+$ rm -rf ~/.condarc ~/.conda ~/.continuum
 ```
 
 ---
