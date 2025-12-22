@@ -14,14 +14,14 @@ title: Conda
 访问 [Anaconda Archive 官网](https://repo.anaconda.com/archive/) (1)，选择相应架构（如 `Linux-x86_64`）的最新版本下载
 { .annotate }
 
-1. 也可以访问 [Download Anaconda Distribution | Anaconda](https://www.anaconda.com/download) 获取安装包
+1. 也可以访问 [Download Anaconda Distribution | Anaconda](https://www.anaconda.com/download/success) 获取安装包
 
 !!! tip ""
 
     可以通过 `wget` 命令在终端中下载，例如：
 
     ``` console
-    $ wget https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh
+    $ wget https://repo.anaconda.com/archive/Anaconda3-2025.12-1-Linux-x86_64.sh
     ```
 
 ![](../../../assets/images/ubuntu/anaconda-archive.png)
@@ -35,7 +35,7 @@ title: Conda
     如果使用 `sudo` 以管理员身份运行，Anaconda 将安装至 `root` 目录，之后安装软件包时可能会出现权限问题
 
 ``` console
-$ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
+$ bash Anaconda3-*-Linux-x86_64.sh
 ```
 
 ---
@@ -77,10 +77,10 @@ $ bash ${Anaconda3-xxxx.xx-xx-Linux-x86_64.sh}
 
     如果需要手动初始化 `conda`，可以使用下列命令：
 
-    > 将 `${PATH_TO_CONDA}` 替换为 Anaconda 的安装目录，默认为 `~/anaconda3`
+    > 如果更改了默认安装位置，需要将 `~/anaconda3` 替换为实际路径
 
     ``` console
-    $ source ${PATH_TO_CONDA}/bin/activate
+    $ source ~/anaconda3/bin/activate
     $ conda init --all # (1)!
     ```
 

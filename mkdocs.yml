@@ -99,7 +99,7 @@ nav:
     - guide/mysql/index.md
     - 安装 MySQL: guide/mysql/installation.md
     - 安装 SQL IDE: guide/mysql/ide.md
-    - 常见安装错误: guide/mysql/faq.md
+    - 故障排除: guide/mysql/troubleshooting.md
   - Android Studio 安装与配置指南:
     - guide/android-studio/index.md
     - 安装 Android Studio: guide/android-studio/installation.md

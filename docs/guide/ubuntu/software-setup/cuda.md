@@ -34,9 +34,7 @@ $ sudo apt-key del 7fa2af80
     
     ``` console
     $ wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
-
     $ sudo dpkg -i cuda-keyring_1.1-1_all.deb
-
     $ sudo apt update
     ```
     
@@ -69,6 +67,9 @@ $ sudo apt-key del 7fa2af80
         - `cuda-toolkit-12-5`
         - `cuda-toolkit-12-6`
         - `cuda-toolkit-12-8`
+        - `cuda-toolkit-12-9`
+        - `cuda-toolkit-13-0`
+        - `cuda-toolkit-13-1`
 
         !!! tip ""
     
@@ -161,11 +162,18 @@ $ gedit ~/.bashrc
 
 将 CUDA 的路径 `PATH` 和 `LD_LIBRARY_PATH` 写入 `.bashrc` 文件
 
-> 需要将 `cuda-x.x` 替换为实际安装的版本，例如 `cuda-11.8`
+!!! tip annotate ""
+
+    此处使用 `/usr/local/cuda/` 软链接指向了**最后安装的 CUDA 版本**，如果存在多个版本可以自行修改生效的版本 (1)
+
+1. 可以使用下列命令查看所有已安装的 CUDA 版本：
+   ``` console
+   $ ls -l /usr/local/ | grep cuda
+   ```
 
 ``` bash title=".bashrc"
-export PATH=/usr/local/cuda-x.x/bin${PATH:+:${PATH}}
-export LD_LIBRARY_PATH=/usr/local/cuda-x.x/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
+export PATH=/usr/local/cuda/bin${PATH:+:${PATH}}
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
 ```
 
 ![](../../../assets/images/guide/bashrc-cuda.png)
@@ -181,8 +189,6 @@ $ source ~/.bashrc
 ---
 
 安装完成后，查看 CUDA 版本以验证安装
-
-> 建议重启系统以重新加载图形界面
 
 ``` console
 $ nvcc --version
@@ -215,7 +221,7 @@ $ sudo apt autoremove --purge -V
     它通过高度优化的卷积、池化、归一化和激活函数等算法，显著提升了训练和推理任务的效率，并与主流深度学习框架（如
     TensorFlow、PyTorch）无缝集成，使开发者无需手动编写底层代码即可充分利用 GPU 性能，广泛应用于学术和工业领域的高性能计算场景。
 
-!!! note annotate "更新至 cuDNN 9"
+??? note annotate "更新至 cuDNN 9"
 
     2024年2月 cuDNN 9.0.0 发布，主要引入了对动态形状推理的优化支持，显著提升了可变输入尺寸场景（如自然语言处理）的计算效率，同时新增了针对
     Ampere 架构 GPU（如A100）的细粒度 Tensor Core 加速功能，优化了卷积、池化和归一化等核心操作的性能，并扩展了 API 以支持更灵活的模型设计。
@@ -244,9 +250,7 @@ $ sudo apt install zlib1g
     
     ``` console
     $ wget https://developer.download.nvidia.com/compute/cuda/repos/$distro/$arch/cuda-keyring_1.1-1_all.deb
-    
     $ sudo dpkg -i cuda-keyring_1.1-1_all.deb
-    
     $ sudo apt update
     ```
     

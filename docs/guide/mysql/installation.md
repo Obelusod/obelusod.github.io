@@ -209,7 +209,7 @@ title: 安装 MySQL
     
     !!! example ""    
 
-        **常见安装错误及解决方案可参考**：[常见安装错误](faq.md)
+        **常见安装错误及解决方案可参考**：[故障排查 | 安装问题](troubleshooting.md/#安装问题)
 
 ![](../../assets/images/mysql/config-8.png)
 

@@ -25,13 +25,13 @@ void myDisplay(void)
         glVertex2f(R * cos(2 * Pi / n * i), R * sin(2 * Pi / n * i));
     }
     glEnd();
-    glFlush();
+    glutSwapBuffers();
 }
 
 int main(int argc, char *argv[])
 {
     glutInit(&argc, argv);
-    glutInitDisplayMode(GLUT_RGB | GLUT_SINGLE);
+    glutInitDisplayMode(GLUT_RGB | GLUT_DOUBLE);
     glutInitWindowPosition(100, 100);
     glutInitWindowSize(400, 400);
     glutCreateWindow("第一个 OpenGL 程序");
