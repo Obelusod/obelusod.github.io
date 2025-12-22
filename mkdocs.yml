@@ -36,12 +36,14 @@ theme:
 
   features:
     - navigation.instant
+    - navigation.instant.prefetch
     - navigation.instant.progress
-    - navigation.tracking
     - navigation.top
     - navigation.tabs
     - navigation.indexes
     - navigation.footer
+    - navigation.path
+    - navigation.expand
     - toc.follow
     - search.suggest
     - search.highlight
@@ -49,6 +51,7 @@ theme:
     - content.code.annotate
     - content.tooltips
     - content.tabs.link
+    - content.footnote.tooltips
 
 nav:
   - 主页: index.md
@@ -184,9 +187,9 @@ markdown_extensions:
   - def_list
   - footnotes
   - tables
-  - footnotes
 
 plugins:
+  - optimize
   - search:
       lang:
         - zh
