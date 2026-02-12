@@ -36,16 +36,16 @@ title: 同步双系统时间
 
     安装 `ntpdate` 时间同步工具
 
-    ```bash
-    sudo apt install ntpdate
+    ``` console
+    $ sudo apt install ntpdate
     ```
     
     ---
     
     使用 `ntpdate` 工具，将系统时间与 `time.windows.com`（Windows 的 NTP 服务器）上的时间同步
     
-    ```bash
-    sudo ntpdate time.windows.com
+    ``` console
+    $ sudo ntpdate time.windows.com
     ```
     
     ---
@@ -54,8 +54,8 @@ title: 同步双系统时间
     
     > `hwclock` 工具可能需要使用 `sudo apt install util-linux-extra` 命令安装
     
-    ```bash
-    sudo hwclock --localtime --systohc # (1)!
+    ``` console
+    $ sudo hwclock --localtime --systohc # (1)!
     ```
     
     1. 此外，也可以仅使用 `sudo timedatectl set-local-rtc 1` 命令，将系统时间视为本地时间
