@@ -7,16 +7,16 @@ title: 获取系统镜像
 !!! info annotate "推荐 LTS 版本 (1)"
 
     - **[Ubuntu 24.04 LTS (Noble Numbat)](https://releases.ubuntu.com/noble/)**
-        - Linux Kernel (Initial) : v6.8
+        - Linux Kernel (GA): v6.8
         - Maintenance：2024-04-25 ~ 2029-05-31
     - **[Ubuntu 22.04 LTS (Jammy Jellyfish)](https://releases.ubuntu.com/jammy/)**
-        - Linux Kernel (Initial) : v5.15
+        - Linux Kernel (GA): v5.15
         - Maintenance：2022-04-21 ~ 2027-06-01
     - **[Ubuntu 20.04 LTS (Focal Fossa)](https://releases.ubuntu.com/focal/)**
-        - Linux Kernel (Initial) : v5.4
-        - Maintenance：2020-04-23 ~ 2025-05-29
+        - Linux Kernel (GA): v5.4
+        - Maintenance：2020-04-23 ~ 2025-05-29 :material-alert-decagram-outline:
 
-1. LTS（Long-term Support），即长期支持版本，每两年推出新版本，每个版本提供 5 年的长期更新/维护支持。
+1. LTS（Long-term Support），即长期支持版本，每两年发布一次，提供长达 5 年的安全更新和维护。非 LTS 版本通常仅支持 9 个月，不建议生产环境使用。
 
 !!! tip "Ubuntu 桌面版（Desktop）与服务器版（Server）"
 
@@ -29,8 +29,8 @@ title: 获取系统镜像
     - **清华大学镜像站（Ubuntu）**：<https://mirrors.tuna.tsinghua.edu.cn/ubuntu-releases>
     - **南京大学镜像站（Ubuntu）**：<https://mirror.nju.edu.cn/ubuntu-releases>
 
-| 初始版本     | Code Name       | Linux Kernel | GNOME | Python | GCC    | systemd |
-|:------------:|:---------------:|:------------:|:-----:|:------:|:------:|:-------:|
-| Ubuntu 24.04 | Noble Numbat    | 6.8          | 46    | 3.12   | 14     | 255.4   |
-| Ubuntu 22.04 | Jammy Jellyfish | 5.15         | 42    | 3.10.4 | 11.2.0 | 249.11  |
-| Ubuntu 20.04 | Focal Fossa     | 5.4          | 3.36  | 3.8.2  | 9.3    | 242     |
+| LTS Version  | Code Name       | Kernel (GA) | GNOME | Python | GCC  | systemd |
+|:------------:|:---------------:|:-----------:|:-----:|:------:|:----:|:-------:|
+| Ubuntu 24.04 | Noble Numbat    |     6.8     | 46    |  3.12  |  14  | 255.4   |
+| Ubuntu 22.04 | Jammy Jellyfish |    5.15     | 42    |  3.10  | 11.2 | 249.11  |
+| Ubuntu 20.04 | Focal Fossa     |     5.4     | 3.36  |  3.8   | 9.3  | 242     |

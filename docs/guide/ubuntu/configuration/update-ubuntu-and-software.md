@@ -52,6 +52,11 @@ title: 更新 Ubuntu 与软件
     Signed-By: /usr/share/keyrings/ubuntu-archive-keyring.gpg
     ```
 
+!!! example "Ubuntu 24.04 及以上版本建议使用 DEB822 格式"
+
+    自 Ubuntu 24.04 LTS 起，APT 配置文件默认为 **DEB822 格式** (`.sources`)，而非传统的单行格式
+    (`.list`)，为了避免源重复报错，建议优先使用 DEB822 格式。如果是在此之前的版本可能不兼容，需要使用**传统格式**。
+
 === "编辑配置文件更换"
 
     === "DEB822 格式（ubuntu.sources）"

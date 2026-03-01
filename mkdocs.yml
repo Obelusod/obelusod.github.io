@@ -65,7 +65,7 @@ nav:
     - 配置 Ubuntu:
       - guide/ubuntu/configuration/index.md
       - guide/ubuntu/configuration/update-ubuntu-and-software.md
-      - guide/ubuntu/configuration/set-root-password.md
+      - guide/ubuntu/configuration/managing-root-access.md
       - guide/ubuntu/configuration/install-nvidia-drivers.md
       - guide/ubuntu/configuration/remove-snap-packages.md
       - guide/ubuntu/configuration/localize-user-directories.md

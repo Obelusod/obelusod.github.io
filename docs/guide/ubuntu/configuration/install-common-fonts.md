@@ -37,10 +37,10 @@ $ sudo apt install font-manager
 
 获取常用字体
 
-<div class="grid cards" markdown>
+<div class="grid cards annotate" markdown>
 
 - :material-microsoft:{ .lg .middle }
-  **[Microsoft's Core Fonts（微软字体库）](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web)**
+  **[Microsoft's Core Fonts（微软字体库）](https://en.wikipedia.org/wiki/Core_fonts_for_the_Web)**(1)
 - :material-format-font:{ .lg .middle }
   **[Source Han Serif（思源宋体）](https://source.typekit.com/source-han-serif/cn/)**
 - :simple-harmonyos:{ .lg .middle }
@@ -49,6 +49,11 @@ $ sudo apt install font-manager
   **[JetBrains Mono](https://www.jetbrains.com/lp/mono/)**
 
 </div>
+
+1. 可以使用下列命令一键安装：
+``` console
+$ sudo apt install ttf-mscorefonts-installer
+```
 
 ---
 

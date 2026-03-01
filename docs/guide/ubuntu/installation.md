@@ -98,7 +98,7 @@ title: 安装 Ubuntu
 
 在 GRUB 启动菜单中，选择 **"Try or Install Ubuntu"**（尝试或安装 Ubuntu），进入 Ubuntu 系统
 
-???+ info "GRUB 选项说明"
+??? info "GRUB 选项说明"
 
     - **Try or Install Ubuntu**：进入 Ubuntu 的 Live CD 系统，试用或安装 Ubuntu，可以在不安装系统的情况下直接从启动盘启动，通常用于安装新的操作系统或者修复旧的操作系统。
     - **Ubuntu (safe graphics)**：以安全图形模式启动 Ubuntu 系统，确保系统以兼容性较好的图形模式启动，从而减少可能出现的图形或显卡驱动问题。
@@ -140,11 +140,10 @@ title: 安装 Ubuntu
 
 选择一种网络类型，根据网络情况选择是否连接至互联网
 
-!!! tip "额外安装与联网更新"
+!!! tip "联网更新"
 
-    连接网络后会提供额外的安装选项（如可选专有软件），并在安装过程中自动获取更新，但可能会导致安装时间大大延长。
-
-    如果网络较差，建议选择 `Do not connect to the internet` 暂不连接网络。
+    连接网络后会提供额外的更新选项，可以选择在安装过程中获取更新，但可能会导致安装时间大大延长。如果网络较差，建议选择
+    `Do not connect to the internet` 暂不连接网络。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-4.png)
 
@@ -160,7 +159,7 @@ title: 安装 Ubuntu
 
 选择 **"Interactive installation"**（交互安装）进行自定义配置安装
 
-!!! info "选项说明"
+??? info "安装方式"
 
     - **Interactive installation（交互安装）**：即传统的安装方式，在安装过程中，用户需要根据引导逐一选择或输入相关配置信息（如分区、账户、时区等），直到完成所有配置后才会开始安装，适用于普通用户的自定义安装。
     - **Automated installation（自动安装）**：一种无需用户干预、提前配置的高级安装方式，通过网络从指定的 URL
@@ -176,11 +175,11 @@ title: 安装 Ubuntu
 
 根据需要选择预安装的应用，推荐选择 **"Default selection"**（默认集合）进行最小化安装
 
-!!! info "选项说明"
+!!! info "预装集合"
 
     - **Default selection（默认集合）**：即最小化安装，仅预装一些基本的应用，但依然包括捆绑的软件（如 Snap、FireFox）。
     - **Extened selection（扩展集合）**：附带安装一些常用的办公应用、工具（如
-    LibreOffice、Rhythmbox、GNOME Calendar），无需网络连接即可离线安装（使用 snap 包）。
+    LibreOffice、Rhythmbox、GNOME Calendar），无需网络连接即可离线安装。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-7.png)
 
@@ -188,7 +187,7 @@ title: 安装 Ubuntu
 
 ### 专有软件（Proprietary Software）
 
-选择是否安装推荐的专有软件（如显卡驱动、Wi-Fi 驱动和编解码器等），建议此处**全都不勾选**，后续再自行安装
+选择是否安装推荐的专有软件（如显卡驱动、Wi-Fi 驱动和编解码器等），建议此处**全都不勾选**，后续有需要再自行安装
 
 !!! warning "开源显卡驱动"
 
@@ -205,20 +204,20 @@ title: 安装 Ubuntu
 
 根据实际情况选择安装类型和磁盘分区
 
-!!! question "选择安装类型"
+!!! question "如何选择安装类型"
 
-    - 如果已有 Windows 系统且需要安装双系统，可以选择 **"Install Ubuntu alongside Windows Boot Manager and Ubuntu 24.04 LTS"**，保留
+    - 如果已有 Windows 系统且需要**安装双系统**，可以选择 "Install Ubuntu alongside Windows Boot Manager and Ubuntu 24.04 LTS"，保留
     Windows 相关文件并与 Ubuntu 共存，将会自动进行分区。
-    - 如果安装双系统或自定义分区，选择 **"Manual installation"**（手动安装），自定义磁盘分区。
-    - 如果仅使用 Ubuntu（或不存在 Windows 系统），选择 **"Erase disk and install Ubuntu"**（擦除磁盘并安装 Ubuntu）。
+    - 如果安装双系统或**自定义分区**，选择 "Manual installation"（手动安装），自定义磁盘分区。
+    - 如果**仅使用 Ubuntu**（不存在其他系统），选择 "Erase disk and install Ubuntu"（擦除磁盘并安装 Ubuntu）。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-9.png)
 
 ---
 
-!!! example "手动分区"
+!!! example "手动分区指南"
 
-    以下步骤为自定义分区，即选择 **"Manual installation"**（手动安装）的情况。
+    以下步骤为自定义分区，即选择 **"Manual installation"**（手动安装）的情况，如果不需要手动分区可以跳过此步骤。
 
 选择一块磁盘的 **"Free space"**（空闲区）(1)，注意不同磁盘分区的命名差异
 { .annotate }
@@ -256,9 +255,11 @@ title: 安装 Ubuntu
 
 ---
 
-???+ info "Linux 目录结构 [^1]"
+选择 **"Free space"**（空闲区），并点击左下方 **"+"** 按钮，新建根挂载点 `/` 分区
 
-    在基于 Linux 内核的系统中，所有的目录和文件都置于**根挂载点`/`**下，可以为某些重要分区/目录单独地分配一个独立的分区，以提高系统的管理效率、安全性和性能，并避免数据损坏或丢失。
+??? info "Linux 目录结构 [^1]"
+
+    在基于 Linux 内核的系统中，所有的目录和文件都置于**根挂载点**下。
 
     | 常见目录/分区                          | 描述                                                |
     |:---------------------------------------|:----------------------------------------------------|
@@ -276,57 +277,7 @@ title: 安装 Ubuntu
 
 !!! tip "建议仅划分出根挂载点"
 
-    在 Ubuntu 24.04 之后，引导分区会自动分配大小，因此建议**仅划分出根挂载点 `/`** 即可。
-
-??? example "参考分区方案（GPT，200 GB）"
-
-    以下分区方案仅供参考，可以根据具体需求适当调整，例如不单独分配 `/home` 分区，或增加 `/usr`、`/var` 分区。
-
-    一般而言，如果电脑内存为 16GB 或以上，`swap` 分区可以不分配或少分配（日常使用基本不会占满）。
-
-    对于根目录 `/` 和用户主目录 `/home`，建议用剩余的所有空间以 4:6 或 5:5 比例分配，两者至少为 20GB。
-
-    <table><thead>
-      <tr>
-        <th style="text-align: center;">独立分区</th>
-        <th style="text-align: center;">分区类型<br/>（Type）</th>
-        <th style="text-align: center;">文件系统<br/>（File System）</th>
-        <th style="text-align: center;">挂载点<br/>（Mount Point）</th>
-        <th style="text-align: center;">大小<br/>（Size）</th>
-      </tr></thead>
-    <tbody>
-      <tr>
-        <td style="text-align: center;">引导分区 <code>/boot/efi</code></td>
-        <td style="text-align: center;">逻辑分区（Logical）</td>
-        <td style="text-align: center;" colspan="2">EFI 系统分区（EFI System Partition）</td>
-        <td style="text-align: center;">1 GB</td>
-      </tr>
-      <tr>
-        <td style="text-align: center;">内存交换分区 <code>swap</code></td>
-        <td style="text-align: center;">逻辑分区（Logical）</td>
-        <td style="text-align: center;" colspan="2">交换空间（swap area）</td>
-        <td style="text-align: center;">4096 MB</td>
-      </tr>
-      <tr>
-        <td style="text-align: center;">根挂载点 <code>/</code></td>
-        <td style="text-align: center;">主分区（Primary）</td>
-        <td style="text-align: center;">Ext4 日记文件系统</td>
-        <td style="text-align: center;"><code>/</code></td>
-        <td style="text-align: center;">81920 MB</td>
-      </tr>
-      <tr>
-        <td style="text-align: center;">用户主目录 <code>/home</code></td>
-        <td style="text-align: center;">逻辑分区（Logical）</td>
-        <td style="text-align: center;">Ext4 日记文件系统</td>
-        <td style="text-align: center;"><code>/home</code></td>
-        <td style="text-align: center;">剩余所有</td>
-      </tr>
-    </tbody>
-    </table>
-
----
-
-选择 **"Free space"**（空闲区），并点击左下方 **"+"** 按钮，依次新建分区
+    从 Ubuntu 24.04 起，引导分区 `/boot/efi` 会自动分配大小，交换分区 `swap` 也已被 Swapfile（交换文件）替代，因此建议**仅划分出根挂载点 `/`** 即可。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-12.png)
 
@@ -346,14 +297,14 @@ title: 安装 Ubuntu
 
 设置用户名、计算机名和密码，其中用户和计算机名不宜过长，否则在终端输入命令时提示符可能会超出窗口视野
 
-!!! tip "远程控制无需登录"
-
-    如果该电脑/系统常被用于远程操控，可以取消勾选 `Require my password to log in`（登录时需要密码），以便每次重启后无需登录直接进入桌面。
-
-!!! info annotate "Use Active Directory（使用活动目录）[^2]"
+??? info annotate "Use Active Directory（使用活动目录）[^2]"
 
     Active Directory（AD）是用于在网络环境中为企业和组织提供存储和组织网络资源和用户信息的组策略服务，以及统一身份验证和访问控制的能力；在安装
     Ubuntu 时，可以选择使用 AD 对 Ubuntu 进行用户身份验证和集中式管理。
+
+!!! tip "远程控制无需登录"
+
+    如果该电脑/系统常被用于远程操控，可以取消勾选 `Require my password to log in`（登录时需要密码），以便每次重启后无需登录直接进入桌面。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-14.png)
 

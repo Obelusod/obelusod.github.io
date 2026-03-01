@@ -4,7 +4,7 @@ title: 更改开机默认启动项
 
 !!! abstract "引导加载程序（Boot Loader）"
 
-    安装 Ubuntu 系统时，Ubuntu 的引导加载程序 GNU GRUB 会被安装至第一块硬盘的第一块扇区，即主引导记录（MBR）中，并且优先于
+    安装 Ubuntu 系统后，Ubuntu 的引导加载程序 **GNU GRUB** 会被安装至第一块硬盘的第一块扇区，即主引导记录（MBR）中，并且优先于
     Windows Boot Manager（Windows 启动管理器），因此开机后会进入 GNU GRUB 菜单（第一项），而不是 Windows 系统（第二项）。
 
     **可以通过更改 BIOS 或 GRUB 的启动项，设置开机后默认进入 Windows 或 Ubuntu 系统。**
@@ -15,12 +15,12 @@ title: 更改开机默认启动项
     
     -   **更改 BIOS 默认启动项（以 Windows 为主）**
 
-        如果日常主要使用 Windows（而非 Ubuntu）系统，那么可以将 BIOS 的第一启动项改为 Windows Boot Manager（Windows
-        启动管理器），开机后直接进入 Windows 系统。
+        如果日常主要使用 Windows 系统，那么可以将 BIOS 的第一启动项改为 Windows Boot Manager（Windows
+        启动管理器），开机后直接进入 Windows 系统。如果之后想切换至 Ubuntu 系统，则需要进入 BIOS 中选择。
     
     -   **更改 GRUB 默认启动项（以 Ubuntu 为主）**
 
-        如需在开机后仍进入 GNU GRUB 菜单，但不使用第一启动项，可以对配置文件进行更改，使启动菜单默认选择此项（在倒计时结束后，自动启动所选系统/程序）。
+        如需在开机后仍进入 GNU GRUB 菜单，但更改第一启动项（在倒计时结束后，自动启动所选系统），可以对配置文件进行修改。
         
         另外，安装其他 Linux 内核版本后，也可以通过更改默认项优先使用指定的内核版本。
     
@@ -37,7 +37,7 @@ title: 更改开机默认启动项
 
     ---
 
-    通常在 BIOS（Advanced Mode）的 **"Boot"**（启动）栏中，设置 **"Boot Option #1"**（启动选项 #1）为
+    以华硕主板为例，通常在 BIOS（Advanced Mode）的 **"Boot"**（启动）栏中，设置 **"Boot Option #1"**（启动选项 #1）为
     `Windows Boot Manager`（Windows 启动管理器），最后保存更改即可
 
     ![](../../../assets/images/ubuntu/bios-boot.png)

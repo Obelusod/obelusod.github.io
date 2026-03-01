@@ -17,20 +17,23 @@ Ubuntu 终端默认使用 Bash（Bourne-Again Shell）
 
 ---
 
-Bash 命令提示符中，如 `vmware@vmwaretest:~$`、`root@mypc:/home#`
+Bash 命令提示符中，如 `vmware@vmwaretest:~$`、`root@mypc:/home#` 含义如下：
 
 - `vmware`、`root`：当前用户名
 - `vmwaretest`、`mypc`：当前主机名
-- `~`、`/home`：当前路径（工作目录）
-- `$`：表示终端已准备好接收命令输入（当前为普通用户）
+- `~`、`/home`：当前路径（工作目录），其中 `~` 代表用户的主目录 Home
+- `$`：表示当前为普通用户
 - `#`：表示当前为超级管理员 `root` 用户
 
-!!! tip "Shell 使用提示"
+!!! tip annotate "Shell 使用提示"
 
     - 在终端中要求输入密码时，为确保安全，输入的密码不会被显示。
     - Bash 提供了命令自动补全功能，按下 ++tab++ 键可以根据当前已输入的字符自动补全完整的命令/参数/路径。
+    - 终端中的复制/粘贴快捷键分别为 ++ctrl+shift+c++ 和 ++ctrl+shift+v++ 键 (1)。
 
     建议参考：[Linux 常用命令学习 | 菜鸟教程](https://www.runoob.com/w3cnote/linux-common-command-2.html)
+
+1. 终端的++ctrl+c++（即 `^C`）常用于终止程序，而非复制文本
 
 ---
 
@@ -38,10 +41,9 @@ Bash 命令提示符中，如 `vmware@vmwaretest:~$`、`root@mypc:/home#`
 
 !!! info "文本编辑器（Text Editor）"
 
-    当使用命令打开文本文件并编辑时，需要用到文本编辑器，WSL 的 Ubuntu 可能并未默认安装，主要推荐三款文本编辑器：**Vim**、**Gedit** 和 
-    **GNOME Text Editor**。
+    当使用命令打开文本文件并编辑时，需要用到文本编辑器，主要推荐四款文本编辑器：**Vim**、**Nano**、**Gedit** 和 **GNOME Text Editor**。
 
-    **本篇指南所有涉及文本编辑的命令，均使用具有图形界面的 `gedit` 编辑，可自行更换。**
+    **本篇指南所有涉及文本编辑的命令，为了保持通用性，均使用具有图形界面的 `gedit` 编辑，可自行更换。**
 
 === "Vim"
 
@@ -50,6 +52,15 @@ Bash 命令提示符中，如 `vmware@vmwaretest:~$`、`root@mypc:/home#`
     
     ``` console
     $ sudo apt install vim
+    ```
+
+=== "Nano"
+
+    [GNU nano](https://www.nano-editor.org/) 是一款简单易用、基于命令行的文本编辑器，提供类似图形界面的直观操作体验。非常适合
+    Linux 初学者快速上手，也是大多数 Linux 发行版默认预装的终端编辑器。
+
+    ``` console
+    $ sudo apt install nano
     ```
 
 === "Gedit"

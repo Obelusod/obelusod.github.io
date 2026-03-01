@@ -20,7 +20,7 @@ title: 安装 NVIDIA 显卡驱动
 
     在 **"Additional Drivers"**（附加驱动）栏中，选择一个合适的 NVIDIA 驱动版本，然后点击 **"Apply Changes"**（应用更改）自动安装
 
-    !!! info "版本标签（Tags）"
+    ??? info "版本标签（Tags）"
 
         - `server`：适用于服务器环境
         - `open`、`open source`：开源的内核驱动
@@ -58,7 +58,7 @@ title: 安装 NVIDIA 显卡驱动
 
     1. 如果提示找不到 `ubuntu-drivers` 命令，需要使用 `sudo apt install ubuntu-drivers-common` 命令安装
 
-    !!! info "版本标签（Tags）"
+    ??? info "版本标签（Tags）"
 
         - `server`：适用于服务器环境
         - `open`、`open source`：开源的内核驱动
@@ -104,9 +104,13 @@ title: 安装 NVIDIA 显卡驱动
 
 === "使用软件包本地安装"
 
-    !!! danger "不推荐使用此方法安装！"
+    !!! danger "强烈不建议使用此方法安装！"
 
-        手动安装 NVIDIA 驱动会比前两种方法复杂得多，安装过程中也可能会遇到更多出乎意外的问题。如果前两种方法均无法安装或遇到问题，可以再尝试手动安装。
+        手动安装 NVIDIA 驱动会比前两种方法复杂得多，安装过程中也可能会遇到非常多严重的问题，甚至导致**系统崩溃**。如果前两种方法均无法安装或遇到问题，可以再尝试手动安装。
+
+        !!! warning "本文安装方法仅供参考，请确保熟悉 Ubuntu 系统并拥有解决系统性错误的能力"
+
+            
 
     ---
 
@@ -143,7 +147,7 @@ title: 安装 NVIDIA 显卡驱动
     > 如果当前正在使用 NVIDIA 驱动，执行后将卸载并自动更换为最初的开源驱动
 
     ``` console
-    $ sudo apt --purge remove nvidia*
+    $ sudo apt purge nvidia*
     ```
 
     ---
