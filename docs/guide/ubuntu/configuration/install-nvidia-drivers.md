@@ -92,7 +92,7 @@ title: 安装 NVIDIA 显卡驱动
     $ sudo apt install ${driver-name} # (1)!
     ```
     
-    1. 使用 `sudo ubuntu-drivers autoinstall` 命令可以自动安装官方推荐的驱动（不建议）
+    1. 使用 `sudo ubuntu-drivers install` 命令可以自动安装官方推荐的驱动（不建议）
 
     ---
 
@@ -147,7 +147,7 @@ title: 安装 NVIDIA 显卡驱动
     > 如果当前正在使用 NVIDIA 驱动，执行后将卸载并自动更换为最初的开源驱动
 
     ``` console
-    $ sudo apt purge nvidia*
+    $ sudo apt purge "nvidia-*"
     ```
 
     ---
@@ -155,20 +155,19 @@ title: 安装 NVIDIA 显卡驱动
     安装 NVIDIA 驱动程序安装时所需的编译和链接工具
 
     ``` console
-    $ sudo apt install build-essential libglvnd-dev pkg-config # (1)!
+    $ sudo apt install build-essential libglvnd-dev pkg-config
     ```
-    
-    1. `build-essential`、`libglvnd-dev`、`pkg-config` 包含了绝大部分常用的编译和链接工具
 
     ---
 
-    编辑 Linux 内核模块的禁用列表文件 `blacklist`
+    新建开源驱动模块的禁用文件 `blacklist-nvidia-nouveau.conf` (1)
+    { .annotate }
+    
+    1. 也可以在同路径下，编辑 Linux 内核模块的 `blacklist.conf` 文件
 
     ``` console
-    $ sudo gedit /etc/modprobe.d/blacklist.conf # (1)!
+    $ sudo gedit /etc/modprobe.d/blacklist-nvidia-nouveau.conf
     ```
-    
-    1. 也可以在同路径下，新建 `blacklist-nvidia-nouveau.conf` 文件，专门用于禁用 Nvidia Nouveau 开源驱动程序
 
     ---
 
@@ -253,7 +252,7 @@ title: 安装 NVIDIA 显卡驱动
         在下列命令尾加上 `--no-opengl-files` 参数，不安装 OpenGL 文件，可能解决某些报错
     
     ``` console
-    $ sudo bash ${NVIDIA-Linux-x86_64-xxx.xx.run}
+    $ sudo bash NVIDIA-Linux-x86_64-*.run
     ```
 
     ---

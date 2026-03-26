@@ -4,8 +4,8 @@ title: 更改开机默认启动项
 
 !!! abstract "引导加载程序（Boot Loader）"
 
-    安装 Ubuntu 系统后，Ubuntu 的引导加载程序 **GNU GRUB** 会被安装至第一块硬盘的第一块扇区，即主引导记录（MBR）中，并且优先于
-    Windows Boot Manager（Windows 启动管理器），因此开机后会进入 GNU GRUB 菜单（第一项），而不是 Windows 系统（第二项）。
+    安装 Ubuntu 系统后，其引导加载程序 **GNU GRUB** 可能会接管电脑的启动流程，优先于 Windows Boot Manager（Windows
+    启动管理器），导致开机后会进入 GNU GRUB 菜单，且默认第一项为 Ubuntu。
 
     **可以通过更改 BIOS 或 GRUB 的启动项，设置开机后默认进入 Windows 或 Ubuntu 系统。**
 
@@ -16,7 +16,7 @@ title: 更改开机默认启动项
     -   **更改 BIOS 默认启动项（以 Windows 为主）**
 
         如果日常主要使用 Windows 系统，那么可以将 BIOS 的第一启动项改为 Windows Boot Manager（Windows
-        启动管理器），开机后直接进入 Windows 系统。如果之后想切换至 Ubuntu 系统，则需要进入 BIOS 中选择。
+        启动管理器），开机后直接进入 Windows 系统。如果之后想切换至 Ubuntu 系统，需要进入 BIOS 中选择。
     
     -   **更改 GRUB 默认启动项（以 Ubuntu 为主）**
 
@@ -51,18 +51,17 @@ title: 更改开机默认启动项
     执行下列命令，查看 GRUB 配置文件中的所有启动项的顺序和名称
 
     ``` console
-    $ cat /boot/grub/grub.cfg | grep menu
+    $ sudo awk -F"['\"]" '/menuentry |submenu / {print $1": " $2}' /boot/grub/grub.cfg
     ```
     
-    ![](../../../assets/images/ubuntu/cat-grub-menu.png)
+    ![](../../../assets/images/ubuntu/awk-grub-cfg.png)
 
-    !!! info "GRUB 菜单选项"
+    ???+ info "GRUB 菜单选项"
 
-        每段首行的 `menuentry` 和 `submenu` 分别按顺序对应一级菜单的选项，其中 `submenu` 二级菜单下还有多个选项。
-
-        单引号 `''` 内即为启动项的名称（如 `Windows Boot Manager (on /dev/nvme0n1p1)` ），可以根据此名称设置默认启动项。
-    
-    ![](../../../assets/images/ubuntu/grub-menu.png)
+        在上述命令的输出结果中，每段不带缩进（除了最后一项）的 `menuentry` 和 `submenu` 分别按顺序对应主菜单的选项，其中
+        `submenu` 下带行首缩进的 `menuentry` 为子菜单选项。在开机启动的 GRUB 中只会显示主菜单的选项。
+ 
+        ![](../../../assets/images/ubuntu/grub-menu.png)
 
     ---
 
@@ -74,24 +73,27 @@ title: 更改开机默认启动项
 
     ---
 
-    将文件中 `GRUB_DEFAULT=0` 的原始值 `0`，改为指定启动项的项数（从 0 计数）或名称（加 `""` 双引号），修改完成后保存文件
+    将文件中 `GRUB_DEFAULT` 的值，改为指定启动项的**索引值**（从 0 计数）或**名称**，并保存文件
 
-    !!! info "二级菜单"
+    !!! info "子菜单（Submenu）"
+
+        菜单的启动项也可以用索引值（从 0 计数）或完整名称表示。建议使用完整名称，以免内核更新或启动项变动导致索引错误。
     
-        如果启动项在二级菜单，需要使用 `>` 符号连接，并用 `""` 双引号括起来，例如：
+        如果启动项在子菜单，需要使用 `>` 符号连接，并用 `""` 双引号括起来，例如（下列两者等价）：
 
-        `GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 5.19.0-43-generic"`
-
-        `GRUB_DEFAULT="1>2"`
+        - `GRUB_DEFAULT="1>2"`
+        - `GRUB_DEFAULT="Advanced options for Ubuntu>Ubuntu, with Linux 6.14.0-27-generic"`
         
-        !!! tip ""
+        > 如果 Ubuntu 系统系统为中文，其启动项的名称也为中文
 
-            如果 Ubuntu 系统为中文，其启动项的名称也为中文
+    !!! tip "记忆上次选择"
+
+        如果需要默认选中上一次成功进入的系统，可以将 `GRUB_DEFAULT` 改为 `saved`，然后在其下方新增一行 `GRUB_SAVEDEFAULT=true`
 
     ![](../../../assets/images/ubuntu/edit-grub-file.png)
 
     /// caption
-    图中，将默认启动项更改为 Ubuntu 高级选项（一级菜单）中的 Linux 5.19.0-43 内核版本（二级菜单）
+    图中，将默认启动项更改为 Ubuntu 高级选项（主菜单）中的 Linux 6.14.0-27 内核版本（子菜单）
     ///
 
     ---

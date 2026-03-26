@@ -63,24 +63,44 @@ title: PyTorch
         | 南京大学镜像站（nju）      | `https://mirrors.nju.edu.cn/pytorch/whl`      |
         | 阿里云镜像站（aliyun）     | `https://mirrors.aliyun.com/pytorch-wheels`   |
 
-    ???+ quote "PyTorch v2.10.0 | CUDA 12.6, 12.8, 13.0 | Python 3.10 - 3.14"
+    ???+ quote "PyTorch v2.11.0 | CUDA 12.6, 12.8, 13.0 | Python 3.10 - 3.14"
     
         === "CUDA 12.6"
 
             ``` console
-            $ pip install torch==2.10.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
+            $ pip install torch==2.11.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu126
             ```
 
         === "CUDA 12.8"
 
             ``` console
-            $ pip install torch==2.10.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
+            $ pip install torch==2.11.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128
             ```
 
         === "CUDA 13.0"
 
             ``` console
-            $ pip install torch==2.10.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+            $ pip install torch==2.11.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu130
+            ```
+
+    ??? quote "PyTorch v2.10.0 | CUDA 12.6, 12.8, 13.0 | Python 3.10 - 3.14"
+    
+        === "CUDA 12.6"
+
+            ``` console
+            $ pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu126
+            ```
+
+        === "CUDA 12.8"
+
+            ``` console
+            $ pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu128
+            ```
+
+        === "CUDA 13.0"
+
+            ``` console
+            $ pip install torch==2.10.0 torchvision==0.25.0 torchaudio==2.10.0 --index-url https://download.pytorch.org/whl/cu130
             ```
 
     ??? quote "PyTorch v2.9.1 | CUDA 12.6, 12.8, 13.0 | Python 3.10 - 3.14"

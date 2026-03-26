@@ -12,13 +12,18 @@
       </tr></thead>
     <tbody>
       <tr>
+        <td>2.11</td>
+        <td rowspan="3">12.6, 12.8, 13.0</td>
+        <td>~ 9.10, 9.17</td>
+        <td rowspan="3">&gt;=3.10, &lt;=3.14</td>
+      </tr>
+      <tr>
         <td>2.10</td>
-        <td rowspan="2">12.6, 12.8, 13.0</td>
-        <td rowspan="2">~ 9.10, 9.13</td>
-        <td rowspan="2">&gt;=3.10, &lt;=3.14</td>
+        <td>~ 9.10, 9.15</td>
       </tr>
       <tr>
         <td>2.9</td>
+        <td>~ 9.10, 9.13</td>
       </tr>
       <tr>
         <td>2.8</td>

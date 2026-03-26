@@ -63,7 +63,7 @@ $ tlp-stat -s
 $ sudo tlp-stat -b
 ```
 
-![](../../../assets/images/ubuntu/tlp-stat-b.png)
+![](../../../assets/images/ubuntu/tlp-stat-b-1.png)
 
 /// caption
 图中，`Supported features: charge thresholds` 说明支持充电阈值功能
@@ -73,7 +73,7 @@ $ sudo tlp-stat -b
 
 ## 配置充电阈值
 
-编辑 TLP 配置文件，查找 `START/STOP_CHARGE_THRESH_BATx` 项 (1)
+编辑 TLP 配置文件，查找 `CHARGE_THRESH` 项 (1)
 { .annotate }
 
 1. 可以使用快捷键 ++ctrl+f++ 快速查找关键字
@@ -123,7 +123,7 @@ $ sudo tlp start
 $ sudo tlp-stat -b
 ```
 
-![](../../../assets/images/ubuntu/tlp-stat-b.png)
+![](../../../assets/images/ubuntu/tlp-stat-b-2.png)
 
 /// caption
 图中，`/sys/class/power_supply/BAT0/charge_control_end_threshold` 即为停止充电阈值

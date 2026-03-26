@@ -39,7 +39,7 @@ title: 安装 Ubuntu
 
 !!! info "引导启动"
 
-    安装 Ubuntu 系统需要从引导盘（U盘）使用 ISO 镜像安装。
+    安装 Ubuntu 系统需要从引导盘（U 盘）使用 ISO 镜像安装。
 
 === "在 BIOS/Boot Manager 启动"
 
@@ -178,7 +178,7 @@ title: 安装 Ubuntu
 !!! info "预装集合"
 
     - **Default selection（默认集合）**：即最小化安装，仅预装一些基本的应用，但依然包括捆绑的软件（如 Snap、FireFox）。
-    - **Extened selection（扩展集合）**：附带安装一些常用的办公应用、工具（如
+    - **Extended selection（扩展集合）**：附带安装一些常用的办公应用、工具（如
     LibreOffice、Rhythmbox、GNOME Calendar），无需网络连接即可离线安装。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-7.png)
@@ -191,10 +191,8 @@ title: 安装 Ubuntu
 
 !!! warning "开源显卡驱动"
 
-    如果勾选 `Install third-party software for graphics and Wi-Fi hardware`，将会安装第三方非开源的专有驱动（如
-    NVIDIA 驱动），否则将默认使用开源的显卡驱动（Xorg）。
-
-    另外，勾选后安装的专有驱动（如 NVIDIA 驱动）可能不是最新的稳定版本，如出现问题可以在之后更换。
+    Ubuntu 默认使用开源的显卡驱动（Xorg），如果勾选 `Install third-party software for graphics and Wi-Fi hardware`，将会安装第三方非开源的专有驱动（如
+    NVIDIA/AMD 驱动）。另外，勾选后安装的专有驱动可能不是最新版本，如出现问题可以在之后更换。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-8.png)
 
@@ -247,6 +245,10 @@ title: 安装 Ubuntu
 在左下方选择 **"Device for boot loader installation"**（安装引导程序的设备），即 Linux 引导分区 `/boot/efi`
 的位置，默认会自动分配分区大小
 
+!!! tip "双系统引导位置"
+
+    如果在此之前已安装有 Windows 系统，可以将引导程序安装在 Windows 系统的引导分区（`/boot/efi`）中，无需新建引导分区。
+
 ![](../../assets/images/ubuntu/ubuntu-installation-11.png)
 
 /// caption
@@ -277,7 +279,7 @@ title: 安装 Ubuntu
 
 !!! tip "建议仅划分出根挂载点"
 
-    从 Ubuntu 24.04 起，引导分区 `/boot/efi` 会自动分配大小，交换分区 `swap` 也已被 Swapfile（交换文件）替代，因此建议**仅划分出根挂载点 `/`** 即可。
+    在目前的 Ubuntu 新版本中，引导分区 `/boot/efi` 会自动分配大小，交换分区 `swap` 也已被 Swapfile（交换文件）替代，因此建议**仅划分出根挂载点 `/`** 即可。
 
 ![](../../assets/images/ubuntu/ubuntu-installation-12.png)
 
@@ -295,7 +297,7 @@ title: 安装 Ubuntu
 
 ### 设置账户（Account）
 
-设置用户名、计算机名和密码，其中用户和计算机名不宜过长，否则在终端输入命令时提示符可能会超出窗口视野
+设置昵称、主机名、用户名（必须小写）和密码，其中用户名和主机名不宜过长
 
 ??? info annotate "Use Active Directory（使用活动目录）[^2]"
 
@@ -361,7 +363,7 @@ title: 安装 Ubuntu
 
 启动后进入 GNU GRUB 系统，选择启动引导（Boot）项，或是在等待 10s 后自动选择第一启动项
 
-> 其中 `Window Boot Manager` 为 Windows 启动管理器，用于启动 Windows 系统
+> 其中 `Windows Boot Manager` 为 Windows 启动管理器，用于启动 Windows 系统
 
 ![](../../assets/images/ubuntu/ubuntu-installation-21.png)
 
