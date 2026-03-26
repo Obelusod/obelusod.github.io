@@ -1,0 +1,90 @@
+@import url("https://fontsapi.zeoseven.com/442/main/result.css");
+
+/* 设置代码块字体 */
+:root {
+    --md-code-font: "Maple Mono NF CN";
+}
+
+/* 设置内容网格的最大宽度 */
+.md-grid {
+    max-width: 64rem;
+}
+
+/* 自定义锚点链接样式 */
+.toclink {
+    color: unset !important;
+}
+
+/* 自定义锚点链接悬停样式 */
+.toclink:hover {
+    color: var(--md-accent-fg-color) !important;
+}
+
+/* 隐藏侧边栏的滚动条 */
+.md-sidebar__scrollwrap {
+    scrollbar-width: none;
+}
+
+/* 隐藏代码块的滚动条 */
+.md-typeset pre > code {
+    scrollbar-width: none;
+}
+
+/* 设置备案信息样式 */
+.md-beian {
+    display: flex;
+    gap: .35rem;
+    margin: 0 .4rem;
+    padding: .2rem 0 .6rem;
+    font-size: .64rem;
+    align-items: center
+}
+
+@media screen and (min-width: 45em) {
+    .md-beian {
+        padding: .6rem 0
+    }
+}
+
+/* 设置块引用的样式 */
+.md-typeset blockquote {
+    font-size: medium;
+}
+
+/* 设置图表标题的样式 */
+.md-typeset figcaption {
+    font-style: normal;
+    font-size: smaller;
+    color: #646a73;
+    max-width: 35rem;
+}
+
+/* 设置表格显示为全宽 */
+.md-typeset__table,
+.md-typeset__table table:not([class]) {
+    width: 100%;
+    display: table;
+}
+
+/* 设置表格默认垂直居中 */
+.md-typeset table:not([class]) td:not([align]), .md-typeset table:not([class]) th:not([align]) {
+    vertical-align: middle;
+    text-align: center;
+}
+
+/* 设置反馈提示的样式 */
+.md-feedback__title {
+    font-size: smaller;
+}
+
+/* 设置按键图标的尺寸 */
+.md-typeset kbd {
+    font-size: .7em;
+    line-height: 1.3;
+    padding: 0 .5em;
+}
+
+/* 阻止代码块提示符和输出结果的复制 */
+.highlight .gp, .highlight .go { /* Generic.Prompt, Generic.Output */
+    user-select: none;
+}

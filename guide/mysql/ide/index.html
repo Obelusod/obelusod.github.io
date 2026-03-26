@@ -1,0 +1,3099 @@
+<!DOCTYPE html><html lang="zh" class="no-js"><head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="Obelus">
+      
+      
+        <link rel="canonical" href="https://obelus.cc/guide/mysql/ide/">
+      
+      
+        <link rel="prev" href="../installation/">
+      
+      
+        <link rel="next" href="../troubleshooting/">
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/logo.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>安装 SQL IDE - Obelisk Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+  
+  
+  
+  
+  <style>:root{--md-annotation-icon:url('data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2024%2024%22%3E%3Cpath%20d%3D%22M12%202A10%2010%200%200%200%202%2012a10%2010%200%200%200%2010%2010%2010%2010%200%200%200%2010-10A10%2010%200%200%200%2012%202m3%2011-2%204h-3l2-4H9V7h6z%22/%3E%3C/svg%3E');}</style>
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../stylesheets/extra.css">
+    
+      <link rel="stylesheet" href="../../../stylesheets/round.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+  
+
+
+  
+  
+
+<script id="__analytics">function __md_analytics(){function e(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],e("js",new Date),e("config","G-7NRK35CQKM"),document.addEventListener("DOMContentLoaded",(function(){document.forms.search&&document.forms.search.query.addEventListener("blur",(function(){this.value&&e("event","search",{search_term:this.value})}));document$.subscribe((function(){var t=document.forms.feedback;if(void 0!==t)for(var a of t.querySelectorAll("[type=submit]"))a.addEventListener("click",(function(a){a.preventDefault();var n=document.location.pathname,d=this.getAttribute("data-md-value");e("event","feedback",{page:n,data:d}),t.firstElementChild.disabled=!0;var r=t.querySelector(".md-feedback__note [data-md-value='"+d+"']");r&&(r.hidden=!1)})),t.hidden=!1})),location$.subscribe((function(t){e("config","G-7NRK35CQKM",{page_path:t.pathname})}))}));var t=document.createElement("script");t.async=!0,t.src="https://www.googletagmanager.com/gtag/js?id=G-7NRK35CQKM",document.getElementById("__analytics").insertAdjacentElement("afterEnd",t)}</script>
+  
+    <script>"undefined"!=typeof __md_analytics&&__md_analytics()</script>
+  
+
+    
+    
+  
+<meta property="og:type" content="website">
+<meta property="og:title" content="安装 SQL IDE - Obelisk Docs">
+<meta property="og:image" content="https://obelus.cc/assets/images/social/guide/mysql/ide.png">
+<meta property="og:image:type" content="image/png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:url" content="https://obelus.cc/guide/mysql/ide/">
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:title" content="安装 SQL IDE - Obelisk Docs">
+<meta property="twitter:image" content="https://obelus.cc/assets/images/social/guide/mysql/ide.png">
+<link href="../../../assets/stylesheets/glightbox.min.css" rel="stylesheet"><script src="../../../assets/javascripts/glightbox.min.js"></script><style id="glightbox-style">
+            html.glightbox-open { overflow: initial; height: 100%; }
+            .gslide-title { margin-top: 0px; user-select: text; }
+            .gslide-desc { color: #666; user-select: text; }
+            .gslide-image img { background: white; }
+            .gscrollbar-fixer { padding-right: 15px; }
+            .gdesc-inner { font-size: 0.75rem; }
+            body[data-md-color-scheme="slate"] .gdesc-inner { background: var(--md-default-bg-color); }
+            body[data-md-color-scheme="slate"] .gslide-title { color: var(--md-default-fg-color); }
+            body[data-md-color-scheme="slate"] .gslide-desc { color: var(--md-default-fg-color); }
+        </style></head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#推荐-sql-ide" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="Obelisk Docs" class="md-header__button md-logo" aria-label="Obelisk Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 7.5-6.47-.54L14 1l-2.53 5.96L5 7.5l4.9 4.27-1.46 6.33L14 14.74l5.56 3.36-1.47-6.33zm-6.86 4.73.4 1.71-1.51-.91-1.03-.62-1.03.62-1.51.91.39-1.71.28-1.18-.91-.79L9.88 9.1l1.76-.15 1.2-.1.47-1.11.69-1.62.69 1.62.47 1.11 1.2.1 1.75.15-1.33 1.16-.92.79zM1.16 12c-.299-.5-.171-1.11.29-1.41l2.73-1.8 1.57 1.36-3.2 2.11c-.17.11-.36.17-.55.17-.32 0-.64-.16-.84-.43m.29 8.16 5.86-3.85L7 17.76l-.34 1.37-4.11 2.71c-.17.11-.36.16-.55.16-.32 0-.64-.16-.84-.45a1.013 1.013 0 0 1 .29-1.39m5.87-8.66.92.81-.27 1.19-5.42 3.55c-.17.11-.36.16-.55.16-.32 0-.64-.15-.84-.45a1 1 0 0 1 .29-1.38z"></path></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"></path></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Obelisk Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              安装 SQL IDE
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: light)" data-md-color-scheme="default" data-md-color-primary="blue-grey" data-md-color-accent="indigo" aria-label="切换至深色模式" type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换至深色模式" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 7a5 5 0 0 1 5 5 5 5 0 0 1-5 5 5 5 0 0 1-5-5 5 5 0 0 1 5-5m0 2a3 3 0 0 0-3 3 3 3 0 0 0 3 3 3 3 0 0 0 3-3 3 3 0 0 0-3-3m0-7 2.39 3.42C13.65 5.15 12.84 5 12 5s-1.65.15-2.39.42zM3.34 7l4.16-.35A7.2 7.2 0 0 0 5.94 8.5c-.44.74-.69 1.5-.83 2.29zm.02 10 1.76-3.77a7.131 7.131 0 0 0 2.38 4.14zM20.65 7l-1.77 3.79a7.02 7.02 0 0 0-2.38-4.15zm-.01 10-4.14.36c.59-.51 1.12-1.14 1.54-1.86.42-.73.69-1.5.83-2.29zM12 22l-2.41-3.44c.74.27 1.55.44 2.41.44.82 0 1.63-.17 2.37-.44z"></path></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="(prefers-color-scheme: dark)" data-md-color-scheme="slate" data-md-color-primary="blue-grey" data-md-color-accent="indigo" aria-label="切换至浅色模式" type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换至浅色模式" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"></path></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"></path></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"></path></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+  
+
+  <nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+    <div class="md-grid">
+      <ul class="md-tabs__list">
+        <!-- 顶部导航栏仅显示特定项 -->
+        
+          
+            
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  主页
+
+      </a>
+    </li>
+  
+
+          
+        
+          
+            
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link">
+        
+  
+  
+    
+  
+  指南
+
+      </a>
+    </li>
+  
+
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </ul>
+    </div>
+  </nav>
+
+
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Obelisk Docs" class="md-nav__button md-logo" aria-label="Obelisk Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m23 7.5-6.47-.54L14 1l-2.53 5.96L5 7.5l4.9 4.27-1.46 6.33L14 14.74l5.56 3.36-1.47-6.33zm-6.86 4.73.4 1.71-1.51-.91-1.03-.62-1.03.62-1.51.91.39-1.71.28-1.18-.91-.79L9.88 9.1l1.76-.15 1.2-.1.47-1.11.69-1.62.69 1.62.47 1.11 1.2.1 1.75.15-1.33 1.16-.92.79zM1.16 12c-.299-.5-.171-1.11.29-1.41l2.73-1.8 1.57 1.36-3.2 2.11c-.17.11-.36.17-.55.17-.32 0-.64-.16-.84-.43m.29 8.16 5.86-3.85L7 17.76l-.34 1.37-4.11 2.71c-.17.11-.36.16-.55.16-.32 0-.64-.16-.84-.45a1.013 1.013 0 0 1 .29-1.39m5.87-8.66.92.81-.27 1.19-5.42 3.55c-.17.11-.36.16-.55.16-.32 0-.64-.15-.84-.45a1 1 0 0 1 .29-1.38z"></path></svg>
+
+    </a>
+    Obelisk Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    主页
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    指南
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ubuntu/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Ubuntu 安装与配置指南
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3" id="__nav_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Ubuntu 安装与配置指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/download-iso/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    获取系统镜像
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/create-boot-usb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    制作启动 U 盘
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/boot-and-disk/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    准备磁盘分区
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 Ubuntu
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_6">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ubuntu/configuration/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置 Ubuntu
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_6" id="__nav_3_6_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    配置 Ubuntu
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/update-ubuntu-and-software/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更新 Ubuntu 与软件
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/managing-root-access/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    管理并获取 Root 权限
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/install-nvidia-drivers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 NVIDIA 显卡驱动
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/remove-snap-packages/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    卸载 Snap 组件及其软件包
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/localize-user-directories/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更改用户目录本地化
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/change-default-boot-entry/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    更改开机默认启动项
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/sync-dual-system-time/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    同步双系统时间
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/adjust-high-dpi-scaling/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    调整高分辨率缩放
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/install-common-fonts/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装常用字体
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/configuration/battery-charge-management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    电池充电管理
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../ubuntu/software-setup/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件安装与配置
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_3_7" id="__nav_3_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件安装与配置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/software-setup/pip/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Pip
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/software-setup/conda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Conda
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/software-setup/cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUDA Toolkit (+cuDNN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/software-setup/pytorch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    PyTorch
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../ubuntu/faq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    常见问题
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../wsl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    WSL 安装与配置指南
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4" id="__nav_4_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    WSL 安装与配置指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wsl/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 WSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wsl/configuration/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    配置 WSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wsl/management/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    管理 WSL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../wsl/software-setup/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    软件安装与配置
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_4_5" id="__nav_4_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    软件安装与配置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../wsl/software-setup/cuda/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    CUDA Toolkit (+cuDNN)
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../opengl/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenGL 安装与配置指南
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5" id="__nav_5_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    OpenGL 安装与配置指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opengl/download-freeglut-and-glew/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    获取 freeglut 与 GLEW
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../opengl/environment-config/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Visual Studio 环境配置
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Visual Studio 环境配置
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opengl/environment-config/project-level/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目级环境配置（单项目）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opengl/environment-config/property-sheet/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    项目属性表配置（跨项目）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opengl/setting-system-environment-variables/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    设置系统环境变量
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../opengl/example/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    OpenGL 绘图示例
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    MySQL 安装与配置指南
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_6" id="__nav_6_label" tabindex="">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    MySQL 安装与配置指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 MySQL
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 SQL IDE
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 SQL IDE
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#推荐-sql-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐 SQL IDE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="推荐 SQL IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL Workbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datagrip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataGrip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dbeaver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DBeaver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heidisql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HeidiSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phpMyAdmin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#配置-sql-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置 SQL IDE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 SQL IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql-workbench_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL Workbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datagrip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataGrip
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../troubleshooting/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    故障排除
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../android-studio/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Android Studio 安装与配置指南
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_7" id="__nav_7_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Android Studio 安装与配置指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android-studio/installation/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    安装 Android Studio
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../android-studio/create-project/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    创建 Android 项目（Phone）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+      
+        
+          
+        
+      
+        
+      
+        
+      
+        
+      
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8">
+        
+          
+          <div class="md-nav__link md-nav__container">
+            <a href="../../jetbrains-edu-license/" class="md-nav__link ">
+              
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    JetBrains 教育许可证申请指南
+  
+
+    
+  </span>
+  
+  
+
+            </a>
+            
+              
+              <label class="md-nav__link " for="__nav_8" id="__nav_8_label" tabindex="0">
+                <span class="md-nav__icon md-icon"></span>
+              </label>
+            
+          </div>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    JetBrains 教育许可证申请指南
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetbrains-edu-license/register-account/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    注册 JetBrains 账号
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetbrains-edu-license/apply-license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    申请教育许可证（官方文件）
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../jetbrains-edu-license/activate-license/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    在 JetBrains IDE 激活许可证
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#推荐-sql-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        推荐 SQL IDE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="推荐 SQL IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql-workbench" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL Workbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datagrip" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataGrip
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dbeaver" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DBeaver
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#heidisql" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        HeidiSQL
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#phpmyadmin" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        phpMyAdmin
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#配置-sql-ide" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        配置 SQL IDE
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="配置 SQL IDE">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysql-workbench_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        MySQL Workbench
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#datagrip_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        DataGrip
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+  
+
+
+  <nav class="md-path" aria-label="导航栏">
+    <ol class="md-path__list">
+      
+        
+  
+  
+    <li class="md-path__item">
+      <a href="../../.." class="md-path__link">
+        
+  <span class="md-ellipsis">
+    主页
+  </span>
+
+      </a>
+    </li>
+  
+
+      
+      
+        
+  
+  
+    
+    
+      <li class="md-path__item">
+        <a href="../" class="md-path__link">
+          
+  <span class="md-ellipsis">
+    MySQL 安装与配置指南
+  </span>
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ol>
+  </nav>
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+  <h1>安装 SQL IDE</h1>
+
+<div class="admonition abstract">
+<p class="admonition-title">SQL IDE</p>
+<p>SQL IDE 是用于编写、管理和优化 SQL 语句的集成工具，提供代码编辑、执行调试、数据浏览等功能。相比基础命令行终端工具，IDE
+通过可视化界面和辅助功能简化数据库操作，支持多种数据库类型，帮助开发者更高效地完成日常查询、表结构修改和数据维护工作。</p>
+<div class="admonition note">
+<p>目前市面上可供选择的 SQL IDE 众多且各有各的特点功能，以下仅介绍五款适用于 MySQL 的热门免费 IDE</p>
+</div>
+</div>
+<hr>
+<h2 id="推荐-sql-ide"><a class="toclink" href="#推荐-sql-ide">推荐 SQL IDE</a></h2>
+<h3 id="mysql-workbench"><a class="toclink" href="#mysql-workbench">MySQL Workbench</a></h3>
+<div class="admonition info">
+<p class="admonition-title">MySQL Workbench</p>
+<p><strong>MySQL Workbench</strong> 是 Oracle 公司于 2005 年推出的官方数据库集成开发环境，作为 MySQL GUI Tools 的继任者，现已成为
+MySQL 生态中最权威的管理工具。它采用 C++/Python 混合开发，提供完整的数据库生命周期管理功能，包括可视化 ER
+建模、SQL 开发调试、数据库迁移向导（支持从 SQL Server/Oracle 迁移至 MySQL）、性能优化仪表盘以及 MySQL
+服务器配置管理。在新版本（8.0+）已支持 NoSQL 文档存储功能。</p>
+<div class="grid cards" markdown>
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32 0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"></path></svg></span> <strong>优点</strong></p>
+<hr>
+<ul>
+<li><strong>深度集成</strong>：原生支持 MySQL 所有特性，包括最新版本的功能预览</li>
+<li><strong>专业建模工具</strong>：提供逆向/正向工程，支持物理/逻辑模型转换</li>
+<li><strong>可视化诊断</strong>：内置 EXPLAIN 可视化工具和性能仪表盘</li>
+<li><strong>跨平台一致性</strong>：三大操作系统功能完全一致</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15h4V3h-4m-4 0H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2a2 2 0 0 0 2 2h6.31l-.95 4.57c-.02.1-.03.2-.03.31 0 .42.17.79.44 1.06L9.83 23l6.58-6.59c.37-.36.59-.86.59-1.41V5a2 2 0 0 0-2-2"></path></svg></span> <strong>缺点</strong></p>
+<hr>
+<ul>
+<li><strong>单数据库支持</strong>：仅限于 MySQL 数据库</li>
+<li><strong>不支持本地化</strong>：不支持中文语言（可以安装汉化）</li>
+<li><strong>性能问题</strong>：处理大型数据库时可能卡顿</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">暂不完全兼容 MySQL 8.4.x <sup id="fnref2:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>目前 MySQL Workbench 8.0.x 版本针对于 MySQL Server 8.0 版本开发和测试，虽然能连接 MySQL Server 8.4
+及更高版本，但某些功能在这些新服务器版本上可能无法使用。</p>
+</div>
+<div class="admonition quote">
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8m0-18C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-1 12h2v3h3v-5h2l-6-5-6 5h2v5h3z"></path></svg></span> <strong>官方网站</strong>：<a href="https://www.mysql.com/products/workbench">https://www.mysql.com/products/workbench</a></p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/ide-mysql-workbench.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/ide-mysql-workbench.png"></a></p>
+<hr>
+<h3 id="datagrip"><a class="toclink" href="#datagrip">DataGrip</a></h3>
+<div class="admonition info">
+<p class="admonition-title">DataGrip</p>
+<p><strong>DataGrip</strong> 是 JetBrains 公司 2014 年推出的专业级数据库 IDE，基于 IntelliJ 平台构建，与家族其他 IDE
+共享相同的代码分析引擎。其核心优势在于智能上下文感知系统：能自动识别 SQL 方言差异（如 MySQL 的 LIMIT 与 Oracle的
+ROWNUM），支持跨数据库重构（重命名表/列时自动更新关联视图和存储过程），提供可视化查询计划解释器，并内置
+CSV/Excel 数据导入导出工具。企业版还支持数据库版本控制集成（Git/SVN）。</p>
+<div class="grid cards" markdown>
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32 0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"></path></svg></span> <strong>优点</strong></p>
+<hr>
+<ul>
+<li><strong>多数据库支持</strong>：可同时管理异构数据库（如 Oracle + PostgreSQL 联查）</li>
+<li><strong>智能编码</strong>：上下文感知的 SQL 补全，支持方言自动识别</li>
+<li><strong>版本控制</strong>：深度集成 Git，支持 SQL 脚本差异比对</li>
+<li><strong>可扩展性</strong>：支持 Python/JavaScript 插件开发</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15h4V3h-4m-4 0H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2a2 2 0 0 0 2 2h6.31l-.95 4.57c-.02.1-.03.2-.03.31 0 .42.17.79.44 1.06L9.83 23l6.58-6.59c.37-.36.59-.86.59-1.41V5a2 2 0 0 0-2-2"></path></svg></span> <strong>缺点</strong></p>
+<hr>
+<ul>
+<li><strong>资源占用高</strong>：对硬件要求较高（4GB+ 内存）</li>
+<li><strong>启动速度</strong>：初次加载项目较慢</li>
+<li><strong>学习曲线</strong>：功能复杂，需时间熟悉</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">通过学生认证免费使用</p>
+<p>DataGrip 本身为<strong>付费订阅制</strong>，但通过<strong>学生认证</strong>可以免费使用，申请认证可参考：<a href="../../jetbrains-edu-license/">JetBrains 教育许可证申请指南</a></p>
+</div>
+<div class="admonition quote">
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8m0-18C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-1 12h2v3h3v-5h2l-6-5-6 5h2v5h3z"></path></svg></span> <strong>官方网站</strong>：<a href="https://www.jetbrains.com/datagrip">https://www.jetbrains.com/datagrip</a></p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/ide-datagrip.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/ide-datagrip.png"></a></p>
+<hr>
+<h3 id="dbeaver"><a class="toclink" href="#dbeaver">DBeaver</a></h3>
+<div class="admonition info">
+<p class="admonition-title">DBeaver</p>
+<p><strong>DBeaver</strong> 始于 2010 年的开源项目，基于 Eclipse RCP 框架开发，采用模块化架构设计。社区版支持 JDBC
+兼容的所有数据库（包括 MongoDB/Cassandra 等 NoSQL），企业版则添加了 ER
+图协作编辑、数据对比同步等高级功能。其特色功能包括：Lua/Python
+脚本扩展支持、二进制大字段编辑器（可直接预览图片/PDF）、地理空间数据可视化（集成
+OpenStreetMap），以及 SSH 隧道管理器。</p>
+<div class="grid cards" markdown>
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32 0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"></path></svg></span> <strong>优点</strong></p>
+<hr>
+<ul>
+<li><strong>超宽兼容</strong>：支持 80+ 数据库，包括时序数据库和 NoSQL</li>
+<li><strong>数据工具</strong>：强大的 CSV 导入导出和 ETL 功能</li>
+<li><strong>脚本支持</strong>：内置 JavaScript 引擎执行自动化任务</li>
+<li><strong>云集成</strong>：原生支持 AWS/Azure/GCP 连接</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15h4V3h-4m-4 0H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2a2 2 0 0 0 2 2h6.31l-.95 4.57c-.02.1-.03.2-.03.31 0 .42.17.79.44 1.06L9.83 23l6.58-6.59c.37-.36.59-.86.59-1.41V5a2 2 0 0 0-2-2"></path></svg></span> <strong>缺点</strong></p>
+<hr>
+<ul>
+<li><strong>界面响应</strong>：大数据集渲染可能卡顿</li>
+<li><strong>插件管理</strong>：扩展间偶发兼容性问题</li>
+<li><strong>文档不足</strong>：部分高级功能缺乏详细说明</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonition quote">
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8m0-18C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-1 12h2v3h3v-5h2l-6-5-6 5h2v5h3z"></path></svg></span> <strong>官方网站</strong>：<a href="https://dbeaver.io">https://dbeaver.io</a></p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/ide-dbeaver.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/ide-dbeaver.png"></a></p>
+<hr>
+<h3 id="heidisql"><a class="toclink" href="#heidisql">HeidiSQL</a></h3>
+<div class="admonition info">
+<p class="admonition-title">HeidiSQL</p>
+<p><strong>HeidiSQL</strong> 最初由德国开发者 Ansgar Becker 于 2002年 创建（原名 MySQL-Front），2006 年重命名后使用 Delphi
+重写。虽然界面保持经典 Win32 风格，但其轻量化设计和高效执行深受开发者喜爱。特色功能包括：批量 SQL
+语句生成器（根据条件自动生成 ALTER TABLE 语句）、服务器监控面板（实时显示连接数/查询缓存）、以及 PL/SQL
+调试器（支持 MariaDB 10.3+ 的调试协议）。</p>
+<div class="grid cards" markdown>
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32 0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"></path></svg></span> <strong>优点</strong></p>
+<hr>
+<ul>
+<li><strong>极致轻量</strong>：安装包小于 50MB，内存占用低于 100MB</li>
+<li><strong>批量操作</strong>：高效处理表结构批量修改</li>
+<li><strong>连接管理</strong>：支持 SSH 隧道和 SSL 加密</li>
+<li><strong>便携模式</strong>：无需安装即可运行</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15h4V3h-4m-4 0H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2a2 2 0 0 0 2 2h6.31l-.95 4.57c-.02.1-.03.2-.03.31 0 .42.17.79.44 1.06L9.83 23l6.58-6.59c.37-.36.59-.86.59-1.41V5a2 2 0 0 0-2-2"></path></svg></span> <strong>缺点</strong></p>
+<hr>
+<ul>
+<li><strong>平台限制</strong>：主要支持 Windows 系统（新版本已支持 Linux）</li>
+<li><strong>兼容较差</strong>：仅覆盖少数主流数据库</li>
+<li><strong>功能局限</strong>：缺少存储过程调试器</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonition quote">
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8m0-18C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-1 12h2v3h3v-5h2l-6-5-6 5h2v5h3z"></path></svg></span> <strong>官方网站</strong>：<a href="https://www.heidisql.com">https://www.heidisql.com</a></p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/ide-heidisql.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/ide-heidisql.png"></a></p>
+<hr>
+<h3 id="phpmyadmin"><a class="toclink" href="#phpmyadmin">phpMyAdmin</a></h3>
+<div class="admonition info">
+<p class="admonition-title">phpMyAdmin</p>
+<p><strong>phpMyAdmin</strong> 始于 1998 年的 PHP 项目，是最早的 Web 版数据库管理工具之一，现已成为 Linux 发行版（如
+cPanel/Plesk）的标准组件。采用典型的 LAMP 架构（PHP + Apache + MySQL），支持多语言管理和主题切换。其创新性功能包括：可视化外键关系构建器、SQL
+历史查询书签、用户权限矩阵编辑器，以及通过 phpMyAdmin-Export 能生成包含数据的 LaTeX/PDF
+报告,安全方面支持双因素认证和 IP 白名单限制。</p>
+<div class="grid cards" markdown>
+<ul>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M23 10a2 2 0 0 0-2-2h-6.32l.96-4.57c.02-.1.03-.21.03-.32 0-.41-.17-.79-.44-1.06L14.17 1 7.59 7.58C7.22 7.95 7 8.45 7 9v10a2 2 0 0 0 2 2h9c.83 0 1.54-.5 1.84-1.22l3.02-7.05c.09-.23.14-.47.14-.73zM1 21h4V9H1z"></path></svg></span> <strong>优点</strong></p>
+<hr>
+<ul>
+<li><strong>零客户端</strong>：仅需浏览器即可访问</li>
+<li><strong>权限管理</strong>：完善的用户权限控制系统</li>
+<li><strong>数据导出</strong>：支持 20+ 格式（包括 JSON/XML）</li>
+<li><strong>主题定制</strong>：可通过 CSS 修改界面样式</li>
+</ul>
+</li>
+<li>
+<p><span class="twemoji"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 15h4V3h-4m-4 0H6c-.83 0-1.54.5-1.84 1.22l-3.02 7.05c-.09.23-.14.47-.14.73v2a2 2 0 0 0 2 2h6.31l-.95 4.57c-.02.1-.03.2-.03.31 0 .42.17.79.44 1.06L9.83 23l6.58-6.59c.37-.36.59-.86.59-1.41V5a2 2 0 0 0-2-2"></path></svg></span> <strong>缺点</strong></p>
+<hr>
+<ul>
+<li><strong>安全风险</strong>：需定期更新防止漏洞利用</li>
+<li><strong>功能单一</strong>：仅限基础 CRUD 操作</li>
+<li><strong>性能瓶颈</strong>：大表操作可能超时</li>
+</ul>
+</li>
+</ul>
+</div>
+</div>
+<div class="admonition quote">
+<p><span class="twemoji lg middle"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 20c-4.4 0-8-3.6-8-8s3.6-8 8-8 8 3.6 8 8-3.6 8-8 8m0-18C6.5 2 2 6.5 2 12s4.5 10 10 10 10-4.5 10-10S17.5 2 12 2m-1 12h2v3h3v-5h2l-6-5-6 5h2v5h3z"></path></svg></span> <strong>官方网站</strong>：<a href="https://www.phpmyadmin.net">https://www.phpmyadmin.net</a></p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/ide-phpmyadmin.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/ide-phpmyadmin.png"></a></p>
+<hr>
+<h2 id="配置-sql-ide"><a class="toclink" href="#配置-sql-ide">配置 SQL IDE</a></h2>
+<div class="admonition abstract">
+<p class="admonition-title">SQL IDE 配置</p>
+<p>每个 IDE 的界面和功能不尽相同，以下以 <strong>MySQL Workbench</strong> 和 <strong>DataGrip</strong> 为例，介绍一般 IDE 连接和使用 MySQL 的操作。</p>
+</div>
+<h3 id="mysql-workbench_1"><a class="toclink" href="#mysql-workbench_1">MySQL Workbench</a></h3>
+<p>打开 <strong>MySQL Workbench</strong>，本地 MySQL 服务器会直接显示在 <strong>"MySQL Connections"</strong> 中，点击连接即可</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-1.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-1.png"></a></p>
+<hr>
+<p>如需要连接其他 MySQL 服务器，可以点击加号 <strong>"+"</strong> 并填写<strong>主机地址</strong>、<strong>端口号</strong>、<strong>用户名</strong>和<strong>密码</strong>等信息连接</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-2.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-2.png"></a></p>
+<hr>
+<p>连接 MySQL 服务器后，输入 <code>root</code> 用户的密码，点击 <strong>"OK"</strong> 即可连接</p>
+<blockquote>
+<p>可以勾选 <code>Save password in vault</code>（将密码保存至库中），后续连接无需再输入密码</p>
+</blockquote>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-3.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-3.png"></a></p>
+<hr>
+<p>如果提示警告并显示 <strong>"Incompatible/nonstandard"</strong>（不兼容/非标准）信息，勾选 <strong>"Don't show this message again"</strong>（不再显示），并点击 <strong>"Continue Anyway"</strong> 忽略即可</p>
+<div class="admonition warning">
+<p class="admonition-title">暂不完全兼容 MySQL 8.4.x <sup id="fnref:1"><a class="footnote-ref" href="#fn:1">1</a></sup></p>
+<p>目前 MySQL Workbench 8.0.x 版本针对于 MySQL Server 8.0 版本开发和测试，虽然能连接 MySQL Server 8.4
+及更高版本，但某些功能在这些新服务器版本上可能无法使用。</p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-4.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-4.png"></a></p>
+<hr>
+<p>在左侧 <strong>"Navigator"</strong>（导航）界面下方，点击 <strong>"Schema"</strong>（架构）可以切换至当前数据源的架构面板</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-5.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-5.png"></a></p>
+<hr>
+<p>在左侧导航界面可以查看所有架构以及其中的表等信息</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-6.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-6.png"></a></p>
+<hr>
+<p>选择一个表（Table），在其名称右侧点击 <strong>"表格查询"</strong> 图标可以查看表的内容</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-7.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-7.png"></a></p>
+<hr>
+<p>在界面左上方可以点击 <strong>"新建 SQL 文件"</strong> 图标，在文件中写入 MySQL 语句，并点击 <strong>"闪电"</strong> 按钮执行</p>
+<details class="note">
+<summary>三种 SQL 执行方式（闪电按钮）</summary>
+<ul>
+<li>
+<p><strong>执行全部/选中部分（第 1 个按钮）</strong>  </p>
+<ul>
+<li>当选中文本时：执行选中的 SQL 语句</li>
+<li>未选中时：执行当前文件所有语句</li>
+</ul>
+</li>
+<li>
+<p><strong>执行光标所在语句（第 2 个按钮）</strong>  </p>
+<ul>
+<li>自动识别光标位置的完整语句（无需选中）</li>
+<li>执行单个语句时推荐使用</li>
+</ul>
+</li>
+<li>
+<p><strong>EXPLAIN 执行计划（第 3 个按钮）</strong>  </p>
+<ul>
+<li>对光标所在语句生成执行计划</li>
+<li>用于分析查询性能优化</li>
+</ul>
+</li>
+</ul>
+</details>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-8.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-8.png"></a></p>
+<hr>
+<p>如果需要<strong>新建表</strong>，除了手写 MySQL 语句外，也可以<strong>左键双击 "架构名称"</strong> 选中一个架构（粗体显示），并在左上方点击
+<strong>"新建表"</strong> 图标，在新建页面填写<strong>表名称</strong>、<strong>字符集</strong>和<strong>排序规则</strong>以及<strong>列定义</strong>等进行快速创建</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-mysql-workbench-9.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-mysql-workbench-9.png"></a></p>
+<hr>
+<h3 id="datagrip_1"><a class="toclink" href="#datagrip_1">DataGrip</a></h3>
+<p>打开 <strong>DataGrip</strong>，在欢迎界面中项目栏右侧，点击 <strong>"新建项目"</strong>，并输入项目名称</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-1.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-1.png"></a></p>
+<hr>
+<p>在项目界面左上方，点击 <strong>"主菜单"</strong> 选项（3 个竖白点）后，选择 <strong>"文件 &gt; 数据源"</strong></p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-2.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-2.png"></a></p>
+<hr>
+<p>在<strong>数据源</strong>栏左三角点击 <strong>"+"</strong> 加号，并选择 <strong>"MySQL"</strong> 数据库</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-3.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-3.png"></a></p>
+<hr>
+<p>首次添加 MySQL 源需要下载相应的<strong>驱动程序</strong>，可以<strong>点击下方蓝色文字链接</strong>自动下载安装</p>
+<div class="admonition note">
+<p class="admonition-title">MySQL 驱动程序（MySQL Connector/J）</p>
+<p>DataGrip 通过 JDBC（Java Database Connectivity）技术连接 MySQL 数据库，需要依赖专门的 MySQL Connector/J
+驱动程序实现协议转换。该驱动程序是 MySQL 官方提供的 Java 连接器，负责将 JDBC API 调用转换为 MySQL
+网络协议（包括认证握手、SQL 语法适配和结果集封装等核心功能），同时处理字符集编码、时区转换和预处理语句等底层细节。</p>
+</div>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-4.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-4.png"></a></p>
+<hr>
+<p>安装完驱动程序后，按以下格式填写本地连接配置，并点击 <strong>"测试连接"</strong> 进行测试</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-5.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-5.png"></a></p>
+<hr>
+<p>如果提示如图信息则说明配置成功，点击 <strong>"应用"</strong> 并确定即可</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-6.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-6.png"></a></p>
+<hr>
+<p class="annotate">在界面左侧的<strong>数据库资源管理器</strong>(1)中，点击<strong>架构数字</strong>，并勾选所需的<strong>数据库</strong></p>
+<ol>
+<li>如果没有显示此窗口，可以在顶部菜单栏选择 <strong>"视图 &gt; 工具窗口 &gt; 数据库资源管理器"</strong> 打开</li>
+</ol>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-7.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-7.png"></a></p>
+<hr>
+<p>选择其中一个架构即可查看架构中的表等信息</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-8.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-8.png"></a></p>
+<hr>
+<p>可以点击上方的 <strong>"控制台"</strong> 图标并选择新建或已有控制台，在其中写入 <strong>MySQL 语句</strong>进行执行</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-9.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-9.png"></a></p>
+<hr>
+<p>以<strong>添加表</strong>为例，除了通过 MySQL 语句外，也可以<strong>右键点击架构</strong>并选择 <strong>"新建 &gt; 表"</strong> 进行快速创建</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-10.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-10.png"></a></p>
+<hr>
+<p>在创建表页面填写<strong>表名称</strong>、<strong>列名称</strong>、<strong>数据类型</strong>和<strong>键</strong>等信息即可</p>
+<p><a class="glightbox" data-type="image" data-width="auto" data-height="auto" href="../../../assets/images/mysql/config-datagrip-11.png" data-desc-position="bottom"><img alt="" src="../../../assets/images/mysql/config-datagrip-11.png"></a></p>
+<div class="footnote">
+<hr>
+<ol>
+<li id="fn:1">
+<p><a href="https://dev.mysql.com/doc/refman/8.4/en/workbench.html">MySQL :: MySQL 8.4 Reference Manual :: 33 MySQL Workbench</a>&nbsp;<a class="footnote-backref" href="#fnref:1" title="Jump back to footnote 1 in the text">↩</a><a class="footnote-backref" href="#fnref2:1" title="Jump back to footnote 1 in the text">↩</a></p>
+</li>
+</ol>
+</div>
+
+
+
+
+
+
+
+  
+  
+
+
+
+  
+
+
+
+  <form class="md-feedback" name="feedback" hidden>
+    <fieldset>
+      <legend class="md-feedback__title">
+        此页面是否有帮助？
+      </legend>
+      <div class="md-feedback__inner">
+        <div class="md-feedback__list">
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="很有帮助" data-md-value="1">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m7 0c0 .8-.7 1.5-1.5 1.5S14 10.3 14 9.5 14.7 8 15.5 8s1.5.7 1.5 1.5m-5 7.73c-1.75 0-3.29-.73-4.19-1.81L9.23 14c.45.72 1.52 1.23 2.77 1.23s2.32-.51 2.77-1.23l1.42 1.42c-.9 1.08-2.44 1.81-4.19 1.81"></path></svg>
+            </button>
+          
+            <button class="md-feedback__icon md-icon" type="submit" title="仍需改进" data-md-value="0">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 12a8 8 0 0 0-8-8 8 8 0 0 0-8 8 8 8 0 0 0 8 8 8 8 0 0 0 8-8m2 0a10 10 0 0 1-10 10A10 10 0 0 1 2 12 10 10 0 0 1 12 2a10 10 0 0 1 10 10m-6.5-4c.8 0 1.5.7 1.5 1.5s-.7 1.5-1.5 1.5-1.5-.7-1.5-1.5.7-1.5 1.5-1.5M10 9.5c0 .8-.7 1.5-1.5 1.5S7 10.3 7 9.5 7.7 8 8.5 8s1.5.7 1.5 1.5m2 4.5c1.75 0 3.29.72 4.19 1.81l-1.42 1.42C14.32 16.5 13.25 16 12 16s-2.32.5-2.77 1.23l-1.42-1.42C8.71 14.72 10.25 14 12 14"></path></svg>
+            </button>
+          
+        </div>
+        <div class="md-feedback__note">
+          
+            <div data-md-value="1" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢反馈！
+            </div>
+          
+            <div data-md-value="0" hidden>
+              
+              
+                
+              
+              
+              
+                
+                
+              
+              感谢反馈！
+            </div>
+          
+        </div>
+      </div>
+    </fieldset>
+  </form>
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"></path></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+  <footer class="md-footer">
+
+    <!-- Link to previous and/or next page -->
+    
+      
+        
+        <nav class="md-footer__inner md-grid" aria-label="页脚">
+
+          <!-- Link to previous page -->
+          
+            
+            <a href="../installation/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 安装 MySQL">
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"></path></svg>
+              </div>
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  上一页
+                </span>
+                <div class="md-ellipsis">
+                  安装 MySQL
+                </div>
+              </div>
+            </a>
+          
+
+          <!-- Link to next page -->
+          
+            
+            <a href="../troubleshooting/" class="md-footer__link md-footer__link--next" aria-label="下一页: 故障排除">
+              <div class="md-footer__title">
+                <span class="md-footer__direction">
+                  下一页
+                </span>
+                <div class="md-ellipsis">
+                  故障排除
+                </div>
+              </div>
+              <div class="md-footer__button md-icon">
+                
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11z"></path></svg>
+              </div>
+            </a>
+          
+        </nav>
+      
+    
+
+    <!-- Further information -->
+    <div class="md-footer-meta md-typeset">
+      <div class="md-footer-meta__inner md-grid">
+        <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright © 2026 <a href="https://github.com/Obelusod" rel="noreferrer" target="_blank">Obelus</a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+
+        <!-- 备案信息 -->
+        
+          <div class="md-beian">
+  
+
+  
+    <img src="../../../assets/images/misc/beian_logo.png" alt="beian_logo" width="16px">
+  
+
+  
+    <a href="https://beian.mps.gov.cn/#/query/webSearch?code=45010002451008" rel="noreferrer" target="_blank" style="color: inherit; opacity: .7;">
+      桂公网安备45010002451008号
+    </a>
+  
+
+  
+    <a href="https://beian.miit.gov.cn/" rel="noreferrer" target="_blank" style="color: inherit; opacity: .7;">
+      桂ICP备2025067259号
+    </a>
+  
+</div>
+        
+
+        <!-- Social links -->
+        
+      </div>
+    </div>
+  </footer>
+
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+      <div class="md-progress" data-md-component="progress" role="progressbar"></div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.instant", "navigation.instant.prefetch", "navigation.instant.progress", "navigation.top", "navigation.tabs", "navigation.indexes", "navigation.footer", "navigation.path", "navigation.expand", "toc.follow", "search.suggest", "search.highlight", "content.code.copy", "content.code.annotate", "content.tooltips", "content.tabs.link", "content.footnote.tooltips"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+        <script src="../../../js/copy-patch.js"></script>
+      
+    
+  
+<script id="init-glightbox">const lightbox = GLightbox({"touchNavigation": true, "loop": false, "zoomable": true, "draggable": true, "openEffect": "zoom", "closeEffect": "zoom", "slideEffect": "slide"});
+document$.subscribe(()=>{ lightbox.reload(); });
+</script></body></html>
